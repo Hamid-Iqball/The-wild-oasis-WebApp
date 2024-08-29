@@ -10,7 +10,7 @@ function SideBar() {
    <img src="/logo-light.png" alt="logo" className='h-[11rem] '  />
 </div>
 <div>
-    <nav className='text-4xl text-[#5d5f63] '>
+    <nav className='text-3xl text-[#5d5f63] '>
         <ul className='flex flex-col gap-6 mr-4'>
             <li className='hover:bg-slate-100 rounded-md hover:text-orange-950'> 
                 <NavLink to='/dashboard' className={({isActive})=>
