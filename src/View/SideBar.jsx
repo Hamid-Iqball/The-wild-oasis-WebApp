@@ -10,8 +10,8 @@ function SideBar() {
    <img src="/logo-light.png" alt="logo" className='h-[11rem] '  />
 </div>
 <div>
-    <nav className='text-3xl text-[#5d5f63] '>
-        <ul className='flex flex-col gap-6 mr-4'>
+    <nav className='text-[1.7rem] font-[500] text-[#5d5f63] '>
+        <ul className='flex flex-col gap-4 mr-4'>
             <li className='hover:bg-slate-100 rounded-md hover:text-orange-950'> 
                 <NavLink to='/dashboard' className={({isActive})=>
                   isActive ? 'flex justify-start gap-8 py-4 px-8 bg-slate-100 rounded-md text-orange-950' :'flex justify-start gap-8 py-4 px-8'

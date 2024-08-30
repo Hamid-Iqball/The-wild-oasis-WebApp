@@ -8,7 +8,7 @@ function AppLayout() {
     <div className='min-h-screen grid grid-cols-[28rem,1fr] grid-rows-[auto,1fr]'>
    <Header/>
    <SideBar/>
-      <main className='bg-[#F9FAFB] p-[4rem]'>
+      <main className='bg-[#F9FAFB] py-[4rem] px-[6rem]'>
       <Outlet/>
       </main>
       </div>
