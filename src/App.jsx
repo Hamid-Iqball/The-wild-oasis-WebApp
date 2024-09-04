@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Dashboard from './View/Pages/Dashboard'
 import Bookings from './View/Pages/Bookings'
 import Cabins from './View/Pages/Cabins'
@@ -9,9 +10,21 @@ import Account from "./View/Pages/Account"
 import Login from "./View/Pages/Login"
 import PageNotFound from './View/Pages/PageNotFound'
 import AppLayout from "./View/AppLayout" 
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+const queryClient  = new QueryClient({
+  defaultOptions:{
+    queries:{
+      staleTime:60*1000,
+    }
+  }
+})
+
 
 function App() {
   return (
+    <QueryClientProvider client={queryClient}>
+      <ReactQueryDevtools initialIsOpen={false}/>
    <BrowserRouter>
    <Routes>
     <Route element={<AppLayout/>} >
@@ -27,6 +40,7 @@ function App() {
     <Route path='*' element={<PageNotFound/>} />
    </Routes>
    </BrowserRouter>
+    </QueryClientProvider>
   )
 }
 

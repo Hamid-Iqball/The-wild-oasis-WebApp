@@ -1,16 +1,19 @@
-import { useEffect } from "react";
-import { getCabins } from "../../Modal/Services/apiCabins";
+import CabinTable from "../features/cabins/CabinTable";
 
 
 function Cabins() {
-useEffect(function(){
-  getCabins().then((data)=>console.log(data))
-},[])
+
 
   return (
-  <div>
-    <h2>Cabins</h2>
+<section>
+  <div className="flex justify-between items-center mb-16">
+    <h1 className="text-[2.7rem] font-[600] text-orange-800">All Cabins</h1>
+    <p className="text-[1.5rem] font-[500]">Filter/Sort</p>
   </div>
+  <div>
+    <CabinTable/>
+  </div>
+</section>
   );
 }
 
