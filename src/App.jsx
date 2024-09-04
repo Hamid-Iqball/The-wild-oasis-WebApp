@@ -23,8 +23,8 @@ const queryClient  = new QueryClient({
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ReactQueryDevtools initialIsOpen={false}/>
+  <QueryClientProvider client={queryClient}>
+    <ReactQueryDevtools initialIsOpen={false}/>
    <BrowserRouter>
    <Routes>
     <Route element={<AppLayout/>} >
