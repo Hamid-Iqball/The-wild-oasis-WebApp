@@ -1,5 +1,5 @@
 import CabinTable from "../features/cabins/CabinTable";
-import Spinner from "../Spinner";
+
 
 
 function Cabins() {
