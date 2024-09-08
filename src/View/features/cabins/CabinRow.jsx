@@ -2,6 +2,7 @@ import React from 'react'
 import {formatCurrency} from '../../../ViewModal/Utils/helper'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { deleteCabin } from '../../../Modal/Services/apiCabins'
+import toast from 'react-hot-toast'
 
 
 function CabinRow({cabin}) {
@@ -10,13 +11,13 @@ function CabinRow({cabin}) {
     const {isLoading:isDeleteing , mutate} = useMutation({
     mutationFn:deleteCabin,
     onSuccess:()=>{
-        alert("Successfully delted")
+       toast.success("Successfully deleted")
         queryClient.invalidateQueries({
         queryKey:["cabins"]
     })},
     // Here it has access to the exact error message that we have defined in our mutation function
     onError:(err)=>{
-        alert(err.message)
+      toast.error(err.message)
     }
 })
   return (
