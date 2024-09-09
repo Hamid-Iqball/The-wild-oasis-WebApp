@@ -19,7 +19,7 @@ if(isError){
   return <Error/>
 }
   return (
-    <div className='border text-sm max-w-[100%] mx-6 my-4 rounded-md' role='table'>
+    <div className='border text-sm max-w-[100%] rounded-md mb-4' role='table'>
 <div className='grid grid-cols-[0.7fr,1.5fr,1.8fr,1fr,1fr,1fr] px-2 font-semibold gap-8 p-4  text-[1rem] text-[#454546] border-b-[1px] '>
  <h2></h2>
   <h2 className='ml-2'>Cabin</h2>
