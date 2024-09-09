@@ -20,7 +20,7 @@ function handleChange(){
   <div>
     <CabinTable/>
    <Button handleChange={handleChange} >Add new Cabin</Button>
-{showForm && <CreateCabinForm />}
+  {showForm && <CreateCabinForm />}
   </div>
 </section>
   );
