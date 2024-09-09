@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CabinTable from "../features/cabins/CabinTable";
 import CreateCabinForm from "../features/cabins/CreateCabinForm";
-import Button from "../Button";
+import Button from "../MainButton";
 
 
 
@@ -13,8 +13,8 @@ function handleChange(){
 }
   return (
 <section>
-  <div className="flex justify-between items-center mx-6 my-4  mb-8">
-    <h1 className="text-3xl font-semibold text-orange-950">All Cabins</h1>
+  <div className="flex justify-between items-center  my-4  mb-8">
+    <h1 className="text-4xl font-semibold text-orange-700">All Cabins</h1>
     <p className="text-[1rem] font-[500]">Filter/Sort</p>
   </div>
   <div>
