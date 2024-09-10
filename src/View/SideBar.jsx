@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 function SideBar() {
   return (
-    <div className=' flex flex-col justify-start items-center gap-12  bg-white col-span-1 row-span-full border-r-[1px] border-[#F3F4F6]  py-8 ' >
+    <div className=' flex flex-col justify-start items-center gap-12  bg-white col-span-1 row-span-full border-r-[1px] border-[#F3F4F6]  py-8 sticky top-0' >
 <div className='pt-4'>
    <img src="/logo-light.png" alt="logo" className='h-[8rem] '  />
 </div>
