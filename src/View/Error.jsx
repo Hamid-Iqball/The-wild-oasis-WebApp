@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Error({children}) {
+function Error({color,children}) {
   return (
-    <div>{children}</div>
+    <div className={`${color} pt-1`}>{children}</div>
   )
 }
 
