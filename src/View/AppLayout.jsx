@@ -5,11 +5,14 @@ import SideBar from './SideBar'
 
 function AppLayout() {
   return (
-    <div className='min-h-screen grid grid-cols-[16.6rem,1fr] grid-rows-[auto,1fr]'>
-      
+    <div className=' grid grid-cols-[16.6rem,1fr] grid-rows-[auto,1fr] '>
+
    <Header/>
+
    <SideBar/>
-      <main className='bg-[#F9FAFB] py-6 px-12 '>
+
+
+      <main className='bg-[#F9FAFB] py-6 px-12 overflow-scroll'>
       <Outlet/>
       </main>
       </div>
