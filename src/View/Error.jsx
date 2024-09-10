@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Error() {
+function Error({children}) {
   return (
-    <div>Error could not be deleted</div>
+    <div>{children}</div>
   )
 }
 

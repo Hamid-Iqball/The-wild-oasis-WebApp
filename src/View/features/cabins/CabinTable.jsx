@@ -16,7 +16,7 @@ if(isLoading){
     return  <Spinner/>
 }
 if(isError){
-  return <Error/>
+  return <Error>Cabin could not be deleted</Error>
 }
   return (
     <div className='border text-sm max-w-[100%] rounded-md mb-4' role='table'>
