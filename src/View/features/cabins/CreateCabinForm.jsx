@@ -1,16 +1,22 @@
+import toast from 'react-hot-toast'
 import React from 'react'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useForm } from 'react-hook-form'
 
 import SmallButton from '../../SmallButton'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { createCabin } from '../../../Modal/Services/apiCabins'
-import toast from 'react-hot-toast'
 import FormItem from '../../FormItem'
 
-function CreateCabinForm() {
+ function CreateCabinForm({cabinToEdit={}}) {
 
+  const {id:editID, ...editValues} = cabinToEdit
+  const isEditSession = Boolean(editID)
   // biltIn functions in useForm.
-  const {register , handleSubmit, reset,getValues,formState} = useForm()
+  const {register , handleSubmit, reset,getValues,formState} = useForm(
+    {
+      defaultValues:isEditSession ? editValues :{}
+    }
+  )
   const queryClinet =  useQueryClient()
   const {errors} = formState;
 
@@ -74,7 +80,7 @@ function CreateCabinForm() {
             Cancel
           </SmallButton>
           <button className="border border-grey-500 py-3 px-5 text-slate-50 bg-orange-700 font-semibold rounded-md" 
-          disabled={isCreating}>Add Cabin</button>
+          disabled={isCreating}>{isEditSession ? "Edit Cabin" :" Add Cabin"}</button>
         </div>
   </form>
   )

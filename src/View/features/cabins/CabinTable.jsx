@@ -28,7 +28,7 @@ if(isError){
   <h2>DISCOUNT</h2>
   <h2></h2>
 </div>
-{cabins.map(cabin=> <CabinRow cabin={cabin} key={cabin.id}/>)}
+  {cabins.map(cabin=> <CabinRow cabin={cabin} key={cabin.id}/>)}
     </div>
   )
 }

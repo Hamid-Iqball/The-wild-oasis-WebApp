@@ -1,11 +1,13 @@
-import React from 'react'
-import {formatCurrency} from '../../../ViewModal/Utils/helper'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { deleteCabin } from '../../../Modal/Services/apiCabins'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import {formatCurrency} from '../../../ViewModal/Utils/helper'
+import { deleteCabin } from '../../../Modal/Services/apiCabins'
+import CreateCabinForm from './CreateCabinForm'
 
 
 function CabinRow({cabin}) {
+    const [showForm , setShowForm] = useState(false)
     const {image ,id:cabinID, name,maxCapacity,regularPrice,discount} = cabin
     const queryClient = useQueryClient()
     const {isLoading:isDeleteing , mutate} = useMutation({
@@ -21,6 +23,7 @@ function CabinRow({cabin}) {
     }
 })
   return (
+    <>
     <div className='grid grid-cols-[0.8fr,0.3fr,2fr,1fr,1fr,1fr] place-items-center gap-8 text-sm font-[500] bg-white border-b-[1px] border-[#DDDDDD] rounded-md p-[1px]'>
 
        <div className='w-24 bg-white aspect-[4/3] border-slate-400 border'><img src={image} alt="" className='w-24  aspect-[4/3]' />
@@ -29,8 +32,13 @@ function CabinRow({cabin}) {
        <div className='text-start font-normal '>Fits Up to {maxCapacity} people</div>
        <div className='text-[0.9rem] font-semibold' style={{fontFamily:"sono"}}>{formatCurrency(regularPrice)}</div>
        <div className='text-green-500 pl-4 font-semibold' style={{fontFamily:"sono"}}>{formatCurrency(discount)}</div>
-       <button onClick={()=>mutate(cabinID)} disabled={isDeleteing}>Delete</button>
+       <div>
+      <button className=' py-1 px-2 border mr-2' onClick={()=>setShowForm(show=>!show)}>Edit</button>
+       <button className=' py-1 px-2 border ' onClick={()=>mutate(cabinID)} disabled={isDeleteing} >Delete</button>
+       </div>
     </div>
+    {showForm && <CreateCabinForm cabinToEdit={cabin}/>}
+    </>
   )
 }
 

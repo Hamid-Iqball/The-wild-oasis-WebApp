@@ -12,7 +12,7 @@ function AppLayout() {
    <SideBar/>
 
 
-      <main className='bg-[#F9FAFB] py-6 px-12 overflow-scroll'>
+      <main className='bg-[#F9FAFB] py-6 px-12 overflow-scroll overflow-x-hidden'>
       <Outlet/>
       </main>
       </div>
