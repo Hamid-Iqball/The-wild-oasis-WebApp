@@ -13,20 +13,31 @@ export async function getCabins(){
 // Upload Image https://vgsfnabpxjclsbxtblzd.supabase.co/storage/v1/object/public/cabin-images/cabin-002.jpg
 
 
-export async function createCabin(newCabin){
+export async function createCabin(newCabin , id){
     const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll("/"," ");
     const imagePath = `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`
     
-    // Create a cabin
-    const { data, error } = await supabase
-    .from('cabins')
-    .insert([
-    {...newCabin, image:imagePath }
-    ])
+    // Create/Edit a cabin
+    let query = supabase.from('cabins')
+
+    // Create Cabin
+    if(!id){
+            query.insert([{...newCabin, image:imagePath}]).select().single()
+    }
+
+    // Edit Cabin
+    if(id){
+        query.update({...newCabin, image:imagePath}).eq('id', id).select()
+    }
+    
+    const { data, error } = await query.insert([{...newCabin, image:imagePath }]).select().single()
+
+
     if(error){
         console.error(error)
         throw new Error ('Cabin could not be Created')
     }
+
     //Image Upload
     const {  error:storageError } = await supabase
     .storage

@@ -11,13 +11,13 @@ import FormItem from '../../FormItem'
 
   const {id:editID, ...editValues} = cabinToEdit
   const isEditSession = Boolean(editID)
-  // biltIn functions in useForm.
   const {register , handleSubmit, reset,getValues,formState} = useForm(
     {
       defaultValues:isEditSession ? editValues :{}
     }
   )
   const queryClinet =  useQueryClient()
+  // biltIn functions in useForm.
   const {errors} = formState;
 
 
@@ -50,14 +50,14 @@ import FormItem from '../../FormItem'
         </FormItem>
 
         <FormItem label='Maximum capacity' error={errors?.maxCapacity?.message}>
-        <input type="text" id='maxCapacity' {...register("maxCapacity",{required:"This Field is required",min:{
+        <input type="number" id='maxCapacity' {...register("maxCapacity",{required:"This Field is required",min:{
             value:1,
             message:"Capacity should be at least 1"
           }})} className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' disabled={isCreating} />
         </FormItem>
 
         <FormItem label='Price' error={errors?.regularPrice?.message }>
-        <input type="text" id='regularPrice' {...register("regularPrice",{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' disabled={isCreating} />
+        <input type="number" id='regularPrice' {...register("regularPrice",{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' disabled={isCreating} />
           </FormItem>
 
           <FormItem label="Discount" error={errors?.discount?.message}>
@@ -71,7 +71,7 @@ import FormItem from '../../FormItem'
           </FormItem>
 
           <FormItem label="Cabin photo" error={errors?.image?.message}>
-          <input type="file" id='image' {...register("image",{required:"Choose file"})} className='p-1.5 file:bg-orange-700 file:text-slate-50 file:py-3 file:px-4 file:border-none file:rounded-md file:mr-4 hover:file:cursor-pointer   ' disabled={isCreating}/>
+          <input type="file" id='image' {...register("image",{required: isEditSession ? false : "This field is required"})} className='p-1.5 file:bg-orange-700 file:text-slate-50 file:py-3 file:px-4 file:border-none file:rounded-md file:mr-4 hover:file:cursor-pointer   ' disabled={isCreating}/>
           </FormItem>
 
 
