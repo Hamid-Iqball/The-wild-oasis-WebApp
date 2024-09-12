@@ -93,7 +93,7 @@ import FormItem from '../../FormItem'
            </FormItem>
    
           <FormItem label="Description" error={errors?.description?.message}>
-          <textarea type="text" id='description' {...register("description",{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' disabled={isWorking}/>
+          <textarea type="text" id='description' {...register("description",{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none '/>
           </FormItem>
 
           <FormItem label="Cabin photo" error={errors?.image?.message}>
