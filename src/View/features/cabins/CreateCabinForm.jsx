@@ -36,6 +36,7 @@ import FormItem from '../../FormItem'
       }
     })
     function onSubmit(data){
+      // Here the spread operator is to copy paste all the properties, and then override the image property
       mutate({...data,image:data.image[0]});
       console.log(data)
     }

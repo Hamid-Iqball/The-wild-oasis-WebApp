@@ -20,12 +20,12 @@ export async function createCabin(newCabin , id){
     // Create/Edit a cabin
     let query = supabase.from('cabins')
 
-    // Create Cabin
+    // Create new Cabin
     if(!id){
             query.insert([{...newCabin, image:imagePath}]).select().single()
     }
 
-    // Edit Cabin
+    // Edit existing Cabin
     if(id){
         query.update({...newCabin, image:imagePath}).eq('id', id).select()
     }
