@@ -1,22 +1,17 @@
-import { useQuery } from '@tanstack/react-query'
 import React from 'react'
-import { getCabins } from '../../../Modal/Services/apiCabins'
+import CabinRow from './CabinRow'
+import { useCabins } from '../../../ViewModal/Hooks/CabinHooks/useCabins'
 import Spinner from '../../Spinner'
 import Error from '../../Error'
-import CabinRow from './CabinRow'
 
 function CabinTable() {
-const {isLoading ,data:cabins,isError} = useQuery(
-    {
-        queryKey:['cabins'],
-        queryFn: getCabins
-    }
-)
+const {cabins, isLoading , isError} = useCabins()
+
 if(isLoading){
-    return  <Spinner/>
+  return  <Spinner/>
 }
 if(isError){
-  return <Error>Cabin could not be deleted</Error>
+return <Error>Cabin could not be deleted</Error>
 }
   return (
     <div className='border text-sm max-w-[100%] rounded-md mb-4' role='table'>
