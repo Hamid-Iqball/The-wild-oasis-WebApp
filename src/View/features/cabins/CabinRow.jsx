@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {formatCurrency} from '../../../ViewModal/Utils/helper'
 import CreateCabinForm from './CreateCabinForm'
-import { useDeleteCabin } from '../../../ViewModal/Hooks/useDeleteCabin'
+import { useDeleteCabin } from '../../../ViewModal/Hooks/CabinHooks/useDeleteCabin'
 
 
 function CabinRow({cabin}) {

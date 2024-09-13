@@ -1,11 +1,9 @@
-import toast from 'react-hot-toast'
 import React from 'react'
-import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useForm } from 'react-hook-form'
-
 import SmallButton from '../../SmallButton'
-import { createEditCabin } from '../../../Modal/Services/apiCabins'
 import FormItem from '../../FormItem'
+import { useCreateCabin } from '../../../ViewModal/Hooks/CabinHooks/useCreateCabin'
+import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
 
 
  function CreateCabinForm({cabinToEdit={}}) {
@@ -17,50 +15,27 @@ import FormItem from '../../FormItem'
       defaultValues:isEditSession ? editValues :{}
     }
   )
-  const queryClinet =  useQueryClient()
-  // biltIn functions in useForm.
   const {errors} = formState;
-
-
-  // For creating a new Cabin
-  const {mutate:createCabin , isLoading:isCreating} =useMutation({
-    mutationFn:createEditCabin,
-    onSuccess :()=>{
-      toast.success("New Cabin Successfully Created");
-      queryClinet.invalidateQueries({
-        queryKey:['cabins']
-      });
-      reset();
-    },
-      onError:(err)=>{
-        toast.error(err.message)
-      }
-    })
-
-    // For editing an existing cabin
-    const {mutate:editCabin , isLoading:isEditing} =useMutation({
-      mutationFn:({newCabinData,id})=>createEditCabin(newCabinData,id),
-      onSuccess :()=>{
-        toast.success("cabin successfully edited");
-        queryClinet.invalidateQueries({
-          queryKey:['cabins']
-        });
-        reset();
-      },
-        onError:(err)=>{
-          toast.error(err.message)
-        }
-      })
-
-      const isWorking  = isCreating || isEditing
+    const {createCabin , isCreating} = useCreateCabin()
+    const {isEditing , editCabin} = useEditCabin()
+    const isWorking  = isCreating || isEditing
       
       function onSubmit(data){
         const image = typeof data.image === 'string' ? data.image : data.image[0]
       // Here the spread operator is to copy paste all the properties, and then override the image property
       if(isEditSession){
-        editCabin({newCabinData:{...data,image} , id:editID})
+        editCabin({newCabinData:{...data,image} , id:editID},{
+          onSuccess :() =>{
+            reset()
+          }
+        })
       }else{
-        createCabin({...data,image:image});
+        createCabin({...data,image:image},{
+          onSuccess:(data)=>{
+            console.log(data)
+            reset()
+          }
+        });
       }
       // console.log(data)
     }
@@ -70,7 +45,6 @@ import FormItem from '../../FormItem'
 
   return ( 
   <form className='max-w-full mt-4 bg-white py-2 rounded-md' onSubmit={handleSubmit(onSubmit,onError)}>
-
         <FormItem label='Cabin name' error={errors?.name?.message}>
         <input type="text" id='name' {...register('name',{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' disabled={isWorking} />
         </FormItem>
