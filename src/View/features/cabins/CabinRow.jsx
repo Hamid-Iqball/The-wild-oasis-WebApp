@@ -8,7 +8,7 @@ import { useCreateCabin } from '../../../ViewModal/Hooks/CabinHooks/useCreateCab
 
 
 function CabinRow({cabin}) {
-  const {isDeleteing , deleteCabin} = useDeleteCabin()
+    const {isDeleteing , deleteCabin} = useDeleteCabin()
     const [showForm , setShowForm] = useState(false)
     const {isCreating:isDuplicating , createCabin} = useCreateCabin()
     const {image ,id:cabinID, name,maxCapacity,regularPrice,discount,description} = cabin
@@ -20,11 +20,11 @@ function CabinRow({cabin}) {
     }
   return (
     <>
-    <div className='grid grid-cols-[0.8fr,0.3fr,2fr,1fr,1fr,1fr] place-items-center gap-8 text-sm font-[500] bg-white border-b-[1px] border-[#DDDDDD] rounded-md p-[1px]'>
+    <div className='grid grid-cols-[0.8fr,1fr,2fr,1fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm font-[500] bg-white border-b-[1px] border-[#DDDDDD] rounded-md p-[1px]'>
 
        <div className='w-28 bg-white  border-slate-400 border'><img src={image} alt="" className='w-28 ' />
        </div>
-       <div className='text-center font-semibold' style={{fontFamily:"sono"}}>{name}</div>
+       <div className='text-start font-semibold' style={{fontFamily:"sono"}}>{name}</div>
        <div className='text-start font-normal '>Fits Up to {maxCapacity} people</div>
        <div className='text-[0.9rem] font-semibold' style={{fontFamily:"sono"}}>{formatCurrency(regularPrice)}</div>
        <div className='text-green-500 pl-4 font-semibold' style={{fontFamily:"sono"}}>{discount? formatCurrency(discount) : <span>&mdash;</span> }</div>
