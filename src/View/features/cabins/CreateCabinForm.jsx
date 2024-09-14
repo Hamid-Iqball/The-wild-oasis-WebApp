@@ -8,16 +8,16 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
 
  function CreateCabinForm({cabinToEdit={}}) {
 
-  const {id:editID, ...editValues} = cabinToEdit
-  const isEditSession = Boolean(editID)
-  const {register , handleSubmit, reset,getValues,formState} = useForm(
-    {
-      defaultValues:isEditSession ? editValues :{}
-    }
-  )
+   const {createCabin , isCreating} = useCreateCabin()
+   const {isEditing , editCabin} = useEditCabin()
+   const {id:editID, ...editValues} = cabinToEdit
+   const isEditSession = Boolean(editID)
+   const {register , handleSubmit, reset,getValues,formState} = useForm(
+     {
+       defaultValues:isEditSession ? editValues :{}
+     }
+   )
   const {errors} = formState;
-    const {createCabin , isCreating} = useCreateCabin()
-    const {isEditing , editCabin} = useEditCabin()
     const isWorking  = isCreating || isEditing
       
       function onSubmit(data){

@@ -1,4 +1,3 @@
-import CabinRow from "../../View/features/cabins/CabinRow";
 import supabase, { supabaseUrl } from "./supabase";
 
 
@@ -18,10 +17,8 @@ export async function createEditCabin(newCabin , id){
     console.log(newCabin , id)
     const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll(/[^\w.-]/g, '_');
     const imagePath = hasImagePath ? newCabin.image : `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`;
-    
     // Create/Edit a cabin
     let query = supabase.from('cabins')
-
     // Create new Cabin
     if(!id){
         query = query.insert([{...newCabin, image:imagePath}])
@@ -30,14 +27,14 @@ export async function createEditCabin(newCabin , id){
     if(id){
         query = query.update({...newCabin, image:imagePath}).eq('id', id)
     }
-    
     const { data, error } = await query.select()
     if(error){
         console.error(error)
         throw new Error ('Cabin could not be Created')
     }
-
     //Image Upload
+    if(hasImagePath) return data;
+    
     const {  error:storageError } = await supabase
     .storage
     .from('cabin-images')
