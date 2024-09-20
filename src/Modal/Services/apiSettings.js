@@ -2,12 +2,12 @@ import supabase from "./supabase";
 
 
 export async  function getSettings(){  
-let { data: settings, error } = await supabase
+let {  data, error } = await supabase
 .from('settings')
 .select('*').single()
 
 if(error){
     throw new Error("Settings could not be loaded")
 }
-return settings
+return data
 }
