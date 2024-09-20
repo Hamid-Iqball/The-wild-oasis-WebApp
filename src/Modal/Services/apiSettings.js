@@ -11,3 +11,14 @@ if(error){
 }
 return data
 }
+
+
+export async function updateSettigs(newSettings){
+    
+const { data, error } = await supabase
+.from('settings')
+.update(newSettings)
+.eq('id', 1)
+.single()
+
+}
