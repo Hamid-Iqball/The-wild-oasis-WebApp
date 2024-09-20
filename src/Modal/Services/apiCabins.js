@@ -13,8 +13,7 @@ export async function getCabins(){
 // Create/Edit Cabin
 export async function createEditCabin(newCabin , id){
     const hasImagePath = newCabin.image?.startsWith?.(supabaseUrl);
-    // Upload Image https://vgsfnabpxjclsbxtblzd.supabase.co/storage/v1/object/public/cabin-images/cabin-002.jpg
-    console.log(newCabin , id)
+    // Upload Image 
     const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll(/[^\w.-]/g, '_');
     const imagePath = hasImagePath ? newCabin.image : `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`;
     // Create/Edit a cabin
