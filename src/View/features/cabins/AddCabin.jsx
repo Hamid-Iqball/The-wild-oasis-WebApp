@@ -11,7 +11,7 @@ function handleChange(){
   return (
     <div>
         <Button handleChange={handleChange} >Add new Cabin</Button>
-        {isOpenModal && <Modal><CreateCabinForm/> </Modal>}
+        {isOpenModal && <Modal onClose={()=>setIsOpenModal(false)} ><CreateCabinForm  onCloseModal={()=>setIsOpenModal(false)}/> </Modal>}
     </div>
   )
 }

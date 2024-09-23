@@ -6,7 +6,7 @@ import { useCreateCabin } from '../../../ViewModal/Hooks/CabinHooks/useCreateCab
 import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
 
 
- function CreateCabinForm({cabinToEdit={}}) {
+ function CreateCabinForm({cabinToEdit={}, onCloseModal}) {
 
    const {createCabin , isCreating} = useCreateCabin()
    const {isEditing , editCabin} = useEditCabin()
@@ -32,7 +32,8 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
       }else{
         createCabin({...data,image:image},{
           onSuccess:(data)=>{
-            console.log(data)
+            
+            onCloseModal?.()
             reset()
           }
         });
@@ -44,7 +45,7 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
     }
 
   return ( 
-  <form className='max-w-full mt-4 bg-white border border-neutral-200 p-2 rounded-md' onSubmit={handleSubmit(onSubmit,onError)}>
+  <form className='max-w-full  bg-white  p-2 rounded-md' onSubmit={handleSubmit(onSubmit,onError)}>
         <FormItem label='Cabin name' error={errors?.name?.message}>
         <input type="text" id='name' {...register('name',{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' disabled={isWorking} />
         </FormItem>
@@ -76,7 +77,7 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
 
 
         <div className='flex items-center justify-end gap-4 pr-8'>
-          <SmallButton>
+          <SmallButton onCloseModal={onCloseModal}>
             Cancel
           </SmallButton>
           <button className="border border-grey-500 py-3 px-5 text-slate-50 bg-orange-700 font-semibold rounded-md" 
