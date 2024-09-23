@@ -44,7 +44,7 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
     }
 
   return ( 
-  <form className='max-w-full mt-4 bg-white py-2 rounded-md' onSubmit={handleSubmit(onSubmit,onError)}>
+  <form className='max-w-full mt-4 bg-white border border-neutral-200 p-2 rounded-md' onSubmit={handleSubmit(onSubmit,onError)}>
         <FormItem label='Cabin name' error={errors?.name?.message}>
         <input type="text" id='name' {...register('name',{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' disabled={isWorking} />
         </FormItem>
@@ -80,7 +80,7 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
             Cancel
           </SmallButton>
           <button className="border border-grey-500 py-3 px-5 text-slate-50 bg-orange-700 font-semibold rounded-md" 
-          disabled={isWorking}>{isEditSession ? "Edit Cabin" :" Add Cabin"}</button>
+          disabled={isWorking}>{isEditSession ? "Edit Cabin" :" Create new Cabin"}</button>
         </div>
   </form>
   )

@@ -4,8 +4,17 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
 ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        'backdrop-color': '#ffff',
+      },
+      backdropBlur: {
+        'custom': '4px',
+      },
+
+ 
   },
   plugins: [],
 }
 
+}
