@@ -1,5 +1,5 @@
 import React from 'react'
-import Error from './Error'
+import Error from '../UI/Error'
 
 function FormItem({label, error, children}) {
   return (

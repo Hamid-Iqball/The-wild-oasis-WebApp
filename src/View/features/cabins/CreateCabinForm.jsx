@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import SmallButton from '../../SmallButton'
-import FormItem from '../../FormItem'
+import SmallButton from '../../UI/SmallButton'
+import FormItem from '../../UI/FormItem'
 import { useCreateCabin } from '../../../ViewModal/Hooks/CabinHooks/useCreateCabin'
 import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
 

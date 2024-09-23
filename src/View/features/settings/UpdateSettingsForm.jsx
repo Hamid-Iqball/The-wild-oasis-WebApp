@@ -1,12 +1,12 @@
 import React from 'react'
-import FormItem from '../../FormItem'
+import FormItem from '../../UI/FormItem'
 import { useSettings } from '../../../ViewModal/Hooks/SettingsHooks/useSetting'
-import Spinner from '../../Spinner'
+import Spinner from '../../UI/Spinner'
 import { useUpdateSetting } from '../../../ViewModal/Hooks/SettingsHooks/useUpdateSettings'
 
 
 function UpdateSettingsForm() {
-    // first 
+
     const {isError,isLoading,settings:{
         minBookingLength,
         maxBookingLength,

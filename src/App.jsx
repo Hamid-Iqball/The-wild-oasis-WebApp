@@ -9,7 +9,7 @@ import Settings from "./View/Pages/Settings"
 import Account from "./View/Pages/Account"
 import Login from "./View/Pages/Login"
 import PageNotFound from './View/Pages/PageNotFound'
-import AppLayout from "./View/AppLayout" 
+import AppLayout from "./View/UI/AppLayout" 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Toaster } from 'react-hot-toast'
 

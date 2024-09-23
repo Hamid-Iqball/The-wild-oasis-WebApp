@@ -1,8 +1,8 @@
 import React from 'react'
 import CabinRow from './CabinRow'
 import { useCabins } from '../../../ViewModal/Hooks/CabinHooks/useCabins'
-import Spinner from '../../Spinner'
-import Error from '../../Error'
+import Spinner from '../../UI/Spinner'
+import Error from '../../UI/Error'
 
 function CabinTable() {
 const {cabins, isLoading , isError} = useCabins()
