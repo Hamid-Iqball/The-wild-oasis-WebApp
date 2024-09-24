@@ -6,6 +6,7 @@ import { useCreateCabin } from '../../../ViewModal/Hooks/CabinHooks/useCreateCab
 import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
 
 
+
  function CreateCabinForm({cabinToEdit={}, onCloseModal}) {
 
    const {createCabin , isCreating} = useCreateCabin()
@@ -18,7 +19,7 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
      }
    )
   const {errors} = formState;
-    const isWorking  = isCreating || isEditing
+  const isWorking  = isCreating || isEditing
       
       function onSubmit(data){
         const image = typeof data.image === 'string' ? data.image : data.image[0]
@@ -32,20 +33,35 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
       }else{
         createCabin({...data,image:image},{
           onSuccess:(data)=>{
-            
-            onCloseModal?.()
+            console.log(data)
+            onCloseModal()
             reset()
           }
         });
       }
-      // console.log(data)
     }
+
     function onError(errros){
       console.log(errros)
     }
 
+    // Conditinally styling the form,So that it will have different style in different places.
+    function getInputClass(type='regular'){
+      switch (type) {
+        case 'modal':
+          return 'max-w-full  bg-white  p-2 rounded-md'
+
+          case 'regular':
+            return 'w-[80%] bg-orange-white border border-slate-200 rounded-md m-2 p-2'
+        default:
+          return 'w-[70%] bg-white p-2 '
+     
+      }
+    }
+
+    const typeofInput = onCloseModal ? 'modal' :'regular'
   return ( 
-  <form className='max-w-full  bg-white  p-2 rounded-md' onSubmit={handleSubmit(onSubmit,onError)}>
+  <form  onSubmit={handleSubmit(onSubmit,onError)}  type={onCloseModal?'modal':'regular'} className={getInputClass(typeofInput)}>
         <FormItem label='Cabin name' error={errors?.name?.message}>
         <input type="text" id='name' {...register('name',{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' disabled={isWorking} />
         </FormItem>
@@ -88,3 +104,5 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
 }
 
 export default CreateCabinForm
+
+
