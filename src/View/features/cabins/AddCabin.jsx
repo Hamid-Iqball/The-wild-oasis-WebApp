@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+
 import Button from '../../UI/MainButton'
 import Modal from '../../UI/Modal'
 import CreateCabinForm from './CreateCabinForm'
@@ -8,7 +8,7 @@ return (
 
 <Modal>
 <Modal.Open opens='cabin-form'> 
-  <Button>Add new Cabin</Button>
+<button className="border border-grey-500 py-3 px-5 text-slate-50 bg-orange-700 font-semibold rounded-md ">Add new Cabin</button>
 </Modal.Open>
 <Modal.Window name='cabin-form'>
   <CreateCabinForm/>
@@ -17,17 +17,9 @@ return (
 
 )
 
-
-// const [isOpenModal, setIsOpenModal] =useState(false)
-// function handleChange(){
-//  setIsOpenModal(show=>!show)
-// }
-//   return (
-//     <div>
-//         <Button handleChange={handleChange} >Add new Cabin</Button>
-//         {isOpenModal && <Modal onClose={()=>setIsOpenModal(false)} ><CreateCabinForm  onCloseModal={()=>setIsOpenModal(false)}/> </Modal>}
-//     </div>
-//   )
 }
 
 export default AddCabin
+
+
+// Clone Element:In React CloneElement is used to create coopy of a react element,While alowing you to modify it's props and childrens.It is usefull when you need to modify or extend the props of a child element without changing the original element or component it self.

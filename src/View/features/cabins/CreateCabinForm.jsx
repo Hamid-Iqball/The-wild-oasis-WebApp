@@ -50,12 +50,12 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
     function getInputClass(type='regular'){
       switch (type) {
         case 'modal':
-          return 'max-w-full  bg-white  p-2 rounded-md'
+          return 'max-w-full  bg-white  p-2 rounded-md '
 
           case 'regular':
-            return 'w-[80%] bg-orange-white border border-slate-200 rounded-md m-2 p-2'
+            return 'w-[80%] bg-orange-white border border-slate-200 rounded-md m-2 p-2 bg-orange-600'
         default:
-          return 'w-[70%] bg-white p-2 '
+          return 'w-[80%] bg-white p-2 '
      
       }
     }
