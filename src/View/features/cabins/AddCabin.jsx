@@ -1,11 +1,10 @@
 
-import Button from '../../UI/MainButton'
 import Modal from '../../UI/Modal'
 import CreateCabinForm from './CreateCabinForm'
 
 function AddCabin() {
 return (
-
+<>
 <Modal>
 <Modal.Open opens='cabin-form'> 
 <button className="border border-grey-500 py-3 px-5 text-slate-50 bg-orange-700 font-semibold rounded-md ">Add new Cabin</button>
@@ -15,6 +14,7 @@ return (
 </Modal.Window>
 </Modal>
 
+</>
 )
 
 }
