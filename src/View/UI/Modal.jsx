@@ -27,13 +27,12 @@ return cloneElement(children, {onClick : ()=>open(openWindowsName)})
 
 
 function Window({children,name}) {
-  const {openName,close} = useContext(ModalContext)
-        
+  const {openName,close} = useContext(ModalContext)    
   const {ref} = useOutsideClick(close)
 
 
-if(name !== openName) return null;
-  
+
+  if(name !== openName) return null;
 
   return createPortal (
     <div className='fixed top-0 left-0 w-full h-screen z-50 bg-slate-50 bg-opacity-20 backdrop-blur transition duration-1000'>
