@@ -20,6 +20,7 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
    )
   const {errors} = formState;
   const isWorking  = isCreating || isEditing
+  const typeofInput = onCloseModal ? 'modal' :'regular'
       
       function onSubmit(data){
         const image = typeof data.image === 'string' ? data.image : data.image[0]
@@ -58,8 +59,6 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
      
       }
     }
-
-    const typeofInput = onCloseModal ? 'modal' :'regular'
   return ( 
   <form  onSubmit={handleSubmit(onSubmit,onError)}  type={onCloseModal?'modal':'regular'} className={getInputClass(typeofInput)}>
         <FormItem label='Cabin name' error={errors?.name?.message}>

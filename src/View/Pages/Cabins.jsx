@@ -9,7 +9,7 @@ function Cabins() {
     <p className="text-[1rem] font-[500]">Filter/Sort</p>
   </div>
   <div>
-    <CabinTable/>
+   <CabinTable/>
    <AddCabin/>
   </div>
 </section>
