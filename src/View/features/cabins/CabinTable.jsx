@@ -24,11 +24,9 @@ return <Error>Cabin could not be deleted</Error>
       <h2>DISCOUNT</h2>
       <h2></h2>
     </Table.Header>
-    <Table.Row>
-      {cabins.map(cabin=> <CabinRow cabin={cabin} key={cabin.id}/>)}
-    </Table.Row>
- 
-        
+    
+    <Table.Body data={cabins} render={(cabin=> <CabinRow cabin={cabin} key={cabin.id}/>)} />
+       
     </Table>
   )
 }

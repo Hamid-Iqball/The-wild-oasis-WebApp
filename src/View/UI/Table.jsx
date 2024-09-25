@@ -13,9 +13,9 @@ function Table({columns,children}) {
 
 function Header({children}){
     const {columns} = useContext(TableContext)
-    return <div className={`grid grid-cols-[${columns}] px-2 font-semibold gap-8 p-4  text-[1rem] text-[#454546] border-b-[1px]`} role='row'>
+    return <header className={`grid grid-cols-[${columns}] px-2 font-semibold gap-8 p-4  text-[1rem] text-[#454546] border-b-[1px]`} role='row'>
     {children}
-    </div>
+    </header>
 }
 
 
@@ -26,8 +26,11 @@ function Row({children}){
     </div>
 }
 
-function Body(){
+function Body({data ,render}){
+    return <div>
 
+{data.map(render)}
+    </div>
 }
 
 function Footer(){
