@@ -4,6 +4,7 @@ import { useCabins } from '../../../ViewModal/Hooks/CabinHooks/useCabins'
 import Spinner from '../../UI/Spinner'
 import Error from '../../UI/Error'
 import Table from '../../UI/Table'
+import Menus from '../../UI/Menus'
 
 function CabinTable() {
 const {cabins, isLoading , isError} = useCabins()
@@ -14,7 +15,8 @@ if(isLoading){
 if(isError){
 return <Error>Cabin could not be deleted</Error>
 }
-  return (
+  return ( <Menus>
+
     <Table columns='0.7fr,1.5fr,1.8fr,1fr,1fr,1fr'>
     <Table.Header>
       <h2></h2>
@@ -28,6 +30,7 @@ return <Error>Cabin could not be deleted</Error>
     <Table.Body data={cabins} render={(cabin=> <CabinRow cabin={cabin} key={cabin.id}/>)} />
        
     </Table>
+  </Menus>
   )
 }
 

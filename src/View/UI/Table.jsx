@@ -26,8 +26,12 @@ function Row({children}){
     </div>
 }
 
+function Empty(){
+    return <div> No Data Availabale.</div>
+}
 function Body({data ,render}){
-    return <div>
+    if (!data) return <Empty/>
+    return <div className='p-[2px]'>
 
 {data.map(render)}
     </div>

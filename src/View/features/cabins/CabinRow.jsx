@@ -8,12 +8,12 @@ import { useCreateCabin } from '../../../ViewModal/Hooks/CabinHooks/useCreateCab
 import { formatCurrency } from '../../../Modal/Utils/helper'
 import Modal from '../../UI/Modal'
 import ConfirmDelete from "../../UI/ConfrmDelete"
+import Menus from '../../UI/Menus'
 
 
 
 function CabinRow({cabin}) {
     const {isDeleteing , deleteCabin} = useDeleteCabin()
-
     const {isCreating:isDuplicating , createCabin} = useCreateCabin()
     const {image ,id:cabinID, name,maxCapacity,regularPrice,discount,description} = cabin
 
@@ -26,7 +26,8 @@ function CabinRow({cabin}) {
    
     
     
-    
+
+
     <div className='grid grid-cols-[0.8fr,1fr,2fr,1fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm font-[500] bg-white border-b-[1px] border-[#DDDDDD] rounded-md p-[1px]'>
 
        <div className='w-28 bg-white  border-slate-400 border'><img src={image} alt="" className='w-28 ' />
@@ -46,16 +47,26 @@ function CabinRow({cabin}) {
       </Modal.Window>
       <Modal.Open opens='delete-cabin'>
 
-       <button className=' py-1 px-2 border ' > <HiTrash/></button>
+       <button className=' py-1 px-2 border'> <HiTrash/></button>
       </Modal.Open>
       <Modal.Window name='delete-cabin'>
      <ConfirmDelete disabled={isDeleteing}
      onConfirm ={()=>deleteCabin(cabinID)} />
         </Modal.Window>  
     </Modal>
-       </div>
+
+    <Menus.Menu>
+    <Menus.Toggle id={cabinID}/>
+    <Menus.List id={cabinID} >
+    <Menus.Button>Duplicate</Menus.Button>
+    <Menus.Button>Edit</Menus.Button>
+    <Menus.Button>Delete</Menus.Button>
+    </Menus.List> 
+    </Menus.Menu>
+    </div>
     </div>
    
+
   )
 }
 

@@ -5,12 +5,12 @@ function ConfrmDelete({disabaled , onConfirm, onCloseModal}) {
   return (
     <div className=' p-2 '>
         <div className='p-2 text-start pb-4'>
-            <h1 className='text-red-500 my-2 text-3xl font-semibold'>Delete Cabin</h1>
+            <h1 className='text-orange-700 my-2 text-3xl font-semibold'>Delete Cabin</h1>
             <p className='text-[#6D7481] text-lg'>Are you sure you want to delete this cabins permanently? This action cannot be undone.</p>
         </div>
         <div className='flex justify-end items-center gap-3'>
             <SmallButton disabaled={disabaled} onCloseModal={onCloseModal}>Cancel</SmallButton>
-            <button className="border border-grey-500 py-3 px-5 text-slate-50 bg-red-500 font-semibold rounded-md " onClick={onConfirm}>Delete</button>
+            <button className="border border-grey-500 py-3 px-5 text-white bg-orange-700 font-semibold rounded-md " onClick={onConfirm}>Delete</button>
         </div>
     </div>
   )
