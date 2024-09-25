@@ -1,4 +1,4 @@
-import React, { cloneElement, createContext, useContext, useEffect, useRef, useState } from 'react'
+import React, { cloneElement, createContext, useContext, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { HiXMark } from 'react-icons/hi2'
 import { useOutsideClick } from '../../ViewModal/Hooks/useOutsideClick'
@@ -55,4 +55,4 @@ export default Modal
 
 // React Portal : React portal is a feature that allows us to render an element outside of the parent component's DOM structure while still keeping the child element in the original position of the component tree. With a portal we can render a component in any place inside the DOM tree but still leave the component at the same place in the react component tree.
 
-// cloneElement:: cloneElement let us create a new React element using another element as a string point.
+// cloneElement:: cloneElement let us create a new React element using another element as a strting point.It allows us to clone an existing React Element and modify it's props conditionally.
