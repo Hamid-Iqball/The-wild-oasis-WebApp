@@ -37,17 +37,18 @@ function CabinRow({cabin}) {
        <div className='text-[0.9rem] font-semibold' style={{fontFamily:"sono"}}>{formatCurrency(regularPrice)}</div>
        <div className='text-green-500 pl-4 font-semibold' style={{fontFamily:"sono"}}>{discount? formatCurrency(discount) : <span>&mdash;</span> }</div>
        <div>
+
       <Modal>
-      <button className=' py-1 px-2 border mr-1' onClick={handleDuplicate} disabled={isDuplicating}><HiSquare2Stack/></button>
+      <button className=' py-1 px-2 border rounded mr-1' onClick={handleDuplicate} disabled={isDuplicating}><HiSquare2Stack color='#99d9ec'/></button>
       <Modal.Open opens='edit-form'>
-      <button className=' py-1 px-2 border mr-1'  ><HiPencil/></button>
+      <button className=' py-1 px-2 border rounded mr-1'  ><HiPencil color='orange'/></button>
       </Modal.Open>
-        <Modal.Window name='edit-form'>
-        <CreateCabinForm cabinToEdit={cabin}/>
+      <Modal.Window name='edit-form'>
+      <CreateCabinForm cabinToEdit={cabin}/>
       </Modal.Window>
       <Modal.Open opens='delete-cabin'>
 
-       <button className=' py-1 px-2 border'> <HiTrash/></button>
+       <button className=' py-1 px-2 border rounded '> <HiTrash color='red'/></button>
       </Modal.Open>
       <Modal.Window name='delete-cabin'>
      <ConfirmDelete disabled={isDeleteing}
@@ -55,14 +56,6 @@ function CabinRow({cabin}) {
         </Modal.Window>  
     </Modal>
 
-    <Menus.Menu>
-    <Menus.Toggle id={cabinID}/>
-    <Menus.List id={cabinID} >
-    <Menus.Button>Duplicate</Menus.Button>
-    <Menus.Button>Edit</Menus.Button>
-    <Menus.Button>Delete</Menus.Button>
-    </Menus.List> 
-    </Menus.Menu>
     </div>
     </div>
    
