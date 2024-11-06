@@ -1,5 +1,3 @@
-
-
 import CreateCabinForm from './CreateCabinForm'
 import { useDeleteCabin } from '../../../ViewModal/Hooks/CabinHooks/useDeleteCabin'
 import { HiPencil, HiSquare2Stack } from 'react-icons/hi2'
@@ -24,10 +22,6 @@ function CabinRow({cabin}) {
     }
   return (
    
-    
-    
-
-
     <div className='grid grid-cols-[0.8fr,1fr,2fr,1fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm font-[500] bg-white border-b-[1px] border-[#DDDDDD] rounded-md p-[1px]'>
 
        <div className='w-28 bg-white  border-slate-400 border'><img src={image} alt="" className='w-28 ' />
@@ -40,6 +34,7 @@ function CabinRow({cabin}) {
 
       <Modal>
       <button className=' py-1 px-2 border rounded mr-1' onClick={handleDuplicate} disabled={isDuplicating}><HiSquare2Stack color='#99d9ec'/></button>
+
       <Modal.Open opens='edit-form'>
       <button className=' py-1 px-2 border rounded mr-1'  ><HiPencil color='orange'/></button>
       </Modal.Open>
