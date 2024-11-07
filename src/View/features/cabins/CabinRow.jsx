@@ -6,7 +6,7 @@ import { useCreateCabin } from '../../../ViewModal/Hooks/CabinHooks/useCreateCab
 import { formatCurrency } from '../../../Modal/Utils/helper'
 import Modal from '../../UI/Modal'
 import ConfirmDelete from "../../UI/ConfrmDelete"
-import Menus from '../../UI/Menus'
+
 
 
 
