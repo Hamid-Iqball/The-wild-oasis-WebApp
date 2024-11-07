@@ -8,18 +8,16 @@ import Modal from '../../UI/Modal'
 import ConfirmDelete from "../../UI/ConfrmDelete"
 
 
-
-
 function CabinRow({cabin}) {
     const {isDeleteing , deleteCabin} = useDeleteCabin()
     const {isCreating:isDuplicating , createCabin} = useCreateCabin()
     const {image ,id:cabinID, name,maxCapacity,regularPrice,discount,description} = cabin
-
     function handleDuplicate(){
      createCabin({
         name:`Copy of ${name}`, maxCapacity, regularPrice, discount, image, description
       })
     }
+    
   return (
    
     <div className='grid grid-cols-[0.8fr,1fr,2fr,1fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm font-[500] bg-white border-b-[1px] border-[#DDDDDD] rounded-md p-[1px]'>

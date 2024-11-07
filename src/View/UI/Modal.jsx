@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom'
 import { HiXMark } from 'react-icons/hi2'
 import { useOutsideClick } from '../../ViewModal/Hooks/useOutsideClick'
 
-// The Pattren used here is known as Compound component pattren to enhance reuseability. This is done in four steps
+// The Pattren used here is known as Compound component pattren to enhance reuseability. This is done in four steps which are the fol
 // 1) Create Context
 const ModalContext = createContext()
 
