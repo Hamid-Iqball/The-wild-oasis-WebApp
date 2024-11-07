@@ -5,13 +5,13 @@ import { useSearchParams } from 'react-router-dom'
 function CabinTableOperations() {
 const [searchParam , setSearchParams] =useSearchParams()
 
-// Storing the value in URL .
+    // Storing the value in URL with the help of useSearchParams hook. 
     const handleClick = (value)=>{
         searchParam.set('discount',value)
         setSearchParams(searchParam)
     }
 
-    const styleButton = 'bg-white border-0 hover:bg-[#C2410C] active:bg-[#C2410C] px-2 py-1 rounded-md text-[14px] transition-all 0.3s hover:text-white active:text-white'
+    const styleButton = 'bg-white border-0 hover:bg-[#C2410C] active:bg-[#C2410C] px-2 py-1 rounded-md text-[14px] transition-all 0.3s ease-in-out hover:text-white active:text-white'
     
   return (
     <div className='flex items-center gap-4'>

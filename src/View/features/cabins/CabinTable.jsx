@@ -9,14 +9,22 @@ import { useSearchParams } from 'react-router-dom'
 
 function CabinTable() {
 const {cabins, isLoading , isError} = useCabins()
-const [searchParam] = useSearchParams()   //Here we need the data that we have stored in the URL thus we get it with the help of the exact useSearchParams hook
+const [searchParam] = useSearchParams()   //Here we need the data that we have stored in the URL and we get that with the help of useSearchParams hook
 
 if(isLoading){
   return  <Spinner/>
 }
 
+// Filtering the cabins by the amount of discount the hotel has provided.
 const filterValue = searchParam.get('discount') || 'all'
-
+let filteredCabins;
+if(filterValue==='all') filteredCabins=cabins
+if(filterValue==='no-discount'){
+ filteredCabins = cabins.filter((cabin)=>cabin.discount===0)
+}
+if(filterValue==='with-discount'){
+ filteredCabins = cabins.filter((cabin)=>cabin.discount>0)
+}
 
 if(isError){
 return <Error>Cabin could not be deleted</Error>
@@ -34,7 +42,7 @@ return ( <Menus>
       <h2></h2>
     </Table.Header>
     
-    <Table.Body data={cabins} render={(cabin=> <CabinRow cabin={cabin} key={cabin.id}/>)} />
+    <Table.Body data={filteredCabins} render={(cabin=> <CabinRow cabin={cabin} key={cabin.id}/>)} />
        
     </Table>
   </Menus>
