@@ -13,7 +13,10 @@ function Table({columns,children}) {
 
 function Header({children}){
     const {columns} = useContext(TableContext)
-    return <header className={`grid grid-cols-[${columns}] px-2 font-semibold gap-8 p-4  text-[1rem] text-[#454546] border-b-[1px]`} role='row'>
+    return <header className={`px-2 font-semibold gap-8 p-4  text-[1rem] text-[#454546] border-b-[1px]`}
+    role='row'
+    style={{display:'grid' , gridTemplateColumns:columns}}
+    >
     {children}
     </header>
 }
@@ -21,7 +24,7 @@ function Header({children}){
 
 function Row({children}){
     const {columns} = useContext(TableContext)
-    return <div className={`${columns} `}>
+    return <div style={{display:'grid' , gridTemplateColumns:columns}}>
         {children}
     </div>
 }
