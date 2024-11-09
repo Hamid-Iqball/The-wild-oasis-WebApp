@@ -4,12 +4,12 @@ import SortBy from '../../UI/SortBy'
 
 // We are using these operations of Filtering,Sorting and the value we are going to store in the URL. Because if we store the value in a useState then we will have to make the operation component the child of that component where we are using this operation component which will surely affect reuseability.
 function CabinTableOperations({filterField,options}) { 
-const [searchParam , setSearchParams] =useSearchParams()
+const [searchParams , setSearchParams] =useSearchParams()
 
     // Storing the value in URL with the help of useSearchParams hook. 
     const handleClick = (value)=>{
-        searchParam.set(filterField,value)
-        setSearchParams(searchParam)
+        searchParams.set(filterField,value)
+        setSearchParams(searchParams)
     }
 
     
@@ -28,11 +28,11 @@ const [searchParam , setSearchParams] =useSearchParams()
         </div>
 
 
-        <div className= 'bg-white shadow-sm rounded-md p-2 flex gap-1 text-[14px] border-grey-2 active:border-[#C2410C]'>
+        <div className= 'bg-white shadow-sm rounded-md flex gap-1 text-[14px] border-grey-2 active:border-[#C2410C]'>
           <SortBy options={[
             {value:'name-desc',label:'Sort by name (A-Z)'},
             {value:'name-asc',label:'Sort by name (Z-A)'},
-            {value:'regulatPrice-asc',label:'Sort by price (low first)'},
+            {value:'regularPrice-asc',label:'Sort by price (low first)'},
             {value:'regularPrice-desc',label:'Sort by price (high first)'},
             {value:'maxCapacity-asc',label:'Sort by capacity (low first)'},
             {value:'maxCapacity-desc',label:'Sort by capacity (high first)'},

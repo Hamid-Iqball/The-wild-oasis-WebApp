@@ -1,15 +1,20 @@
 import React from 'react'
+import Select from './Select'
+import { useSearchParams } from 'react-router-dom'
 
-function SortBy({options}) {
-  return (
- 
-        <select className='outline-none active:border-[#C2410C]'>
-     { options.map((option)=>  <option value={option.value} key={option.value} >
-            {option.label}
-    </option>)}
-    </select>
-  
-  )
+function SortBy({options }) {
+const [searchParams,setSearchParams] = useSearchParams()
+const sortBy = searchParams.get('sortBy'|| '')
+
+    const handleChange = (e)=>{
+    searchParams.set('sortBy',e.target.value)
+    setSearchParams(searchParams)
+    }
+
+return (
+<Select options={options} type='white' value={sortBy} onChange={handleChange}/>
+)
+
 }
 
 export default SortBy
