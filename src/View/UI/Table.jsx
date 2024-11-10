@@ -13,7 +13,7 @@ function Table({columns,children}) {
 
 function Header({children}){
     const {columns} = useContext(TableContext)
-    return <header style={{display:'grid' , gridTemplateColumns:columns}} className ={ ` px-2 font-semibold gap-8 p-4  text-[1rem] text-[#454546] border-b-[1px]`} role='row'>
+    return <header style={{display:'grid' , gridTemplateColumns:columns}} className ={ ` px-2 font-semibold gap-8 p-3  text-[1rem] text-[#454546] border-b-[1px]`} role='row'>
     {children}
     </header>
 }

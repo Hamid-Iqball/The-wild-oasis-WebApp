@@ -8,7 +8,7 @@ function Cabins() {
   return (
 <section>
   <div className="flex justify-between items-center  my-4  mb-8">
-    <h1 className="text-4xl font-semibold text-orange-700">All Cabins</h1>
+    <h1 className="text-3xl font-[500] text-orange-800">All Cabins</h1>
     <p className="text-[1rem] font-[500]">
 
     <CabinTableOperations filterField='discount' options={[

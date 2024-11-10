@@ -12,7 +12,12 @@ function Bookings() {
   // if(isLoading) return <Spinner/>
   return (
    <div>
-    Bookings
+   <div className="flex justify-between items-center mb-8">
+    <h2 className="text-orange-800 text-3xl font-[500]">Bookings</h2>
+    <div>
+      TEST/FILTER
+    </div>
+   </div>
    <BookingTable/>
    </div>
   );
