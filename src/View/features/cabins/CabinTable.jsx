@@ -52,14 +52,15 @@ return <Error>Cabin could not be deleted</Error>
 
 return ( 
 
-    <Table columns='0.7fr,1.5fr,1.8fr,1fr'>
+  <Table columns="0.7fr 1.5fr 1.8fr 1fr 1fr 1fr"> 
+  {/* There must be no commas in the props */}
     <Table.Header>
- 
+      <h2></h2>
       <h2 className='ml-2'>CABIN</h2>
       <h2 className='-ml-4'>CAPACITY</h2>
       <h2 className='-ml-2'>PRICE</h2>
       <h2>DISCOUNT</h2>
-
+      <h2></h2>
     </Table.Header>
     
     <Table.Body data={sortedCabins} render={(cabin=> <CabinRow cabin={cabin} key={cabin.id}/>)} />

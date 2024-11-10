@@ -13,6 +13,7 @@ if(error){
     throw new Error("Bookings could not loaded")
 }
 
+return bookings
 }
 
 // This function is only for one individual booking.
