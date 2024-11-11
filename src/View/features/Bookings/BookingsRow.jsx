@@ -4,6 +4,8 @@ import Bookings from '../../Pages/Bookings'
 import { format, isToday } from 'date-fns'
 import { formatCurrency, formatDistanceFromNow } from '../../../Modal/Utils/helper'
 import { HiDotsVertical } from 'react-icons/hi'
+import { Dropdown } from 'react-bootstrap'
+import { BsThreeDotsVertical } from 'react-icons/bs'
 
 function BookingsRow({booking}) {
   const {
@@ -52,7 +54,24 @@ cabins:{name:cabinName}
         
         <div className={`${getStatus[status]} rounded-full px-2 py-1 text-xs font-[500]`}>{status.toUpperCase()}</div>
         <div>{formatCurrency(totalPrice)}</div>
-        <div className='flex justify-end items-end'> <HiDotsVertical/> </div>
+        <div className='flex justify-end items-end'> 
+         <Dropdown>
+          <Dropdown.Toggle>
+            <BsThreeDotsVertical/>
+          </Dropdown.Toggle>
+          <Dropdown.Menu className='flex justify-between items-center flex-col gap-2' >
+            <Dropdown.Item>
+              See Details
+            </Dropdown.Item>
+            <Dropdown.Item>
+             Check in
+            </Dropdown.Item>
+            <Dropdown.Item>
+              Delete booking
+            </Dropdown.Item>
+          </Dropdown.Menu>
+         </Dropdown>
+           </div>
     </div>
   )
 }
