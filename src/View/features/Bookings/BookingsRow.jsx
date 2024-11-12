@@ -1,14 +1,18 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useState } from 'react'
 import Bookings from '../../Pages/Bookings'
 import { format, isToday } from 'date-fns'
 import { formatCurrency, formatDistanceFromNow } from '../../../Modal/Utils/helper'
 import { HiDotsVertical } from 'react-icons/hi'
-import { Dropdown } from 'react-bootstrap'
+import { Button, Dropdown } from 'react-bootstrap'
 import { BsThreeDotsVertical } from 'react-icons/bs'
+import {Provider} from "../../UI/provider"
+import { ChakraProvider, MenuCheckboxItem, MenuContent, MenuItem, MenuItemGroup, MenuRadioItem, MenuRadioItemGroup, MenuRoot, MenuSeparator, MenuTrigger, MenuTriggerItem } from '@chakra-ui/react'
 
+// import "bootstrap/dist/css/bootstrap.min.css";
 function BookingsRow({booking}) {
-  const {
+  const [isDropdownOpen,setIsDropdownOpen] = useState(null)
+const {
 id:bookinId,
 created_at,
 startDate,
@@ -27,7 +31,11 @@ cabins:{name:cabinName}
     'checked in' :'text-green-700 bg-green-100'
   }
 
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
+  const handleChnage = ()=>{
+    console.log('Byeeeeeeeee')
+  }
 
   console.log(booking)
   return (
@@ -54,24 +62,25 @@ cabins:{name:cabinName}
         
         <div className={`${getStatus[status]} rounded-full px-2 py-1 text-xs font-[500]`}>{status.toUpperCase()}</div>
         <div>{formatCurrency(totalPrice)}</div>
-        <div className='flex justify-end items-end'> 
-         <Dropdown>
-          <Dropdown.Toggle>
-            <BsThreeDotsVertical/>
-          </Dropdown.Toggle>
-          <Dropdown.Menu className='flex justify-between items-center flex-col gap-2' >
-            <Dropdown.Item>
-              See Details
-            </Dropdown.Item>
-            <Dropdown.Item>
-             Check in
-            </Dropdown.Item>
-            <Dropdown.Item>
-              Delete booking
-            </Dropdown.Item>
-          </Dropdown.Menu>
-         </Dropdown>
-           </div>
+        <div className='relative flex justify-end items-end'>
+        <Provider>
+        <MenuRoot>
+      <MenuTrigger as={Button}>
+        <BsThreeDotsVertical/>
+      </MenuTrigger>
+      <MenuContent>
+        <MenuItem>Regular Item</MenuItem>
+        <MenuRadioItemGroup defaultValue="1">
+          <MenuRadioItem value="1" onClick={()=>console.log('Heyyyyyy')}>Radio Item 1</MenuRadioItem>
+          <MenuRadioItem value="2" onClick={handleChnage}>Radio Item 2</MenuRadioItem>
+        </MenuRadioItemGroup>
+        <MenuSeparator />
+      
+      </MenuContent>
+    </MenuRoot>
+        </Provider>
+       
+      </div>
     </div>
   )
 }
