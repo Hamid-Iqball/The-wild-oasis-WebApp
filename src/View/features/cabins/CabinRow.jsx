@@ -22,7 +22,7 @@ function CabinRow({cabin}) {
    
     <div className='grid grid-cols-[0.8fr,1fr,2fr,1fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm font-[500] bg-white border-b-[1px] border-[#DDDDDD] rounded-md p-[1px]'>
 
-       <div className='w-28 bg-white  border-slate-400 border'><img src={image} alt="" className='w-28 ' />
+       <div className='w-24 bg-white  border-slate-400 border'><img src={image} alt="" className='w-28 ' />
        </div>
        <div className='text-start font-semibold' style={{fontFamily:"sono"}}>{name}</div>
        <div className='text-start font-normal '>Fits Up to {maxCapacity} people</div>

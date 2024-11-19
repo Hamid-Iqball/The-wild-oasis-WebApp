@@ -5,14 +5,24 @@ import SideBar from './SideBar'
 
 function AppLayout() {
   return (
-    <div className=' grid grid-cols-[16rem,1fr] grid-rows-[auto,1fr] '>
+    <div className="flex h-screen">
 
-   <Header />
+    <aside className="w-56 bg-gray-800 text-white fixed h-full">
+      <SideBar />
+    </aside>
 
-   <SideBar />
 
-      <main className='bg-[#F9FAFB] py-6 px-12 overflow-y-auto overflow-x-hidden'>
-      <Outlet/>
+
+      <main  className="ml-56 flex flex-col flex-1">
+
+          <header className='h-12  flex items-center justify-between p-4'>
+          <Header />
+          </header>
+
+          <section className="flex-1 bg-gray-100 p-4 overflow-auto">
+            <Outlet/>
+          </section>
+
       </main>
       </div>
   )
