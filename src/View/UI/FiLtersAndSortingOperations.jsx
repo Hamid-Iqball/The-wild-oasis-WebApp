@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSearchParams } from 'react-router-dom'
-import SortBy from '../../View/UI/SortBy'
+import SortBy from './SortBy'
 
 
 // We are using these operations of Filtering,Sorting and the value we are going to store in the URL. Because if we store the value in a useState then we will have to make the operation component the child of that component where we are using this operation component which will surely affect reuseability.
@@ -17,7 +17,6 @@ const [searchParams , setSearchParams] =useSearchParams()
   return (
 
     <div className='flex items-center gap-4'>
-
       <div className='border-gray-50 bg-white shadow-sm rounded-md p-1 flex gap-1'>
       { filteringOptions.map((option,index)=>
        <button
