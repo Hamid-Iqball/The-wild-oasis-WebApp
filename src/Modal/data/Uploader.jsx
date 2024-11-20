@@ -146,9 +146,9 @@ function Uploader() {
         Upload ALL
       </SmallButton>
 
-      <button onClick={uploadBookings} disabled={isLoading}>
+      <SmallButton onClick={uploadBookings} disabled={isLoading}>
         Upload bookings ONLY
-      </button>
+      </SmallButton>
     </div>
   );
 }
