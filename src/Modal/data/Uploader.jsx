@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { isFuture, isPast, isToday } from "date-fns";
-import supabase from "../services/supabase";
-import Button from "../ui/Button";
-import { subtractDates } from "../utils/helpers";
+// import { isFuture, isPast, isToday } from "date-fns";
+import { isPast , isFuture , isToday } from "date-fns";
+import supabase from "../Services/supabase";
 
-import { bookings } from "./data-bookings";
+import { subtractDates } from "../Utils/helper";
+
+import { bookings } from "../../starter/data/data-bookings";
 import { cabins } from "./data-cabins";
 import { guests } from "./data-guests";
+import SmallButton from "../../View/UI/SmallButton";
 
 // const originalSettings = {
 //   minBookingLength: 3,
@@ -140,13 +142,13 @@ function Uploader() {
     >
       <h3>SAMPLE DATA</h3>
 
-      <Button onClick={uploadAll} disabled={isLoading}>
+      <SmallButton onClick={uploadAll} disabled={isLoading}>
         Upload ALL
-      </Button>
+      </SmallButton>
 
-      <Button onClick={uploadBookings} disabled={isLoading}>
+      <button onClick={uploadBookings} disabled={isLoading}>
         Upload bookings ONLY
-      </Button>
+      </button>
     </div>
   );
 }
