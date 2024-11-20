@@ -1,4 +1,4 @@
-import { data } from "autoprefixer";
+
 import supabase from "./supabase";
 
 // This function is to get all the bookings.
@@ -31,6 +31,6 @@ export async function getBooking(id){
         throw new Error ("Bookings not found")
       }
 
-      return data;
+      return bookings;
     
 }

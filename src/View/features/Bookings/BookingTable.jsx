@@ -7,11 +7,12 @@ import BookingsRow from './BookingsRow'
 
 
 
-function BookingTable() {
 
+function BookingTable() {
 const {bookings , isLoading} = useBookings()
 
 if(isLoading) return <Spinner/>
+
   return (
     <Table columns='0.8fr 2fr 3fr 1.4fr 1fr 1fr'>
     <Table.Header >

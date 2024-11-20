@@ -11,9 +11,9 @@ const sortBy = searchParams.get('sortBy'|| '')
     setSearchParams(searchParams)
     }
 
-return (
-<Select options={options} type='white' value={sortBy} onChange={handleChange}/>
-)
+    return (
+    <Select options={options} type='white' value={sortBy} onChange={handleChange}/>
+    )
 
 }
 

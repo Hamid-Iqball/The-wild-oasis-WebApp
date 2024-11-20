@@ -26,9 +26,9 @@ cabins:{name:cabinName}
   } = booking
 
   const getStatus = {
-    unconfirmed:'text-blue-700 bg-blue-100',
-    'checked-out': 'text-gray-700 bg-gray-100',
-    'checked-in' :'text-green-700 bg-green-100'
+    unconfirmed:'text-blue-600 bg-blue-100',
+    'checked-out': 'text-gray-600 bg-gray-100',
+    'checked-in' :'text-green-600 bg-green-100'
   }
 
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
@@ -60,14 +60,15 @@ cabins:{name:cabinName}
         </span>
         </div>
         
-        <div className={`${getStatus[status]} rounded-full px-2 py-1 text-xs font-[500]`}>{status.toUpperCase()}</div>
+        <div className={`${getStatus[status]} rounded-full px-2 py-1 text-xs  font-[600]`}>{status.toUpperCase()}</div>
         <div>{formatCurrency(totalPrice)}</div>
         <div className='relative flex justify-end items-end'>
         <Provider>
         <MenuRoot>
-      <MenuTrigger as={Button}>
+         <MenuTrigger as={Button}>
         <BsThreeDotsVertical/>
       </MenuTrigger>
+
       <MenuContent>
         <MenuItem>Regular Item</MenuItem>
         <MenuRadioItemGroup defaultValue="1">
@@ -75,8 +76,8 @@ cabins:{name:cabinName}
           <MenuRadioItem value="2" onClick={handleChnage}>Radio Item 2</MenuRadioItem>
         </MenuRadioItemGroup>
         <MenuSeparator />
-      
       </MenuContent>
+      
     </MenuRoot>
         </Provider>
        
