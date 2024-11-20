@@ -14,15 +14,13 @@ function AppLayout() {
 
 
       <main  className="ml-56 flex flex-col flex-1">
-
-          <header className='h-12  flex items-center justify-between p-4'>
+          <header className='h-14  flex items-center justify-between p-4'>
           <Header />
           </header>
 
           <section className="flex-1 bg-gray-100 p-4 overflow-auto">
             <Outlet/>
           </section>
-
       </main>
       </div>
   )

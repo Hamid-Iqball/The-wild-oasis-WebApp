@@ -8,7 +8,6 @@ import { subtractDates } from "../Utils/helper";
 import { bookings } from "../../starter/data/data-bookings";
 import { cabins } from "./data-cabins";
 import { guests } from "./data-guests";
-import SmallButton from "../../View/UI/SmallButton";
 
 // const originalSettings = {
 //   minBookingLength: 3,
@@ -142,13 +141,14 @@ function Uploader() {
     >
       <h3>SAMPLE DATA</h3>
 
-      <SmallButton onClick={uploadAll} disabled={isLoading}>
-        Upload ALL
-      </SmallButton>
+      <button className="border border-grey-500 py-2 px-5 text-orange-700 bg-slate-50  rounded-md"  onClick={uploadAll}disabled={isLoading}>
+              Upload ALL
+      </button>
 
-      <SmallButton onClick={uploadBookings} disabled={isLoading}>
-        Upload bookings ONLY
-      </SmallButton>
+      <button className="border border-grey-500 py-2 px-5 text-orange-700 bg-slate-50 rounded-md" onClick={uploadBookings} disabled={isLoading}>
+        Upload booking only
+      </button>
+    
     </div>
   );
 }
