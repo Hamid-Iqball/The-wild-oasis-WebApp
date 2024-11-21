@@ -2,7 +2,7 @@
 import supabase from "./supabase";
 
 // This function is to get all the bookings.
-export async function getBookings (filter){
+export async function getBookings (filter,sortBy){
     
 let query = supabase
 .from('bookings')
@@ -10,13 +10,18 @@ let query = supabase
 .select("id,created_at,startDate,endDate, numNights, numGuests,status,totalPrice , cabins(name) , guests(fullName,email)")
 // we can not use useSearchParams() hook here because this is just a normal function but we can use it in theuseBooking hook.
 
-// FILTER
-if(filter !== null) query =query[filter.method || 'eq'](filter.field , filter.value);
+// FILTERING
+if(filter) query =query[filter.method || 'eq'](filter.field , filter.value);
+// SORTING
+if(sortBy) query = query.order(sortBy.field,{ascending:sortBy.direction === 'asc'})
 let { data: bookings, error } = await query;
+
 if(error){
     console.error(error)
     throw new Error("Bookings could not loaded")
 }
+
+
 
 return bookings
 }
