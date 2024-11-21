@@ -10,18 +10,17 @@ let query = supabase
 .select("id,created_at,startDate,endDate, numNights, numGuests,status,totalPrice , cabins(name) , guests(fullName,email)")
 // we can not use useSearchParams() hook here because this is just a normal function but we can use it in theuseBooking hook.
 
+
 // FILTERING
 if(filter) query =query[filter.method || 'eq'](filter.field , filter.value);
 // SORTING
 if(sortBy) query = query.order(sortBy.field,{ascending:sortBy.direction === 'asc'})
+  // ascending is used as boolean in sorting logic. if it is true then it means (A-Z) and vice versa.
 let { data: bookings, error } = await query;
-
 if(error){
     console.error(error)
     throw new Error("Bookings could not loaded")
 }
-
-
 
 return bookings
 }

@@ -1,8 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getBookings } from "../../../Modal/Services/apiBookings";
 import { useSearchParams } from "react-router-dom";
-import { Field } from "@chakra-ui/react";
-import { RxValue } from "react-icons/rx";
+
 
 export function useBookings(){
     // This is where we are using out client-side-filtering , the idea is that to pass the object that contains filter and sortby in data in the getBooking.
