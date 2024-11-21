@@ -37,7 +37,9 @@ function Body({data ,render}){
 }
 
 function Footer(){
+return <div className='bg-slate-400 text-slate-50 flex justify-center '>
 
+</div>
 }
 
 Table.Header = Header;

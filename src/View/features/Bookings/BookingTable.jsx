@@ -4,6 +4,7 @@ import Table from '../../UI/Table'
 import { useBookings } from '../../../ViewModal/Hooks/BookingHooks/useBookings'
 import Spinner from '../../UI/Spinner'
 import BookingsRow from './BookingsRow'
+import Pagination from '../../UI/Pagination'
 
 
 
@@ -26,8 +27,11 @@ if(isLoading) return <Spinner/>
     <Table.Body 
 data={bookings}
 render = {(booking)=> <BookingsRow booking={booking} key={booking.id}/>}
-
 />
+
+<Table.Footer>
+  <Pagination/>
+</Table.Footer>
     </Table>
   )
 }
