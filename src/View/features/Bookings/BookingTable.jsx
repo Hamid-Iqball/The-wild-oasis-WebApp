@@ -30,7 +30,7 @@ if(isLoading) return <Spinner/>
     />
 
     <Table.Footer>
-      <Pagination count={45}/>
+      <Pagination count={15}/>
     </Table.Footer>
     </Table>
   )
