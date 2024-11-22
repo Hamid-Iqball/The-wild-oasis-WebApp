@@ -23,7 +23,8 @@ function prevPage(){
     setSearchParams(searchParams) 
 }
 
-if (count <= Page_Size) return ;
+// if (count <= Page_Size) return ;
+if(pageCount <=1) return ;
   return (
     <div className='text-black flex justify-between items-center gap-3' >
         <div>
