@@ -25,13 +25,13 @@ if(isLoading) return <Spinner/>
     <div></div>
     </Table.Header>
     <Table.Body 
-data={bookings}
-render = {(booking)=> <BookingsRow booking={booking} key={booking.id}/>}
-/>
+      data={bookings}
+      render = {(booking)=> <BookingsRow booking={booking} key={booking.id}/>}
+    />
 
-<Table.Footer>
-  <Pagination/>
-</Table.Footer>
+    <Table.Footer>
+      <Pagination count={45}/>
+    </Table.Footer>
     </Table>
   )
 }

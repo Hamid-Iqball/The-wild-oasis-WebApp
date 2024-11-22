@@ -36,9 +36,9 @@ function Body({data ,render}){
     </div>
 }
 
-function Footer(){
-return <div className='bg-slate-400 text-slate-50 flex justify-center '>
-
+function Footer({children}){
+return <div className='bg-[#F3F4F6] px-2 p-1'>
+{children}
 </div>
 }
 
