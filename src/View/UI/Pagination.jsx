@@ -1,9 +1,10 @@
 import React from 'react'
 import {HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 import { useSearchParams } from 'react-router-dom'
+import { Page_Size } from '../../Modal/Utils/constants'
 
 
-const Page_Size = 10
+
 function Pagination({count}) {
 //The value of nextpage and the previous page will depends on the current page and we will get it from URl with the help of useSearchParams
 const [searchParams , setSearchParams] = useSearchParams()

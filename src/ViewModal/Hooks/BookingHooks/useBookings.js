@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom";
 
 export function useBookings(){
     // This is where we are using out client-side-filtering , the idea is that to pass the object that contains filter and sortby in data in the getBooking.
-    const [searchParams , setSearchParams] = useSearchParams()
+    const [searchParams] = useSearchParams()
 
     // Filter 
     const filterValue = searchParams.get("status");

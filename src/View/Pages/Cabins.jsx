@@ -19,6 +19,7 @@ function Cabins() {
     {value:'no-discount' , label:'No discount'},
     {value:'with-discount' , label:'With discount'}]
     }
+    
     sortingOptions={[
       {value:'name-desc',label:'Sort by name (A-Z)'},
       {value:'name-asc',label:'Sort by name (Z-A)'},
