@@ -37,7 +37,7 @@ cabins:{name:cabinName}
     console.log('Byeeeeeeeee')
   }
 
-  console.log(booking)
+  // console.log(booking)
   return (
     <div className='grid grid-cols-[0.8fr,2fr,3fr,1.4fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm  bg-white border-b-[1px] border-[#DDDDDD] rounded-xm p-2'>
         <div>{cabinName}</div>
