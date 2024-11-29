@@ -8,6 +8,8 @@ import { Button, Dropdown } from 'react-bootstrap'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import {Provider} from "../../UI/provider"
 import { ChakraProvider, MenuCheckboxItem, MenuContent, MenuItem, MenuItemGroup, MenuRadioItem, MenuRadioItemGroup, MenuRoot, MenuSeparator, MenuTrigger, MenuTriggerItem } from '@chakra-ui/react'
+import { FaEye, FaTrash } from 'react-icons/fa'
+import { FaTentArrowsDown } from 'react-icons/fa6'
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 function BookingsRow({booking}) {
@@ -63,24 +65,27 @@ cabins:{name:cabinName}
         <div className={`${getStatus[status]} rounded-full px-2 py-1 text-xs  font-[600]`}>{status.toUpperCase()}</div>
         <div>{formatCurrency(totalPrice)}</div>
         <div className='relative flex justify-end items-end'>
-        <Provider>
-        <MenuRoot>
-         <MenuTrigger as={Button}>
-        <BsThreeDotsVertical/>
-      </MenuTrigger>
 
-      <MenuContent>
-        <MenuItem>Regular Item</MenuItem>
-        <MenuRadioItemGroup defaultValue="1">
-          <MenuRadioItem value="1" onClick={()=>console.log('Heyyyyyy')}>Radio Item 1</MenuRadioItem>
-          <MenuRadioItem value="2" onClick={handleChnage}>Radio Item 2</MenuRadioItem>
-        </MenuRadioItemGroup>
-        <MenuSeparator />
-      </MenuContent>
-      
-    </MenuRoot>
-        </Provider>
-       
+
+   <Dropdown >
+   <Dropdown.Toggle variant="secondary" id="dropdown-basic" className='dropdown-btn btn-sm' style={{
+    backgroundColor:'#FFF',
+    // color:'#9a3412',
+    color:'#212529',
+    border:'1px solid #212529',
+    borderRadius:'10px'
+
+   }}>
+        Action
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Item> <span className='flex justify-start items-center gap-3 '> <FaEye style={{color:'#9a3412'}}/> See Details</span></Dropdown.Item>
+        <Dropdown.Item> <span className='flex justify-start items-center gap-3'><FaTentArrowsDown style={{color:'#047857'}}/>Check In</span></Dropdown.Item>
+        <Dropdown.Item><span className='flex justify-start items-center gap-3'> <FaTrash style={{color:'red'}}/>  Delete</span> </Dropdown.Item>
+      </Dropdown.Menu>
+   </Dropdown>
+                    
+                
       </div>
     </div>
   )
