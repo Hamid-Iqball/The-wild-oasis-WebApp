@@ -37,7 +37,7 @@ function BookingDetails() {
             <BookingDataBox booking={booking} />
         </div>
 
-    <div className='flex justify-end gap-2 items-center mt-4'>
+    <div className='flex justify-end gap-2 items-center'>
         {/* <button className='py-2 px-3 text-white bg-orange-700 rounded-md  font-semibold text-center hover:bg-orange-800 hover:duration-300 hover:ease-in-out'>Delete Booking</button> */}
         <button className='py-2 px-3 text-orange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' onClick={moveBack}>Back</button>
     </div>
