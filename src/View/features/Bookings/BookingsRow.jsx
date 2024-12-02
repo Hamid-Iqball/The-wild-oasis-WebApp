@@ -71,7 +71,7 @@ cabins:{name:cabinName}
           // color:'#9a3412',
           color:'#212529',
           border:'1px solid #212529',
-          borderRadius:'10px'
+          borderRadius:'5px'
 
         }}>
               Action
