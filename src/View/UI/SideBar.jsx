@@ -13,7 +13,7 @@ function SideBar() {
     </div>
     <div>
     <nav className='text-[1rem] font-[500] text-[#5d5f63] '>
-        <ul className='flex flex-col gap-3 ml-2 mr-3'>
+        <ul className='flex flex-col gap-2 ml-2 mr-3'>
             <li className='hover:bg-slate-100 rounded-md hover:text-orange-800'> 
                 <NavLink to='/dashboard' className={({isActive})=>
                   isActive ? 'flex justify-start gap-4 py-2 px-4 bg-slate-100 rounded-md text-orange-800 text-[1em]' :'flex justify-start gap-4 py-2 text-[1rem] px-4'

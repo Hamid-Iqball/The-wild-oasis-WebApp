@@ -1,8 +1,10 @@
 import React from 'react'
+import BookingDetails from '../features/Bookings/BookingDetails'
 
 function Booking() {
+    //A Page sould not do any side affects
   return (
-    <div>Booking Details</div>
+    <BookingDetails/>
   )
 }
 
