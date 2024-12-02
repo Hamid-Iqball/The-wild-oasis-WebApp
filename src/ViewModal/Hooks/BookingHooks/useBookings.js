@@ -23,12 +23,12 @@ export function useBookings(){
 
     //query
     const {data:{bookings , count}={} , isLoading , isError } = useQuery({ //The data now contains count as well
-        queryKey:['bookings', filter, sortBy, page], //The queryKey is unqiue identifier used in React Query to manage and chache queries.it just like the dependecy array of the useQuery.This is one the 
+        queryKey:['bookings', filter, sortBy, page], //The queryKey is unqiue identifier used in React Query to manage and chache queries.it just like the dependecy array of the useQuery.
         queryFn:()=>getBookings({filter,sortBy,page})
     })
 
     const PageCount = Math.ceil(count/Page_Size)
-console.log({'PAGECOUNT': PageCount , 'page':page })
+
     //Pre-Fetching :Fetching the next page before it is actually displayed.This could be done with the help of QueryClinet.
     //Next page prefetching
     if(page < PageCount){

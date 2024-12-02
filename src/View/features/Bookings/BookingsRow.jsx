@@ -10,12 +10,14 @@ import {Provider} from "../../UI/provider"
 import { ChakraProvider, MenuCheckboxItem, MenuContent, MenuItem, MenuItemGroup, MenuRadioItem, MenuRadioItemGroup, MenuRoot, MenuSeparator, MenuTrigger, MenuTriggerItem } from '@chakra-ui/react'
 import { FaEye, FaTrash } from 'react-icons/fa'
 import { FaTentArrowsDown } from 'react-icons/fa6'
+import {  useNavigate } from 'react-router-dom'
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 function BookingsRow({booking}) {
-  const [isDropdownOpen,setIsDropdownOpen] = useState(null)
+  
+ const  navigate  = useNavigate()
 const {
-id:bookinId,
+id:bookingId,
 created_at,
 startDate,
 endDate,
@@ -33,11 +35,7 @@ cabins:{name:cabinName}
     'checked-in' :'text-green-600 bg-green-100'
   }
 
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
 
-  const handleChnage = ()=>{
-    console.log('Byeeeeeeeee')
-  }
 
   // console.log(booking)
   return (
@@ -67,25 +65,24 @@ cabins:{name:cabinName}
         <div className='relative flex justify-end items-end'>
 
 
-   <Dropdown >
-   <Dropdown.Toggle variant="secondary" id="dropdown-basic" className='dropdown-btn btn-sm' style={{
-    backgroundColor:'#FFF',
-    // color:'#9a3412',
-    color:'#212529',
-    border:'1px solid #212529',
-    borderRadius:'10px'
+        <Dropdown >
+        <Dropdown.Toggle variant="secondary" id="dropdown-basic" className='dropdown-btn btn-sm' style={{
+          backgroundColor:'#FFF',
+          // color:'#9a3412',
+          color:'#212529',
+          border:'1px solid #212529',
+          borderRadius:'10px'
 
-   }}>
-        Action
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        <Dropdown.Item> <span className='flex justify-start items-center gap-3 '> <FaEye style={{color:'#9a3412'}}/> See Details</span></Dropdown.Item>
-        <Dropdown.Item> <span className='flex justify-start items-center gap-3'><FaTentArrowsDown style={{color:'#047857'}}/>Check In</span></Dropdown.Item>
-        <Dropdown.Item><span className='flex justify-start items-center gap-3'> <FaTrash style={{color:'red'}}/>  Delete</span> </Dropdown.Item>
-      </Dropdown.Menu>
-   </Dropdown>
-                    
-                
+        }}>
+              Action
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item > <button className='flex justify-start items-center gap-3' onClick={()=>{navigate(`/bookings/${bookingId}`);
+            console.log(`bookings/${bookingId}`)}}> <FaEye style={{color:'#9a3412'}}/> See Details</button></Dropdown.Item>
+              <Dropdown.Item> <button className='flex justify-start items-center gap-3'><FaTentArrowsDown style={{color:'#047857'}}/>Check In</button></Dropdown.Item>
+              <Dropdown.Item><button className='flex justify-start items-center gap-3'> <FaTrash style={{color:'red'}}/>  Delete</button> </Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
       </div>
     </div>
   )
