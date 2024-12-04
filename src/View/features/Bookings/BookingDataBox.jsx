@@ -1,11 +1,31 @@
 
+import { format, isToday } from 'date-fns';
 import React from 'react'
 import { BiMessageAltDetail } from 'react-icons/bi'
 import { CiCircleCheck, CiDollar } from 'react-icons/ci'
 
 import { HiOutlineHomeModern } from 'react-icons/hi2'
+import { formatCurrency, formatDistanceFromNow } from '../../../Modal/Utils/helper';
 
 function BookingDataBox({booking}) {
+const { created_at,
+  startDate,
+  endDate,
+  numNights,
+  numGuests,
+  cabinPrice,
+  extrasPrice,
+  totalPrice,
+  hasBreakfast,
+  observations,
+  isPaid,
+  guests: {fullName: guestName, email, country, countryFlag, nationalID },
+  cabins: {name: cabinName },
+
+} = booking;
+
+
+  console.log(booking)
   return (
     <div className='bg-white rounded-md'>
 
@@ -13,40 +33,54 @@ function BookingDataBox({booking}) {
 
         <div className='flex justify-between items-center gap-3'>
         <span><HiOutlineHomeModern size={36}/></span>
-        <h1 className='font-semibold text-2xl'>2 nights in cabin 008</h1> </div>
-        <div><p className='text-xl font-semibold'>Wed, Oct 32 2029 (In almost 5 years) — Fri, Nov 02 2029</p> </div>
+        <h1 className='font-semibold text-2xl'>{numNights} nights in cabin {cabinName}</h1> </div>
+        <div><p className='text-xl font-semibold'>{format(new Date(startDate), "EEE, MMM dd yyyy")} (
+          {isToday(new Date(startDate))
+            ? "Today"
+            : formatDistanceFromNow(startDate)}
+          ) &mdash; {format(new Date(endDate), "EEE, MMM dd yyyy")}</p> </div>
 
     </header>
 
     <section className='flex flex-col p-4 gap-3 px-6'>
 
-        <div className='flex justify-start items-start gap-3'>
-        <span>⛳</span> <p className='font-semibold text-lg text-[#5d5f63]'>Hamid Iqbal</p>.<p className='text-slate-700 text-lg'>hamid.iqbal00124@gmail.com</p> . <p className='text-slate-700'>National ID uuuuuiD</p>
+        <div className='flex justify-start items-center gap-3 text-lg'>
+        <p>{countryFlag ? <img src={countryFlag} alt={`Flag of ${country}`}  className='h-3 ml-1 '/>:''}</p>
+         <p className='font-semibold text-lg text-[#5d5f63]'>{guestName} {numGuests > 1 ? `+ ${numGuests - 1} guests` : ""}</p> <span>&bull;</span>
+         <p className='text-slate-700 text-lg'>{email}</p> <span>&bull;</span>
+         <p className='text-slate-700'>National ID {nationalID}</p>
         </div>
 
-        <div className='flex justify-start items-center gap-3 text-lg'>
+
+
+     { observations &&  <div className='flex justify-start items-center gap-3 text-lg'>
         <span> <BiMessageAltDetail color='#c2410c' size={20}/></span>
         <h2 className='font-semibold text-[#5d5f63]'>Observations</h2>
-        <p className=''>Hi my name is Hamid</p>
-        </div>
+        <p className=''>{observations}</p>
+        </div>}
+
 
         <div className='flex justify-start items-center gap-3 text-lg'>
         <span><CiCircleCheck size={20}/></span>
         <h2 className='font-semibold text-lg text-[#515661]'>Breakfast included ?</h2>
-        <p>No</p>
+        <p className={hasBreakfast? `text-green-600 font-semibold`: 'text-red-600 font-semibold'}>{hasBreakfast? 'YES' : 'NO'}</p>
         </div>
+
 
         <div className='flex items-center justify-between p-3 px-4 bg-amber-200 text-amber-800 text-xl rounded '>
         <div className='flex justify-between items-center gap-3'>
         <CiDollar size={28}/>
         <h2>Total Price</h2>
-        <span>$800</span>
+        <span>{formatCurrency(totalPrice) } {hasBreakfast &&  ` (${formatCurrency(cabinPrice)} cabin + ${formatCurrency(
+                extrasPrice
+              )} breakfast)`} </span>
         </div>
         <div><p>Will Pay at the property</p></div>
         </div>
 
+
         <div className='place-self-end mr-2'>
-        <span className='text-sm text-slate-600'>Booked, Sat Nov 02 2024, 12:13 AM</span>
+        <span className='text-sm text-slate-600'>Booked, {format(new Date(created_at), 'EEE, MMM dd , yyyy, p')}</span>
         </div>
 
 

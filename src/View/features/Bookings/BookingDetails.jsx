@@ -14,6 +14,7 @@ function BookingDetails() {
     if(isLoading){
         return <Spinner/>
     }
+    
     const {status,id:bookingId} = booking
 
  
