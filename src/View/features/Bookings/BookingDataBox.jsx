@@ -7,7 +7,7 @@ import { CiCircleCheck, CiDollar } from 'react-icons/ci'
 import { HiOutlineHomeModern } from 'react-icons/hi2'
 import { formatCurrency, formatDistanceFromNow } from '../../../Modal/Utils/helper';
 
-function BookingDataBox({booking}) {
+function BookingDataBox({booking,status}) {
 const { created_at,
   startDate,
   endDate,
@@ -24,12 +24,16 @@ const { created_at,
 
 } = booking;
 
-
-  console.log(booking)
+const getStatus = {
+  unconfirmed:'text-blue-700 bg-blue-100',
+  'checked-out': 'text-gray-600 bg-gray-200',
+  'checked-in' :'text-green-700 bg-green-200'
+}
+ 
   return (
     <div className='bg-white rounded-md'>
 
-    <header className='flex bg-orange-700 text-orange-50 p-3 justify-between flex-wrap gap-3 px-5 rounded-t-md'>
+    <header className='flex bg-orange-700 text-orange-50 p-4 justify-between flex-wrap gap-3 px-5 rounded-t-md'>
         <div className='flex justify-between items-center gap-3'>
         <span><HiOutlineHomeModern size={36}/></span>
         <h1 className='font-semibold text-2xl'>{numNights} nights in cabin {cabinName}</h1> </div>
@@ -65,7 +69,7 @@ const { created_at,
         </div>
 
 
-        <div className='flex items-center justify-between p-3 px-4 bg-amber-200 text-amber-800 text-xl rounded '>
+        <div className={` ${getStatus[status]} flex items-center justify-between p-3 px-4 text-amber-800 text-xl rounded`} >
         <div className='flex justify-between items-center gap-3'>
         <CiDollar size={28}/>
         <h2>Total Price</h2>
@@ -73,7 +77,7 @@ const { created_at,
                 extrasPrice
               )} breakfast)`} </span>
         </div>
-        <div><p>Will Pay at the property</p></div>
+        <div><p className='font-semibold'>{isPaid?'PAID': 'Will Pay at the property'}</p></div>
         </div>
 
 

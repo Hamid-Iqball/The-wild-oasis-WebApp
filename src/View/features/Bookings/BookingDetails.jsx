@@ -37,7 +37,7 @@ function BookingDetails() {
         </div>
 
         <div >
-            <BookingDataBox booking={booking} />
+            <BookingDataBox booking={booking} status={status} />
         </div>
 
     <div className='flex justify-end gap-2 items-center'>
