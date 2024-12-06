@@ -29,8 +29,7 @@ const { created_at,
   return (
     <div className='bg-white rounded-md'>
 
-    <header className='flex bg-orange-800 text-orange-50 p-4 justify-between flex-wrap gap-3 px-5 rounded-t-md'>
-
+    <header className='flex bg-orange-700 text-orange-50 p-3 justify-between flex-wrap gap-3 px-5 rounded-t-md'>
         <div className='flex justify-between items-center gap-3'>
         <span><HiOutlineHomeModern size={36}/></span>
         <h1 className='font-semibold text-2xl'>{numNights} nights in cabin {cabinName}</h1> </div>
@@ -39,7 +38,6 @@ const { created_at,
             ? "Today"
             : formatDistanceFromNow(startDate)}
           ) &mdash; {format(new Date(endDate), "EEE, MMM dd yyyy")}</p> </div>
-
     </header>
 
     <section className='flex flex-col p-4 gap-3 px-6'>
@@ -81,7 +79,7 @@ const { created_at,
 
         <div className='place-self-end mr-2'>
         <span className='text-sm text-slate-600'>Booked, {format(new Date(created_at), 'EEE, MMM dd , yyyy, p')}</span>
-        </div>
+      </div>
 
 
     </section>
