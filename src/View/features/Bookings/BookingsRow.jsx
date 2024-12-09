@@ -79,7 +79,7 @@ cabins:{name:cabinName}
             <Dropdown.Menu>
               <Dropdown.Item > <button className='flex justify-start items-center gap-3' onClick={()=>{navigate(`/bookings/${bookingId}`);}}>
                  <FaEye style={{color:'#9a3412'}}/> See Details</button></Dropdown.Item>
-             {status==='unconfirmed' && <Dropdown.Item> <button className='flex justify-start items-center gap-3' onClick={()=>navigate(`checkin/${bookingId}`)} ><FaTentArrowsDown style={{color:'#047857'}}/>Check In</button></Dropdown.Item>}
+             {status==='unconfirmed' && <Dropdown.Item> <button className='flex justify-start items-center gap-3' onClick={()=>navigate(`/checkin/${bookingId}`)} ><FaTentArrowsDown style={{color:'#047857'}}/>Check In</button></Dropdown.Item>}
               <Dropdown.Item><button className='flex justify-start items-center gap-3'> <FaTrash style={{color:'red'}}/>  Delete</button> </Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
