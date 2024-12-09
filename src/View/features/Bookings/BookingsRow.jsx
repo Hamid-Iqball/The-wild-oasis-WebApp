@@ -41,8 +41,6 @@ cabins:{name:cabinName}
   }
 
 
-
-  // console.log(booking)
   return (
     <div className='grid grid-cols-[0.8fr,2fr,3fr,1.4fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm  bg-white border-b-[1px] border-[#DDDDDD] rounded-xm p-2'>
         <div>{cabinName}</div>
@@ -60,11 +58,11 @@ cabins:{name:cabinName}
           {format(new Date(startDate), "MMM dd yyyy")} &mdash;
           {format(new Date(endDate), "MMM ddd yyyy")}
         </span>
-        </div>
+      </div>
         
-        <div className={`${getStatus[status]} rounded-full px-2 py-1 text-xs  font-[600]`}>{status.toUpperCase()}</div>
-        <div>{formatCurrency(totalPrice)}</div>
-        <div className='relative flex justify-end items-end'>
+      <div className={`${getStatus[status]} rounded-full px-2 py-1 text-xs  font-[600]`}>{status.toUpperCase()}</div>
+      <div>{formatCurrency(totalPrice)}</div>
+      <div className='relative flex justify-end items-end'>
 
 
         <Dropdown >
@@ -94,7 +92,7 @@ cabins:{name:cabinName}
 
               <Dropdown.Item><button className='flex justify-start items-center gap-3'> <FaTrash style={{color:'red'}}/>  Delete</button> </Dropdown.Item>
             </Dropdown.Menu>
-            
+
         </Dropdown>
       </div>
     </div>
