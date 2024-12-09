@@ -11,6 +11,7 @@ function AppLayout() {
       <SideBar />
     </aside>
     <main  className="ml-56 flex flex-col flex-1">
+      
         <header className='h-14  flex items-center justify-between p-4 border-b'>
         <Header />
         </header>
@@ -18,6 +19,7 @@ function AppLayout() {
         <section className="flex-1 bg-gray-100 p-4 overflow-auto">
           <Outlet/>
         </section>
+        
     </main>
       </div>
   )

@@ -11,8 +11,8 @@ import Account from "./View/Pages/Account"
 import Login from "./View/Pages/Login"
 import PageNotFound from './View/Pages/PageNotFound'
 import AppLayout from "./View/UI/AppLayout" 
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import Booking from './View/Pages/Booking'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 import CheckinBooking from './View/Pages/CheckinBooking'
 

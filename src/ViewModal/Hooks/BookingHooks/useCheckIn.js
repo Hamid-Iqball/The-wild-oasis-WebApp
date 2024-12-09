@@ -9,13 +9,13 @@ const navigate = useNavigate()
 
     //here we will be using the useMutation hook.
    const {mutate:checkin , isLoading:isCheckingIn} =  useMutation({
-    mutationFn:(bookingId)=>updateBooking(bookingId,
+    mutationFn:({bookingId,breakfast})=>updateBooking(bookingId,
         {
             status: 'checked-in',
-            isPaid:true
+            isPaid:true,
+            ...breakfast
         }
     ),
-
 
     onSuccess:(data)=>{
         toast.success(`Booking #${data.id} successfully checked in`)
@@ -23,17 +23,12 @@ const navigate = useNavigate()
         navigate('/')
     },
 
-
     onError:()=>{
 
         toast.error('There was an error while checking in')
     }
    });
 
-
    return {checkin, isCheckingIn}
-
-
-
 
 }
