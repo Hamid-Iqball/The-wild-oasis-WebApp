@@ -20,7 +20,7 @@ const navigate = useNavigate()
     onSuccess:(data)=>{
         toast.success(`Booking #${data.id} successfully checked in`)
         queryClinet.invalidateQueries({active:true})
-        navigate('/')
+        navigate('/bookings')
     },
 
     onError:()=>{

@@ -11,11 +11,16 @@ import { ChakraProvider, MenuCheckboxItem, MenuContent, MenuItem, MenuItemGroup,
 import { FaEye, FaTrash } from 'react-icons/fa'
 import { FaTentArrowsDown } from 'react-icons/fa6'
 import {  useNavigate } from 'react-router-dom'
+import { CiInboxOut } from 'react-icons/ci'
+import { IoArrowRedoCircleOutline, IoArrowUndoCircleOutline } from 'react-icons/io5'
+import { HiArrowUpOnSquare } from 'react-icons/hi2'
+import { useCheckOut } from '../../../ViewModal/Hooks/BookingHooks/useCheckOut'
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 function BookingsRow({booking}) {
   
  const  navigate  = useNavigate()
+ const {checkOut , isCheckingOut} = useCheckOut()
 const {
 id:bookingId,
 created_at,
@@ -41,14 +46,11 @@ cabins:{name:cabinName}
   return (
     <div className='grid grid-cols-[0.8fr,2fr,3fr,1.4fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm  bg-white border-b-[1px] border-[#DDDDDD] rounded-xm p-2'>
         <div>{cabinName}</div>
-        <div className='flex flex-col items-start justify-start gap-1'>
-          <span>
-          {guestName}
-          </span>
-          <span className='text-xs text-gray-500'>
-            {email}
-          </span>
-          </div>
+
+      <div className='flex flex-col items-start justify-start gap-1'>
+        <span>{guestName}</span>
+        <span className='text-xs text-gray-500'>{email} </span>
+      </div>
 
       <div className='flex flex-col items-start justify-start gap-1'>
         <span>{isToday(new Date(startDate))?'Today' : formatDistanceFromNow(startDate)}
@@ -74,14 +76,25 @@ cabins:{name:cabinName}
           borderRadius:'5px'
 
         }}>
-              Action
-            </Dropdown.Toggle>
+          Action
+        </Dropdown.Toggle>
+
             <Dropdown.Menu>
               <Dropdown.Item > <button className='flex justify-start items-center gap-3' onClick={()=>{navigate(`/bookings/${bookingId}`);}}>
-                 <FaEye style={{color:'#9a3412'}}/> See Details</button></Dropdown.Item>
-             {status==='unconfirmed' && <Dropdown.Item> <button className='flex justify-start items-center gap-3' onClick={()=>navigate(`/checkin/${bookingId}`)} ><FaTentArrowsDown style={{color:'#047857'}}/>Check In</button></Dropdown.Item>}
+                 
+              <FaEye style={{color:'#9a3412'}}/> See Details</button></Dropdown.Item>
+
+             {status==='unconfirmed' && <Dropdown.Item> <button className='flex justify-start items-center gap-3' onClick={()=>navigate(`/checkin/${bookingId}`)} > <IoArrowRedoCircleOutline style={{color:'#047857'}} />Check In</button></Dropdown.Item>}
+
+             {status==='checked-in' && <Dropdown.Item>
+              <button className='flex justify-start items-center gap-3' onClick={()=>checkOut(bookingId)} disabled={isCheckingOut}>
+             <HiArrowUpOnSquare style={{color:'#134e4a'}}  /> Check Out
+              </button>
+              </Dropdown.Item>}
+
               <Dropdown.Item><button className='flex justify-start items-center gap-3'> <FaTrash style={{color:'red'}}/>  Delete</button> </Dropdown.Item>
             </Dropdown.Menu>
+            
         </Dropdown>
       </div>
     </div>

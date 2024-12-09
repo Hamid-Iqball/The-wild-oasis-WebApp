@@ -1,7 +1,7 @@
 import React, { cloneElement, createContext, useContext, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { HiXMark } from 'react-icons/hi2'
-import { useOutsideClick } from '../../ViewModal/Hooks/useOutsideClick'
+import { useOutsideClick } from '../../ViewModal/useOutsideClick'
 
 // The Pattren used here is known as Compound component pattren to enhance reuseability. This is done in four steps which are the fol
 // 1) Create Context
