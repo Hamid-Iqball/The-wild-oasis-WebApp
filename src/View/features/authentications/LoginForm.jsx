@@ -1,22 +1,51 @@
-import React from 'react'
-import FormItem from '../../UI/FormItem'
+import React, { useState } from 'react'
+import useLogin from '../../../ViewModal/Hooks/AuthenticationsHooks/useLogin'
+import { Spinner } from 'react-bootstrap'
+import SpinnerMini from '../../UI/SpinnerMini'
+
+
 
 function LoginForm() {
+    const [email,setEmail] = useState("hamid@examples.com")
+    const [password  ,setPassword] = useState("pass0987")
+    const {login , isLoading} = useLogin()
+
+    function handleSubmit (e){
+        e.preventDefault() 
+        if (!email || !password) return ;
+        login({email,password})
+    }
+
   return (
     <div className='bg-white text-orange-950 text-lg p-4 rounded w-2/6'>
-        <form className='flex flex-col gap-3' >
+        <form className='flex flex-col gap-3' onSubmit={handleSubmit} >
         
         <div className='flex flex-col justify-start items-start gap-1'> 
             <label className='font-semibold'>Email Address</label>
-            <input type="email" className='p-1 px-3 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full' />
+            <input type="email" 
+            id='email'
+            value={email}
+            autoComplete='username'
+            onChange={(e)=>setEmail(e.target.value)}
+            disabled={isLoading}
+            className='p-1 px-2 text-normal border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full' />
         </div>
 
         <div className='flex flex-col gap-1 justify-start items-start '>
-            <label className='font-semibold' > Password</label>
-            <input type="passowrd" className='p-1 px-3 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full ' />
+            <label className='font-semibold'> Password</label>
+            <input type="passowrd" 
+            id='password'
+            autoComplete='current-password'
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
+            disabled={isLoading}
+            className='p-1 px-2 text-base border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full ' />
         </div>
 
-        <button className='bg-orange-800 text-white hover:bg-orange-900 transition-colors duration-300 p-1.5 px-3 rounded-md mt-3 font-semibold ease-in-out'> Login</button>
+        <button type='submit'
+        disabled={isLoading}
+        className='bg-orange-800 text-white hover:bg-orange-900 transition-colors duration-300 p-1.5 px-3 rounded-md mt-3 font-semibold ease-in-out'> {!isLoading? 'Login' : <SpinnerMini/>
+}</button>
         </form>
     </div>
   )
