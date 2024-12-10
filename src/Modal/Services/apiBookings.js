@@ -76,3 +76,20 @@ if(error){
 
 return data
 }
+
+
+export async function deleteBooking (id){
+  
+  const { data, error } = await supabase
+  .from('bookings')
+  .delete()
+  .eq('id', id);
+
+if (error) {
+  throw new Error(`Booking could not be deleted: ${error.message}`);
+}
+
+return data; // Return deleted rows or null
+
+
+}

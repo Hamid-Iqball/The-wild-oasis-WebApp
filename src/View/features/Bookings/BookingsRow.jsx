@@ -15,24 +15,31 @@ import { CiInboxOut } from 'react-icons/ci'
 import { IoArrowRedoCircleOutline, IoArrowUndoCircleOutline } from 'react-icons/io5'
 import { HiArrowUpOnSquare } from 'react-icons/hi2'
 import { useCheckOut } from '../../../ViewModal/Hooks/BookingHooks/useCheckOut'
+import Modal from "../../UI/Modal"
+import ConfrmDelete from '../../UI/ConfrmDelete'
+import { useDeleteBooking } from '../../../ViewModal/Hooks/BookingHooks/useDeleteBooking'
+
 
 // import "bootstrap/dist/css/bootstrap.min.css";
 function BookingsRow({booking}) {
   
  const  navigate  = useNavigate()
  const {checkOut , isCheckingOut} = useCheckOut()
-const {
-id:bookingId,
-created_at,
-startDate,
-endDate,
-numNights,
-numGuests,
-totalPrice,
-status,
-guests:{fullName:guestName ,email},
-cabins:{name:cabinName}
+ const {deleteBookingFn , isDeleteingBooking} = useDeleteBooking()
+
+  const {
+  id:bookingId,
+  created_at,
+  startDate,
+  endDate,
+  numNights,
+  numGuests,
+  totalPrice,
+  status,
+  guests:{fullName:guestName ,email},
+  cabins:{name:cabinName}
   } = booking
+
 
   const getStatus = {
     unconfirmed:'text-blue-600 bg-blue-100',
@@ -46,37 +53,35 @@ cabins:{name:cabinName}
         <div>{cabinName}</div>
 
       <div className='flex flex-col items-start justify-start gap-1'>
-        <span>{guestName}</span>
-        <span className='text-xs text-gray-500'>{email} </span>
+      <span>{guestName}</span>
+      <span className='text-xs text-gray-500'>{email} </span>
       </div>
 
       <div className='flex flex-col items-start justify-start gap-1'>
-        <span>{isToday(new Date(startDate))?'Today' : formatDistanceFromNow(startDate)}
-          &rarr; {numNights} night stay
-        </span>
-        <span className='text-xs text-gray-500'>
-          {format(new Date(startDate), "MMM dd yyyy")} &mdash;
-          {format(new Date(endDate), "MMM ddd yyyy")}
-        </span>
+      <span>{isToday(new Date(startDate))?'Today' : formatDistanceFromNow(startDate)}
+        &rarr; {numNights} night stay
+      </span>
+      <span className='text-xs text-gray-500'>
+        {format(new Date(startDate), "MMM dd yyyy")} &mdash;
+        {format(new Date(endDate), "MMM ddd yyyy")}
+      </span>
       </div>
         
       <div className={`${getStatus[status]} rounded-full px-2 py-1 text-xs  font-[600]`}>{status.toUpperCase()}</div>
       <div>{formatCurrency(totalPrice)}</div>
       <div className='relative flex justify-end items-end'>
 
-
+    <Modal>
         <Dropdown >
         <Dropdown.Toggle variant="secondary" id="dropdown-basic" className='dropdown-btn btn-sm' style={{
           backgroundColor:'#FFF',
-          // color:'#9a3412',
           color:'#212529',
           border:'1px solid #212529',
           borderRadius:'5px'
-
         }}>
           Action
         </Dropdown.Toggle>
-
+        
             <Dropdown.Menu>
               <Dropdown.Item > <button className='flex justify-start items-center gap-3' onClick={()=>{navigate(`/bookings/${bookingId}`);}}>
                  
@@ -90,10 +95,18 @@ cabins:{name:cabinName}
               </button>
               </Dropdown.Item>}
 
-              <Dropdown.Item><button className='flex justify-start items-center gap-3'> <FaTrash style={{color:'red'}}/>  Delete</button> </Dropdown.Item>
-            </Dropdown.Menu>
+     <Modal.Open opens='delete'>
+          <Dropdown.Item><button className='flex justify-start items-center gap-3'> <FaTrash style={{color:'red'}}/>  Delete</button> </Dropdown.Item>
+     </Modal.Open>
 
-        </Dropdown>
+     </Dropdown.Menu>
+      </Dropdown>
+
+      <Modal.Window name='delete'>
+        <ConfrmDelete onConfirm={()=>deleteBookingFn(bookingId)} disabaled={isDeleteingBooking}/>
+      </Modal.Window>
+
+    </Modal>
       </div>
     </div>
   )
