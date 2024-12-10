@@ -4,7 +4,7 @@ const TableContext = createContext()
 function Table({columns,children}) {
   return (
     <TableContext.Provider value={{columns}}>
-    <div className={`border rounded-md mb-4  `}  role='table'>
+    <div className={`border rounded-md mb-3 mt-3  `}  role='table'>
        {children}
     </div>
     </TableContext.Provider>

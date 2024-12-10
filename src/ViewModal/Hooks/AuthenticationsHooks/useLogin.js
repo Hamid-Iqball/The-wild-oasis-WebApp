@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 export default function useLogin (){
   const navigate = useNavigate()
   const {mutate:login, isLoading} =   useMutation({
+    
     mutationFn: ({email,password})=>loginApi({email,password}),
 
     onSuccess : (user)=>{

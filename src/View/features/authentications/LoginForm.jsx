@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import useLogin from '../../../ViewModal/Hooks/AuthenticationsHooks/useLogin'
-import { Spinner } from 'react-bootstrap'
 import SpinnerMini from '../../UI/SpinnerMini'
 
 
@@ -28,7 +27,7 @@ function LoginForm() {
             autoComplete='username'
             onChange={(e)=>setEmail(e.target.value)}
             disabled={isLoading}
-            className='p-1 px-2 text-normal border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full' />
+            className='p-2 text-sm border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full' />
         </div>
 
         <div className='flex flex-col gap-1 justify-start items-start '>
@@ -39,7 +38,7 @@ function LoginForm() {
             value={password}
             onChange={(e)=>setPassword(e.target.value)}
             disabled={isLoading}
-            className='p-1 px-2 text-base border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full ' />
+            className='p-2 px-2 text-sm border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full ' />
         </div>
 
         <button type='submit'
