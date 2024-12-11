@@ -13,7 +13,7 @@ import ConfrmDelete from '../../UI/ConfrmDelete'
 
 function BookingDetails() {
 
-    const {isLoading , booking , error} = useBooking()
+    const {isLoading , booking } = useBooking()
     const {checkOut , isCheckingOut} = useCheckOut()
     const {deleteBookingFn, isDeletingBooking} = useDeleteBooking()
     const moveBack = useMoveBack()

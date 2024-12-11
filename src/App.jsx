@@ -15,6 +15,7 @@ import Booking from './View/Pages/Booking'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 import CheckinBooking from './View/Pages/CheckinBooking'
+import ProtectedRoute from './View/UI/ProtectedRoute'
 
 const queryClient  = new QueryClient({
   defaultOptions:{
@@ -31,7 +32,8 @@ function App() {
     <ReactQueryDevtools initialIsOpen={false}/>
    <BrowserRouter>
    <Routes>
-    <Route element={<AppLayout/>} >
+    <Route element={
+      <ProtectedRoute> <AppLayout/>  </ProtectedRoute>} >
     <Route index element={<Navigate replace to="dashboard" />}/>
     <Route path='dashboard' element={<Dashboard/>}/>
     <Route path='bookings' element={<Bookings/>}/>

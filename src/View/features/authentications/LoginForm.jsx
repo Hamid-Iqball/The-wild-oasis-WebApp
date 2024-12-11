@@ -12,7 +12,13 @@ function LoginForm() {
     function handleSubmit (e){
         e.preventDefault() 
         if (!email || !password) return ;
-        login({email,password})
+        login({email,password},{   //Login function us actually a mutate function and we can set some option on this function , one eof them is onSettled as well
+            onSettled:()=>{
+                setEmail('')
+                setPassword('')
+            }
+        })
+  
     }
 
   return (
@@ -27,7 +33,7 @@ function LoginForm() {
             autoComplete='username'
             onChange={(e)=>setEmail(e.target.value)}
             disabled={isLoading}
-            className='p-2 text-sm border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full' />
+            className='p-2  border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full text-base' />
         </div>
 
         <div className='flex flex-col gap-1 justify-start items-start '>
@@ -38,12 +44,12 @@ function LoginForm() {
             value={password}
             onChange={(e)=>setPassword(e.target.value)}
             disabled={isLoading}
-            className='p-2 px-2 text-sm border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full ' />
+            className='p-2 px-2  border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full text-base ' />
         </div>
 
         <button type='submit'
         disabled={isLoading}
-        className='bg-orange-800 text-white hover:bg-orange-900 transition-colors duration-300 p-1.5 px-3 rounded-md mt-3 font-semibold ease-in-out'> {!isLoading? 'Login' : <SpinnerMini/>
+        className='bg-orange-800 text-white hover:bg-orange-900 transition-colors duration-300 p-2 px-3 rounded-md mt-3 font-semibold ease-in-out'> {!isLoading? 'Login' : <SpinnerMini/>
 }</button>
         </form>
     </div>
