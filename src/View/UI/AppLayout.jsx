@@ -12,7 +12,7 @@ function AppLayout() {
     </aside>
     <main  className="ml-56 flex flex-col flex-1">
       
-        <header className='h-14  flex items-center justify-between p-4 border-b'>
+        <header >
         <Header />
         </header>
 
@@ -25,4 +25,4 @@ function AppLayout() {
   )
 }
 
-export default AppLayout
+export default AppLayout 

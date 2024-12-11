@@ -12,7 +12,7 @@ export default function useLogin (){
 
     onSuccess: (user) => {
       queryClient.setQueriesData(["user"],user) // Manually seting data in react query cashe
-      navigate('/dashboard'); // Redirect to dashboard
+      navigate('/dashboard',{replace:true}); // Redirect to dashboard
   },
   
 

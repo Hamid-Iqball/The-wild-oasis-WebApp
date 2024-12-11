@@ -12,13 +12,12 @@ function LoginForm() {
     function handleSubmit (e){
         e.preventDefault() 
         if (!email || !password) return ;
-        login({email,password},{   //Login function us actually a mutate function and we can set some option on this function , one eof them is onSettled as well
+        login({email,password},{   //Login function us actually a mutate function and we can set some option on this function , one eof them is onSettled as well Using onSettled ties the input clearing to the completion of the login request in a predictable manner. It will clear the inputs only if the credientials are correct.
             onSettled:()=>{
                 setEmail('')
                 setPassword('')
             }
         })
-  
     }
 
   return (
