@@ -1,8 +1,10 @@
 import React from 'react'
+import SignupForm from '../features/authentications/SignupForm'
 
 function Users() {
+
   return (
-    <div>Users</div>
+   <SignupForm/>
   )
 }
 
