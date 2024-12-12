@@ -11,7 +11,8 @@ export default function useLogin (){
     mutationFn: ({email,password})=>loginApi({email,password}),
 
     onSuccess: (user) => {
-      queryClient.setQueriesData(["user"],user) // Manually seting data in react query cashe
+  
+      queryClient.setQueryData(["user"],user.user) // Manually seting data in react query cashe
       navigate('/dashboard',{replace:true}); // Redirect to dashboard
   },
   

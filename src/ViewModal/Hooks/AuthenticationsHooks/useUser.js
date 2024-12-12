@@ -4,7 +4,6 @@ import { getCurrentUser } from "../../../Modal/Services/apiAuth";
 export function useUser (){
   const {isLoading,data:user} =   useQuery({
     queryKey:['user'],
-    
     queryFn:getCurrentUser
   })
 
