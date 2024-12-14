@@ -1,26 +1,35 @@
 import React from 'react'
 import FormItem from '../../UI/FormItem'
 import { useForm } from 'react-hook-form'
+import { useSignUp } from '../../../ViewModal/Hooks/AuthenticationsHooks/useSignUp';
+import Spinner from "../../UI/Spinner"
 
 function SignupForm() {
 
-  const {register,formState, handleSubmit,getValues} = useForm() // UseForm has some beautiful things that maks our form handling very easy.
+  const {signUp, isLoading} = useSignUp()
+  const {register,formState, handleSubmit,getValues,reset} = useForm() // UseForm has some beautiful things that maks our form handling very easy.
   const {errors} = formState;
 
-  function submitFunc (data){
-    console.log(data)
+  if(isLoading){
+    return <Spinner/>
+  }
+  function submitFunc ({fullName,email,password}){
+    signUp({fullName,email,password},{
+      // onSettled:()=>reset(),
+    }
+    )
   }
 
   return (
     <div className='flex flex-col gap-5'>
     <h2 className="text-orange-800 text-3xl font-[500]">Create a new user</h2>
     <form action="" onSubmit={handleSubmit(submitFunc)}
-     className='bg-white p-4  rounded-md'>
+    className='bg-white p-4  rounded-md'>
 
     <FormItem label='Full name' error={errors?.fullName?.message}>
     <input type="text" id='fullName' 
     {...register("fullName" , {required:"This fied is required"})}
-    className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' />
+    className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none' />
     </FormItem>
 
 
@@ -54,9 +63,8 @@ function SignupForm() {
 
     <button className='py-[10px] px-3 text-white bg-orange-700 rounded-md  font-semibold text-center hover:bg-orange-800 hover:duration-300 hover:ease-in-out' >Create new user</button>
     </div>
-
-
 </form>
+
     </div>
   )
 }
