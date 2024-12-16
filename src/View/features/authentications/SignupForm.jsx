@@ -14,10 +14,14 @@ function SignupForm() {
     return <Spinner/>
   }
   function submitFunc ({fullName,email,password}){
-    signUp({fullName,email,password},{
-      // onSettled:()=>reset(),
-    }
-    )
+    signUp(
+      { fullName, email, password },
+      {
+        onSettled: () => {
+          reset(); // Resets the form to its initial state after submission
+        },
+      }
+    );
   }
 
   return (
