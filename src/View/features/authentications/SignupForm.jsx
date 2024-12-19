@@ -14,6 +14,7 @@ function SignupForm() {
     return <Spinner/>
   }
   function submitFunc ({fullName,email,password}){
+
     signUp(
       { fullName, email, password },
       {
@@ -32,6 +33,7 @@ function SignupForm() {
 
     <FormItem label='Full name' error={errors?.fullName?.message}>
     <input type="text" id='fullName' 
+    disabled={isLoading}
     {...register("fullName" , {required:"This fied is required"})}
     className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none' />
     </FormItem>
@@ -39,6 +41,7 @@ function SignupForm() {
 
     <FormItem label='Email address' error={errors?.email?.message}>
     <input type="email" id='email' 
+    disabled={isLoading}
     {...register("email",{required:'This field  is required',pattern:{
       value:/\S+@\S+\.\S+/,
       message:'Please enter a valid email address'
@@ -49,6 +52,7 @@ function SignupForm() {
 
     <FormItem label='Password (min 8 characters)' error={errors?.password?.message}>
     <input type="password" id='password'
+    disabled={isLoading}
     {...register("password", {required:"This field is required", minLength:{
       value:8,
       message:'Password need a minimum of 8 characters'
@@ -58,12 +62,13 @@ function SignupForm() {
 
     <FormItem label='Repeat password' error={errors?.passwordConfirm?.message}>
     <input type="password" id='passwordConfirm' 
+    disabled={isLoading}
     {...register("passwordConfirm",{required:"This field is required",validate:((value)=>value=== getValues().password||"Passwords need to match")})}
     className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' />
     </FormItem>
 
     <div className='flex justify-end gap-2 items-center'>
-    <button className='py-2 px-3 text-orange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' >Back</button>
+    <button className='py-2 px-3 text-orange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' type='reset' >Cancel</button>
 
     <button className='py-[10px] px-3 text-white bg-orange-700 rounded-md  font-semibold text-center hover:bg-orange-800 hover:duration-300 hover:ease-in-out' >Create new user</button>
     </div>
