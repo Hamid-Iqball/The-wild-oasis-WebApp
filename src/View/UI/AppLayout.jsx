@@ -12,7 +12,7 @@ function AppLayout() {
     </aside>
     <main  className="ml-56 flex flex-col flex-1">
       
-        <header >
+        <header className='border-b '>
         <Header />
         </header>
 
