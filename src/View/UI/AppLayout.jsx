@@ -12,13 +12,12 @@ function AppLayout() {
     </aside>
     <main  className="ml-56 flex flex-col flex-1">
       
-        <header className='border-b '>
-        <Header />
-        </header>
-
-        <section className="flex-1 bg-gray-100 p-4 overflow-auto">
-          <Outlet/>
-        </section>
+      <header className='border-b '>
+      <Header />
+      </header>
+      <section className="flex-1 bg-gray-100 p-4 overflow-auto">
+        <Outlet/>
+      </section>
         
     </main>
       </div>

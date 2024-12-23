@@ -1,5 +1,5 @@
 import UpdatePassword from "../features/authentications/UpdatePassword";
-import UpdateUserAccount from "../features/authentications/UpdateUserAccount";
+import UpdateUserAccount from "../features/authentications/UpdateUserAccountData";
 
 
 function Account() {
