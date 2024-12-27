@@ -7,6 +7,7 @@ export function useUser (){
     queryFn:getCurrentUser
   })
 
+  console.log(user)
   // if (isError) throw new Error ('Could not log in')
 
   return {isLoading, user , isAuthenticated:user?.role==='authenticated'}
