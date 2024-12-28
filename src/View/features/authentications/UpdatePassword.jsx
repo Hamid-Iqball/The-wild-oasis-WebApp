@@ -13,6 +13,7 @@ const {updateUser, isUpdating} = useUpdateUser()
 function onSubmit ({password}){
   updateUser({password},{onSuccess:reset})
 }
+//The use form comes with its built in validation which makes form handling very easy 
   return (
     <div className='flex flex-col gap-3'>
     <h2 className="text-[#5d5f63] text-xl font-[500]">Update Password</h2>
