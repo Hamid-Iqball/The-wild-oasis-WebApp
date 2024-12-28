@@ -1,16 +1,21 @@
-import React from 'react'
-import { useUser } from '../../ViewModal/Hooks/AuthenticationsHooks/useUser'
-function Avatar() {
+import React from 'react';
+import { useUser } from '../../ViewModal/Hooks/AuthenticationsHooks/useUser';
 
-const {user} = useUser()
-const {fullName , avatar} = user.user_metadata;
+function Avatar() {
+  const { user } = useUser() || {};
+  const { fullName = 'Anonymous', avatar } = user?.user_metadata || {};
 
   return (
-    <div className='flex justify-center items-center gap-[6px] mr-2'>
-        <img src={avatar || 'default-user.jpg'} alt={`Avatar of ${fullName}`} className='w-10'/>
-        <p className='font-semibold text-orange-800 text-sm'>{fullName}</p>
+    <div className="flex justify-center items-center gap-[6px] mr-2 ">
+      <img
+        src={avatar || 'default-user.jpg'}
+        alt={`Avatar of ${fullName}`}
+        title={fullName}
+        className="w-12 h-12 rounded-full object-cover border border-spacing-4 border-red-600"
+      />
+      <p className="font-semibold text-orange-800 text-sm">{fullName}</p>
     </div>
-  )
+  );
 }
 
-export default Avatar
+export default Avatar;

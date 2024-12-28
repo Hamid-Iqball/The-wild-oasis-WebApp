@@ -3,22 +3,34 @@ import FormItem from "../../UI/FormItem"
 import { useUser } from '../../../ViewModal/Hooks/AuthenticationsHooks/useUser'
 import { useUpdateUser } from '../../../ViewModal/Hooks/AuthenticationsHooks/useUpdateUser'
 function UpdateUserAccountData() {
-const {
-  user:{
-    email,
-    user_metadata:{fullName:currenFullName}
-  }
-} =   useUser()
+  const {
+    user:{
+      email,
+      user_metadata:{fullName:currenFullName}
+    }
+  } =   useUser()
+
   const [fullName, setFullName]= useState(currenFullName)
   const [avatar,setAvatar]= useState(null)
   const {updateUser,isUpdating} = useUpdateUser()
 
-  console.log(fullName)
+
   function hanndleSubmit(e){
   e.preventDefault()
   if(!fullName) return
-     updateUser({fullName,avatar })
+     updateUser({fullName,avatar },{
+      onSuccess:()=>{
+        setAvatar(null);
+        e.target.reset()
+      }
+     })
   }
+
+  function handleCancel (){
+setFullName(currenFullName)
+setAvatar(null)
+  }
+
 
   return (
     <div className='flex flex-col gap-3'>
@@ -53,7 +65,7 @@ const {
   
 
     <div className='flex justify-end gap-2 items-center mt-4'>
-    <button className='py-2 px-3 text-orange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' type='reset' >Cancel</button>
+    <button className='py-2 px-3 text-orange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' type='reset' onClick={handleCancel} >Cancel</button>
 
     <button className='py-[10px] px-3 text-white bg-orange-700 rounded-md  font-semibold text-center hover:bg-orange-800 hover:duration-300 hover:ease-in-out' disabled={isUpdating}>Update account</button>
     </div>

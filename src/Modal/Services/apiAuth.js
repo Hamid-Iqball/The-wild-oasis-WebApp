@@ -13,6 +13,7 @@ const {data,error}= await supabase.auth.signUp({
   }
 })
 
+
 if (error){
   throw new Error(error.message)
 }
@@ -31,7 +32,8 @@ let { data, error } = await supabase.auth.signInWithPassword({email,password})
   return data;
 }
 
-//Why we need a function from supabase to load the user again, The thing is the user might want to access this page a bit later, In the web Application if you a logged in a day ago and then reload the page you will have to be logged in. So here we will check if that user exists in our supabase then we will fetch that user .
+//Why we need a function from supabase to load the user again, The thing is the user might want to access this page a bit later, In the web Application if you a logged in a day ago and then reload the page you will have to be logged in. So here we will check if that user exists in our supabase then we will fetch that user.
+
 export async function getCurrentUser (){
     //This will get the data from the local storage
     const {data:session} = await supabase.auth.getSession()
@@ -68,8 +70,8 @@ if(error) throw new Error(error.message)
 if(!avatar) return data;
 
 //2. Upload the avatar image
-const fileName = `avatar-${data.user.id}-${Math.random()}`
-const {error:storageError} = await supabase.storage.from('avatar').upload(fileName,avatar)
+const fileName = `avatars-${data.user.id}-${Math.random()}`
+const {error:storageError} = await supabase.storage.from('avatars').upload(fileName,avatar)
 if(storageError) throw new Error(storageError.message)
 
 //3. Update the avatar image. 
