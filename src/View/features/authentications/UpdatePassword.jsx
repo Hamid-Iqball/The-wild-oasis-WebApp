@@ -11,7 +11,7 @@ const {error} = formState;
 const {updateUser, isUpdating} = useUpdateUser()
 
 function onSubmit ({password}){
-  updateUser({password},{onSuccess:reset})
+  updateUser({password},{onSuccess:reset()})
 }
 //The use form comes with its built in validation which makes form handling very easy 
   return (
