@@ -74,7 +74,7 @@ if(storageError) throw new Error(storageError.message)
 
 
 //3. Update the avatar image. 
-const {data:updateUser,error:error2} = supabase.auth.updateUser({
+const {data:updateUser,error:error2} = await supabase.auth.updateUser({
   data:{
     avatar:`${supabaseUrl}/storage/v1/object/public/avatars/${fileName}`,
   }

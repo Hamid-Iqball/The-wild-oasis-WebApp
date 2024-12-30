@@ -7,15 +7,15 @@ export function useUpdateUser(){
     // const {user} = useUser()
     const {mutate:updateUser, isLoading:isUpdating} = useMutation({
         mutationFn:updateCurrentUser,
-        onSuccess:()=>{
+        onSuccess:({user})=>{
 
-      
-            toast.success("User account successfully updated");
-            // queryClient.setQueryData(["user"],user) // Manually updating the cache
-   
-            queryClient.invalidateQueries({
-                queryKey:['user']
-            })
+    
+        toast.success("User account successfully updated");
+        queryClient.setQueryData(["user"],user) // Manually updating the cache
+
+        queryClient.invalidateQueries({
+            queryKey:['user']
+        })
         },
         onError:(err)=>{
             toast.error(err.message)
