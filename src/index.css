@@ -16,3 +16,23 @@ html{
         scroll-behavior: smooth;
 
 }
+
+/* Dark mode */
+.light{
+    --primaryBackground:243, 244, 246;
+    --secondaryBackground:255, 255, 255;
+    --lightText:93, 95, 99;
+    --darkOrange:154, 52, 18;
+    --lightGreen:220, 252, 231;
+    --darkGreen:54, 163, 74;
+    --lightSilver:243, 244, 246;
+    --darkSilver:75, 85, 99;
+    --lightBlue:219, 234, 254;
+    --darkBlue:37, 99, 235;
+}
+
+.dark{
+    --primaryBackground:17, 24, 39;
+    --secondaryBackground:24, 33, 47;
+    
+}

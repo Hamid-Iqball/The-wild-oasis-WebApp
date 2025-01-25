@@ -75,7 +75,7 @@ function CheckinBooking() {
       {!hasBreakfast &&  <div className='flex justify-start items-center gap-2 bg-white rounded-md p-2 px-4'>
       <input type="checkbox" 
       checked={addBreakfast}
-      onChange={()=>{
+      onChange={()=>{ 
         setAddBreakfast((add)=>!add);
         setConfirmedPaid(false);
       }}
