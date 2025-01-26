@@ -27,7 +27,7 @@ function UpdateSettingsForm() {
     }
 //    We want to update the setting as we leave the fields,we don't have any submit button.
     return (
-<form action="" className='bg-white p-4  rounded-md mt-5'>
+<form action="" className='bg-white p-4  rounded-md mt-5 text-customGray-800'>
     <FormItem label='Minimum nights/booking'>
     <input type="number" id='min-nights' className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' defaultValue={minBookingLength} onBlur={e=>handleUpdate(e ,"minBookingLength")} disabled={isUpdating}/>
     </FormItem>

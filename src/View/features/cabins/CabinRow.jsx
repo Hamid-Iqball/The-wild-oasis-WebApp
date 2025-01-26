@@ -22,12 +22,12 @@ function CabinRow({cabin}) {
    
     <div className='grid grid-cols-[0.8fr,1fr,2fr,1fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm font-[500] bg-white border-b-[1px] border-[#DDDDDD] rounded-md p-[1px]'>
 
-       <div className='w-24 bg-white  border-slate-400 border'><img src={image} alt="" className='w-28 ' />
+       <div className='w-24 bg-white  border-customGray-400 text-customGray-700 border'><img src={image} alt="" className='w-28 ' />
        </div>
        <div className='text-start font-semibold' style={{fontFamily:"sono"}}>{name}</div>
        <div className='text-start font-normal '>Fits Up to {maxCapacity} people</div>
        <div className='text-[0.9rem] font-semibold' style={{fontFamily:"sono"}}>{formatCurrency(regularPrice)}</div>
-       <div className='text-green-500 pl-4 font-semibold' style={{fontFamily:"sono"}}>{discount? formatCurrency(discount) : <span>&mdash;</span> }</div>
+       <div className='text-customGreen-dark pl-4 font-semibold' style={{fontFamily:"sono"}}>{discount? formatCurrency(discount) : <span>&mdash;</span> }</div>
        <div>
 
       <Modal>

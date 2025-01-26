@@ -48,7 +48,7 @@ function LoginForm() {
 
         <button type='submit'
         disabled={isLoading}
-        className='bg-customOrange-800 text-white hover:bg-customOrange-900 transition-colors duration-300 p-2 px-3 rounded-md mt-3 font-semibold ease-in-out'> {!isLoading? 'Login' : <SpinnerMini/>
+        className='bg-customOrange-800 text-customOrange-50 hover:bg-customOrange-900 transition-colors duration-300 p-2 px-3 rounded-md mt-3 font-semibold ease-in-out'> {!isLoading? 'Login' : <SpinnerMini/>
 }</button>
         </form>
     </div>

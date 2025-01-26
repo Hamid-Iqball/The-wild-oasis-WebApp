@@ -48,23 +48,23 @@ const getStatus = {
 
         <div className='flex justify-start items-center gap-3 text-lg'>
         <p>{countryFlag ? <img src={countryFlag} alt={`Flag of ${country}`}  className='h-3 ml-1 '/>:''}</p>
-         <p className='font-semibold text-lg text-[#5d5f63]'>{guestName} {numGuests > 1 ? `+ ${numGuests - 1} guests` : ""}</p> <span>&bull;</span>
-         <p className='text-slate-700 text-lg'>{email}</p> <span>&bull;</span>
-         <p className='text-slate-700'>National ID {nationalID}</p>
+         <p className='font-semibold text-lg text-customGray-800'>{guestName} {numGuests > 1 ? `+ ${numGuests - 1} guests` : ""}</p> <span>&bull;</span>
+         <p className='text-customGray-600 text-lg'>{email}</p> <span>&bull;</span>
+         <p className='text-customGray-600 '>National ID {nationalID}</p>
         </div>
 
 
 
      { observations &&  <div className='flex justify-start items-center gap-3 text-lg'>
         <span> <BiMessageAltDetail color='#c2410c' size={20}/></span>
-        <h2 className='font-semibold text-[#5d5f63]'>Observations</h2>
+        <h2 className='font-semibold text-customGray-800'>Observations</h2>
         <p className=''>{observations}</p>
         </div>}
 
 
         <div className='flex justify-start items-center gap-3 text-lg'>
         <span><CiCircleCheck size={20}/></span>
-        <h2 className='font-semibold text-lg text-[#515661]'>Breakfast included ?</h2>
+        <h2 className='font-semibold text-lg  text-customGray-800'>Breakfast included ?</h2>
         <p className={hasBreakfast? `text-green-600 font-semibold`: 'text-red-600 font-semibold'}>{hasBreakfast? 'YES' : 'NO'}</p>
         </div>
 
@@ -82,7 +82,7 @@ const getStatus = {
 
 
         <div className='place-self-end mr-2'>
-        <span className='text-sm text-slate-600'>Booked, {format(new Date(created_at), 'EEE, MMM dd , yyyy, p')}</span>
+        <span className='text-sm  text-customGray-500'>Booked, {format(new Date(created_at), 'EEE, MMM dd , yyyy, p')}</span>
       </div>
 
 

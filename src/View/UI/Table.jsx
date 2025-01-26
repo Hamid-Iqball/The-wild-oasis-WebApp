@@ -13,7 +13,7 @@ function Table({columns,children}) {
 
 function Header({children}){
     const {columns} = useContext(TableContext)
-    return <header style={{display:'grid' , gridTemplateColumns:columns}} className ={ ` px-2 font-semibold gap-8 p-3  text-[1rem] text-[#454546] border-b-[1px]`} role='row'>
+    return <header style={{display:'grid' , gridTemplateColumns:columns}} className ={ ` px-2 font-semibold gap-8 p-3  text-[1rem] text-customGray-800 border-b-[1px]`} role='row'>
     {children}
     </header>
 }
@@ -37,7 +37,7 @@ function Body({data ,render}){
 }
 
 function Footer({children}){
-return <div className='bg-[#F3F4F6] px-2 p-1'>
+return <div className='bg-customGray-100 px-2 p-1'>
 {children}
 </div>
 }

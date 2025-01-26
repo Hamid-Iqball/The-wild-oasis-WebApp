@@ -39,7 +39,7 @@ function BookingDetails() {
     }    
 
   return (
-    <div className='p-3 grid grid-cols-1  gap-6'>
+    <div className='p-3 grid grid-cols-1 text-customGray-700 gap-6'>
 
     <div className='flex justify-between items-center gap-4'>
         <div className='flex justify-between items-center gap-4'>
@@ -62,7 +62,7 @@ function BookingDetails() {
         <Modal.Open opens='delete-booking'>
         <button className='py-2 px-3 text-white bg-customOrange-700 rounded-md  font-semibold text-center hover:bg-customOrange-800 hover:duration-300 hover:ease-in-out' >Delete Booking</button>
         </Modal.Open>
-        <button className='py-2 px-3 text-customOrange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' onClick={moveBack}>Back</button>
+        <button className='py-2 px-3 text-customOrange-800 font-semibold bg-customGray-50 border rounded-lg text-center hover:bg-customGray-200 hover:duration-300 hover:ease-in-out' onClick={moveBack}>Back</button>
     </div>
 
     <Modal.Window name='delete-booking'>

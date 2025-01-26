@@ -33,11 +33,11 @@ if(pageCount <=1) return ;
         </div>
 
         <div className='flex justify-between items-center gap-4'>
-          <button className='flex justify-center items-center px-1 rounded hover:bg-orange-700 hover:text-white' onClick={prevPage} disabled={currentPage===1}>
+          <button className='flex justify-center items-center px-1 rounded hover:bg-orange-700 hover:text-customGray-50' onClick={prevPage} disabled={currentPage===1}>
                 <HiChevronLeft size={24}/>
                 <span>Previous</span>
           </button>
-          <button className='flex justify-center items-center px-1 rounded hover:bg-orange-700 hover:text-white' onClick={NextPage} disabled={currentPage===pageCount}>
+          <button className='flex justify-center items-center px-1 rounded hover:bg-orange-700 hover:text-customGray-50' onClick={NextPage} disabled={currentPage===pageCount}>
             <span>Next</span>
             <HiChevronRight size={24}/>
           </button>

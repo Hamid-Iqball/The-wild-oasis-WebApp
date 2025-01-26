@@ -2,7 +2,7 @@ import LoginForm from "../features/authentications/LoginForm";
 
 
 function Login() {
-  return <div className="h-screen flex flex-col justify-center items-center bg-[#F9FAFB] gap-4">
+  return <div className="h-screen flex flex-col justify-center items-center bg-customGray-50 gap-4">
 
 
   <img src="logo-light.png" alt="The wild oasis logo" className="w-40" />

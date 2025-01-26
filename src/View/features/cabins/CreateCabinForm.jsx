@@ -87,7 +87,7 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
           </FormItem>
 
           <FormItem label="Cabin photo" error={errors?.image?.message}>
-          <input type="file" id='image' {...register("image",{required: isEditSession ? false : "This field is required"})} className='p-1.5 file:bg-customOrange-700 file:text-slate-50 file:py-2 file:px-4 file:border-none file:rounded-md file:mr-4 hover:file:cursor-pointer   ' disabled={isWorking}/>
+          <input type="file" id='image' {...register("image",{required: isEditSession ? false : "This field is required"})} className='p-1.5 file:bg-customOrange-700 file:text-customGray-50  file:py-2 file:px-4 file:border-none file:rounded-md file:mr-4 hover:file:cursor-pointer   ' disabled={isWorking}/>
           </FormItem>
 
 
@@ -95,7 +95,7 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
           <SmallButton onCloseModal={onCloseModal}>
             Cancel
           </SmallButton>
-          <button className="border border-grey-500 py-[10px] px-4 text-slate-50 bg-customOrange-700 font-semibold rounded-md" 
+          <button className="border border-grey-500 py-[10px] px-4 text-customGray-50 bg-customOrange-700 font-semibold rounded-md" 
           disabled={isWorking}>{isEditSession ? "Edit Cabin" :" Create new Cabin"}</button>
         </div>
   </form>

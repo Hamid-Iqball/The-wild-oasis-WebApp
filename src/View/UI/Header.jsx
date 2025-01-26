@@ -12,7 +12,7 @@ const navigate = useNavigate()
       <div className="justify-self-end">
         <div className='flex justify-between items-center gap-2'>
        <Avatar/>
-          <button className='p-1 hover:bg-slate-200 active:bg-slate-200 hover:rounded-md' onClick={()=>navigate("/account")}>
+          <button className='p-1 hover:bg-customGray-200 active:bg-customGray-200 hover:rounded-md' onClick={()=>navigate("/account")}>
           <HiOutlineUser size='24' color='#9a3412'/>
           </button>
         <Logout />

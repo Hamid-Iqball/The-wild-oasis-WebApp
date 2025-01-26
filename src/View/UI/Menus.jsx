@@ -50,7 +50,7 @@ function List({id,children }){
 
 function Button({children}){
   return <li>
-  <button className='w-full text-left bg-none border-none p-[1.2rem 2.4rem]  transition-all duration-200 hover:bg-gray-300 '>{children}</button>
+  <button className='w-full text-left bg-none border-none p-[1.2rem 2.4rem]  transition-all duration-200 hover:bg-customGray-300 '>{children}</button>
   </li>
 }
 

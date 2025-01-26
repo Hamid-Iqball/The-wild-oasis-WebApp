@@ -42,28 +42,28 @@ function BookingsRow({booking}) {
 
 
   const getStatus = {
-    unconfirmed:'text-blue-600 bg-blue-100',
-    'checked-out': 'text-gray-600 bg-gray-100',
-    'checked-in' :'text-green-600 bg-green-100'
+    unconfirmed:'text-customBlue-dark bg-customBlue-light',
+    'checked-out': 'text-customGray-600 bg-customGray-100',
+    'checked-in' :'text-customGreen-dark bg-customGreen-100'
   }
 
 
   return (
-    <div className='grid grid-cols-[0.8fr,2fr,3fr,1.4fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm  bg-white border-b-[1px] border-[#DDDDDD] rounded-xm p-2'>
+    <div className='grid grid-cols-[0.8fr,2fr,3fr,1.4fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm  bg-white border-b-[1px] border-[#DDDDDD] rounded-xm p-2 text-customGray-700'>
         <div>{cabinName}</div>
 
       <div className='flex flex-col items-start justify-start gap-1'>
       <span>{guestName}</span>
-      <span className='text-xs text-gray-500'>{email} </span>
+      <span className='text-xs text-customGray-400'>{email} </span>
       </div>
 
       <div className='flex flex-col items-start justify-start gap-1'>
       <span>{isToday(new Date(startDate))?'Today' : formatDistanceFromNow(startDate)}
         &rarr; {numNights} night stay
       </span>
-      <span className='text-xs text-gray-500'>
+      <span className='text-xs text-customGray-400'>
         {format(new Date(startDate), "MMM dd yyyy")} &mdash;
-        {format(new Date(endDate), "MMM ddd yyyy")}
+        {format(new Date(endDate), "MMM dd yyyy")}
       </span>
       </div>
         

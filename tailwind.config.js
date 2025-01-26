@@ -14,6 +14,7 @@ export default {
       },
       colors:{
        customOrange:{
+         50:'#FFF7ED',
          100:'#FFF7ED',
          200:'#FFD7A8',
          300:'#FFB86A',
@@ -26,16 +27,26 @@ export default {
          950:'#441306'
        },
        customGreen:{
-         light:'#DCFCE7',
+         100:'#DCFCE7',
          dark:'#16A381',
        },
-       customBlur:{
+       customBlue:{
           dark:'#2563EE',
           light:'#DBEAFE'
        },
        customGray:{
-        light:'#F3F4F6',
-        dark:'#4A5565'
+        50:'#F9FAFB',
+        100:'#F3F4F6',
+        200:'#E5E7EB',
+        300:'#D4D4D8',
+        400:'#99A1AF',
+        500:'#6A7282',
+        600:'#4A5565',
+        700:'#364153',
+        800:'#1E2939',
+        900:'#101828',
+        950:'#030712'
+
        }
       }
 

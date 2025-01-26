@@ -97,7 +97,7 @@ function CheckinBooking() {
       <div className='flex justify-end gap-2 items-center'>
       <button className='py-2 px-3 text-white bg-customOrange-700 rounded-md  font-semibold text-center hover:bg-customOrange-800 hover:duration-300 hover:ease-in-out' disabled={!confirmedPaid} onClick={handleCheckIn} >Check in booking # {bookingId}</button>
 
-      <button className='py-2 px-3 text-orange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' onClick={moveBack}>Back</button>
+      <button className='py-2 px-3 text-orange-800 font-semibold bg-customGray-50 border rounded-lg text-center hover:bg-customGray-200  hover:duration-300 hover:ease-in-out' onClick={moveBack}>Back</button>
       </div>
 </div>
   )
