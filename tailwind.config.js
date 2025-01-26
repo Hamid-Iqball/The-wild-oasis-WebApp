@@ -22,6 +22,8 @@ export default {
          600:'#F54A00',
          700:'#CA3500',
          800:"#9F2D00",
+         900:'#7E2A0C',
+         950:'#441306'
        },
        customGreen:{
          light:'#DCFCE7',

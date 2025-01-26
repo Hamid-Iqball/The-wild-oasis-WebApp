@@ -43,10 +43,10 @@ function BookingDetails() {
 
     <div className='flex justify-between items-center gap-4'>
         <div className='flex justify-between items-center gap-4'>
-        <h1 className='text-3xl text-orange-800 font-[500]'>Booking #{bookingId}</h1>
+        <h1 className='text-3xl text-customOrange-800 font-[500]'>Booking #{bookingId}</h1>
         <span className={`${getStatus[status]}  text-[12px] font-semibold px-1  rounded-lg`} >{status.toUpperCase()}</span>
         </div>
-        <button className='flex justify-between items-center gap-1 text-orange-800 font-semibold' onClick={moveBack}> <FaArrowLeft/> Back </button>
+        <button className='flex justify-between items-center gap-1 text-customOrange-800 font-semibold' onClick={moveBack}> <FaArrowLeft/> Back </button>
     </div>
 
     <div >
@@ -55,14 +55,14 @@ function BookingDetails() {
 
         <Modal>
     <div className='flex justify-end gap-2 items-center'>
-        { status==='unconfirmed' &&  <button className='py-2 px-3 text-white bg-orange-700 rounded-md  font-semibold text-center hover:bg-orange-800 hover:duration-300 hover:ease-in-out' onClick={()=>navigate(`/checkin/${bookingId}`)}>Check in</button>}
+        { status==='unconfirmed' &&  <button className='py-2 px-3 text-white bg-customOrange-700 rounded-md  font-semibold text-center hover:bg-customOrange-800 hover:duration-300 hover:ease-in-out' onClick={()=>navigate(`/checkin/${bookingId}`)}>Check in</button>}
 
-        {status==='checked-in' && <button className='py-2 px-3 text-white bg-orange-700 rounded-md  font-semibold text-center hover:bg-orange-800 hover:duration-300 hover:ease-in-out' onClick={()=>checkOut(bookingId)} disabled={isCheckingOut} >Check Out</button>}
+        {status==='checked-in' && <button className='py-2 px-3 text-white bg-customOrange-700 rounded-md  font-semibold text-center hover:bg-customOrange-800 hover:duration-300 hover:ease-in-out' onClick={()=>checkOut(bookingId)} disabled={isCheckingOut} >Check Out</button>}
 
         <Modal.Open opens='delete-booking'>
-        <button className='py-2 px-3 text-white bg-orange-700 rounded-md  font-semibold text-center hover:bg-orange-800 hover:duration-300 hover:ease-in-out' >Delete Booking</button>
+        <button className='py-2 px-3 text-white bg-customOrange-700 rounded-md  font-semibold text-center hover:bg-customOrange-800 hover:duration-300 hover:ease-in-out' >Delete Booking</button>
         </Modal.Open>
-        <button className='py-2 px-3 text-orange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' onClick={moveBack}>Back</button>
+        <button className='py-2 px-3 text-customOrange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' onClick={moveBack}>Back</button>
     </div>
 
     <Modal.Window name='delete-booking'>

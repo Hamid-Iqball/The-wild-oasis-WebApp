@@ -24,9 +24,9 @@ const [searchParams , setSearchParams] =useSearchParams()
        <button
        className={`${
         searchParams.get(filterField) === option.value
-          ? 'bg-[#C2410C] text-white'
+          ? 'bg-customOrange-700  text-white'
           : 'bg-white text-gray-700'
-         } border-0 hover:bg-[#C2410C]  focus:bg-[#C2410C] active:bg-[#C2410C] px-2 py-1 rounded-md text-[14px] transition-all duration-300 ease-in-out`}
+         } border-0 hover:bg-customOrange-700  focus:bg-customOrange-700  active:hover:bg-customOrange-700  px-2 py-1 rounded-md text-[14px] transition-all duration-300 ease-in-out`}
           onClick={() => handleClick(option.value)}
           key={index}>
         {option.label}
@@ -35,7 +35,7 @@ const [searchParams , setSearchParams] =useSearchParams()
         </div>
 
 
-      <div className= 'bg-white shadow-sm rounded-md flex gap-1 text-[14px] border-grey-2 active:border-[#C2410C]'>
+      <div className= 'bg-white shadow-sm rounded-md flex gap-1 text-[14px] border-grey-2 active:border-customOrange-700'>
         <SortBy options={sortingOptions}></SortBy>
       </div>
     </div>

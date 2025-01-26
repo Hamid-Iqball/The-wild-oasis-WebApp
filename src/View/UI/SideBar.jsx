@@ -14,9 +14,9 @@ function SideBar() {
     <div>
     <nav className='text-[1rem] font-[500] text-[#5d5f63] '>
         <ul className='flex flex-col gap-2 ml-2 mr-3'>
-            <li className='hover:bg-slate-100 rounded-md hover:text-orange-800'> 
+            <li className='hover:bg-slate-100 rounded-md hover:text-customOrange-800'> 
                 <NavLink to='/dashboard' className={({isActive})=>
-                  isActive ? 'flex justify-start gap-4 py-2 px-4 bg-slate-100 rounded-md text-orange-800 text-[1em]' :'flex justify-start gap-4 py-2 text-[1rem] px-4'
+                  isActive ? 'flex justify-start gap-4 py-2 px-4 bg-slate-100 rounded-md text-customOrange-800 text-[1em]' :'flex justify-start gap-4 py-2 text-[1rem] px-4'
               }>
                 <span ><HiOutlineHome size={28} /> </span>
                 Home</NavLink>
@@ -24,7 +24,7 @@ function SideBar() {
 
             <li className='hover:bg-slate-100 rounded-md hover:text-orange-800'>
                 <NavLink to='/bookings' className={({isActive})=>
-                  isActive ? 'flex justify-start gap-4 py-2 px-4 bg-slate-100 rounded-md text-orange-800 text-[1rem]':'flex justify-start gap-4 py-2 px-4 text-[1rem]'
+                  isActive ? 'flex justify-start gap-4 py-2 px-4 bg-slate-100 rounded-md text-customOrange-800 text-[1rem]':'flex justify-start gap-4 py-2 px-4 text-[1rem]'
               }> 
                     <HiOutlineCalendarDays size={28}/>
               <span> 
@@ -32,9 +32,9 @@ function SideBar() {
                 </span></NavLink>
             </li>
 
-            <li className='hover:bg-slate-100 rounded-md hover:text-orange-800' >
+            <li className='hover:bg-slate-100 rounded-md hover:text-customOrange-800' >
                 <NavLink to='/cabins' className={({isActive})=>
-                  isActive ? 'flex justify-start gap-4 py-2 px-4 bg-slate-100 rounded-md text-orange-800 text-[1rem]' :'flex justify-start gap-4 py-2 px-4 text-[1rem]'
+                  isActive ? 'flex justify-start gap-4 py-2 px-4 bg-slate-100 rounded-md text-customOrange-800 text-[1rem]' :'flex justify-start gap-4 py-2 px-4 text-[1rem]'
               } > 
                 <HiOutlineHomeModern size={28}/>
                 <span>
@@ -43,15 +43,15 @@ function SideBar() {
                </NavLink>
             </li>
 
-            <li className='hover:bg-slate-100 rounded-md hover:text-orange-800' >
+            <li className='hover:bg-slate-100 rounded-md hover:text-customOrange-800' >
                 <NavLink to='/users' className={({isActive})=>
-                  isActive ? 'flex justify-start gap-4 py-2 px-4 bg-slate-100 rounded-md text-orange-800 text-[1rem]' :'flex justify-start gap-4 py-2 px-4 text-[1rem]'
+                  isActive ? 'flex justify-start gap-4 py-2 px-4 bg-slate-100 rounded-md text-customOrange-800 text-[1rem]' :'flex justify-start gap-4 py-2 px-4 text-[1rem]'
               } >
                 <HiOutlineUsers size={28}/>
                 <span>Users</span></NavLink>
             </li>
 
-            <li className='hover:bg-slate-100 rounded-md hover:text-orange-800'>
+            <li className='hover:bg-slate-100 rounded-md hover:text-customOrange-800'>
                 <NavLink to='/settings'className={({isActive})=>
                    isActive ? 'flex justify-start gap-4 py-2 px-4 bg-slate-100 rounded-md text-orange-800 text-[1rem]' :'flex justify-start gap-4 py-2 px-4 text-[1rem]'
               }>

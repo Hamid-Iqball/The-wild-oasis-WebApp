@@ -16,7 +16,7 @@ function Bookings() {
   return (
    <div>
    <div className="flex justify-between items-center mb-8 ">
-    <h2 className="text-orange-800 text-3xl font-[500]">Bookings</h2>
+    <h2 className="text-customOrange-800 text-3xl font-[500]">Bookings</h2>
     <div>
 
      <FiltersAndSortingOperations filterField="status" filteringOptions={[

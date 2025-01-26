@@ -6,7 +6,7 @@ function Login() {
 
 
   <img src="logo-light.png" alt="The wild oasis logo" className="w-40" />
-  <h3 className="font-bold text-orange-950 text-3xl mb-2 ">Log in to your account</h3>
+  <h3 className="font-bold text-customOrange-900 text-3xl mb-2 ">Log in to your account</h3>
 
   <LoginForm/>
 

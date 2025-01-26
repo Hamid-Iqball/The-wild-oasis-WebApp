@@ -63,9 +63,9 @@ function CheckinBooking() {
     <div className='p-3 grid grid-cols-1  gap-6'>
     <div className='flex justify-between items-center gap-4'>
     <div className='flex justify-between items-center gap-4'>
-    <h1 className='text-3xl text-orange-800 font-[500]'>Check in Booking #{bookingId}</h1>
+    <h1 className='text-3xl text-customOrange-800 font-[500]'>Check in Booking #{bookingId}</h1>
     </div>
-    <button className='flex justify-between items-center gap-1 text-orange-800 font-semibold' onClick={moveBack}> <FaArrowLeft/> Back </button>
+    <button className='flex justify-between items-center gap-1 text-customOrange-800 font-semibold' onClick={moveBack}> <FaArrowLeft/> Back </button>
     </div>
 
     <div>
@@ -79,7 +79,7 @@ function CheckinBooking() {
         setAddBreakfast((add)=>!add);
         setConfirmedPaid(false);
       }}
-        className="w-5 h-5 text-orange-600 border-gray-300 rounded focus:ring-orange-500 cursor-pointer" />
+        className="w-5 h-5 text-orange-600 border-gray-300 rounded focus:ring-customOrange-500 cursor-pointer" />
       <label htmlFor="" className='font-semibold '>Want to add breakfast for {formatCurrency(optionalBreakfastPrice)} ? </label>
       </div>}
 
@@ -89,13 +89,13 @@ function CheckinBooking() {
       checked={confirmedPaid} 
       onChange={()=>setConfirmedPaid((confirmed)=>!confirmed)}
       disabled={confirmedPaid}
-      className="w-5 h-5 text-orange-600 border-gray-300 rounded focus:ring-orange-500 cursor-pointer" />
+      className="w-5 h-5 text-customOrange-600 border-gray-300 rounded focus:ring-customOrange-500 cursor-pointer" />
       <label htmlFor="" className='font-semibold '>I confirm that {guests.fullName} has paid the total amount of {hasBreakfast ? formatCurrency(totalPrice): `${formatCurrency(totalPrice+optionalBreakfastPrice)} (${formatCurrency(totalPrice)} + ${formatCurrency(optionalBreakfastPrice)}) ` } </label>
       </div>
 
     
       <div className='flex justify-end gap-2 items-center'>
-      <button className='py-2 px-3 text-white bg-orange-700 rounded-md  font-semibold text-center hover:bg-orange-800 hover:duration-300 hover:ease-in-out' disabled={!confirmedPaid} onClick={handleCheckIn} >Check in booking # {bookingId}</button>
+      <button className='py-2 px-3 text-white bg-customOrange-700 rounded-md  font-semibold text-center hover:bg-customOrange-800 hover:duration-300 hover:ease-in-out' disabled={!confirmedPaid} onClick={handleCheckIn} >Check in booking # {bookingId}</button>
 
       <button className='py-2 px-3 text-orange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' onClick={moveBack}>Back</button>
       </div>

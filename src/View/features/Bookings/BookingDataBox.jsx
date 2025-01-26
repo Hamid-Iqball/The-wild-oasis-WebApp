@@ -33,7 +33,7 @@ const getStatus = {
   return (
     <div className='bg-white rounded-md'>
 
-    <header className='flex bg-orange-700 text-orange-50 p-4 justify-between flex-wrap gap-3 px-5 rounded-t-md'>
+    <header className='flex bg-customOrange-700 text-customOrange-100 p-4 justify-between flex-wrap gap-3 px-5 rounded-t-md'>
         <div className='flex justify-between items-center gap-3'>
         <span><HiOutlineHomeModern size={36}/></span>
         <h1 className='font-semibold text-2xl'>{numNights} nights in cabin {cabinName}</h1> </div>
@@ -69,7 +69,7 @@ const getStatus = {
         </div>
 
 
-        <div className={` ${getStatus[status]} flex items-center justify-between p-3 px-4 text-amber-800 text-xl rounded`} >
+        <div className={` ${getStatus[status]} flex items-center justify-between p-3 px-4 text-customOrange-800 text-xl rounded`} >
         <div className='flex justify-between items-center gap-3'>
         <CiDollar size={28}/>
         <h2>Total Price</h2>

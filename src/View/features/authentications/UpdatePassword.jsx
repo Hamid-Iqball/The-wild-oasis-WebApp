@@ -29,7 +29,7 @@ function onSubmit ({password}){
         message: "Password needs a minimum of 8 characters",
       },
     })}autoComplete='current-password'
-    className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none' />
     </FormItem>
 
 
@@ -40,15 +40,15 @@ function onSubmit ({password}){
       validate: (value) =>
         getValues().password === value || "Passwords need to match",
     })}autoComplete='new-password'
-    className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' />
     </FormItem>
 
 
     <div className='flex justify-end gap-2 items-center mt-4'>
-    <button className='py-2 px-3 text-orange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' type='reset' onClick={reset} >Cancel</button>
+    <button className='py-2 px-3 text-customOrange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' type='reset' onClick={reset} >Cancel</button>
 
     <button disabled={isUpdating}
-     className='py-[10px] px-3 text-white bg-orange-700 rounded-md  font-semibold text-center hover:bg-orange-800 hover:duration-300 hover:ease-in-out' >Update Password</button>
+     className='py-[10px] px-3 text-white bg-customOrange-700 rounded-md  font-semibold text-center hover:bg-customOrange-800 hover:duration-300 hover:ease-in-out' >Update Password</button>
     </div>
 </form>
 

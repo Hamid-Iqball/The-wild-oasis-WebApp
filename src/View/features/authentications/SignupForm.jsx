@@ -27,7 +27,7 @@ function SignupForm() {
 
   return (
     <div className='flex flex-col gap-5'>
-    <h2 className="text-orange-800 text-3xl font-[500]">Create a new user</h2>
+    <h2 className="text-customOrange-800 text-3xl font-[500]">Create a new user</h2>
     <form action="" onSubmit={handleSubmit(submitFunc)}
     className='bg-white p-4  rounded-md'>
 
@@ -35,7 +35,7 @@ function SignupForm() {
     <input type="text" id='fullName' 
     disabled={isLoading}
     {...register("fullName" , {required:"This fied is required"})}
-    className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none' />
     </FormItem>
 
 
@@ -46,7 +46,7 @@ function SignupForm() {
       value:/\S+@\S+\.\S+/,
       message:'Please enter a valid email address'
     }})}
-    className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' />
     </FormItem>
 
 
@@ -57,20 +57,20 @@ function SignupForm() {
       value:8,
       message:'Password need a minimum of 8 characters'
     }},)} 
-    className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' />
     </FormItem>
 
     <FormItem label='Repeat password' error={errors?.passwordConfirm?.message}>
     <input type="password" id='passwordConfirm' 
     disabled={isLoading}
     {...register("passwordConfirm",{required:"This field is required",validate:((value)=>value=== getValues().password||"Passwords need to match")})}
-    className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' />
     </FormItem>
 
     <div className='flex justify-end gap-2 items-center'>
-    <button className='py-2 px-3 text-orange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' type='reset' >Cancel</button>
+    <button className='py-2 px-3 text-customOrange-800 font-semibold bg-slate-50 border rounded-lg text-center hover:bg-slate-200  hover:duration-300 hover:ease-in-out' type='reset' >Cancel</button>
 
-    <button className='py-[10px] px-3 text-white bg-orange-700 rounded-md  font-semibold text-center hover:bg-orange-800 hover:duration-300 hover:ease-in-out' >Create new user</button>
+    <button className='py-[10px] px-3 text-white bg-customOrange-700 rounded-md  font-semibold text-center hover:bg-customOrange-800 hover:duration-300 hover:ease-in-out' >Create new user</button>
     </div>
 </form>
 

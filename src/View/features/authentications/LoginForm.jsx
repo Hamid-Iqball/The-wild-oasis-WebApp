@@ -21,7 +21,7 @@ function LoginForm() {
     }
 
   return (
-    <div className='bg-white text-orange-950 text-lg p-4 rounded w-2/6'>
+    <div className='bg-white text-customOrange-950 text-lg p-4 rounded w-2/6'>
         <form className='flex flex-col gap-3' onSubmit={handleSubmit} >
         
         <div className='flex flex-col justify-start items-start gap-1'> 
@@ -32,7 +32,7 @@ function LoginForm() {
             autoComplete='username'
             onChange={(e)=>setEmail(e.target.value)}
             disabled={isLoading}
-            className='p-2  border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full text-base' />
+            className='p-2  border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none w-full text-base' />
         </div>
 
         <div className='flex flex-col gap-1 justify-start items-start '>
@@ -43,12 +43,12 @@ function LoginForm() {
             value={password}
             onChange={(e)=>setPassword(e.target.value)}
             disabled={isLoading}
-            className='p-2 px-2  border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none w-full text-base ' />
+            className='p-2 px-2  border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none w-full text-base ' />
         </div>
 
         <button type='submit'
         disabled={isLoading}
-        className='bg-orange-800 text-white hover:bg-orange-900 transition-colors duration-300 p-2 px-3 rounded-md mt-3 font-semibold ease-in-out'> {!isLoading? 'Login' : <SpinnerMini/>
+        className='bg-customOrange-800 text-white hover:bg-customOrange-900 transition-colors duration-300 p-2 px-3 rounded-md mt-3 font-semibold ease-in-out'> {!isLoading? 'Login' : <SpinnerMini/>
 }</button>
         </form>
     </div>

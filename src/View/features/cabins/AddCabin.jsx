@@ -7,7 +7,7 @@ return (
 <>
 <Modal>
 <Modal.Open opens='cabin-form'> 
-<button className="border border-grey-500 py-[10px] px-4 text-slate-50 bg-orange-700 font-semibold rounded-md ">Add new Cabin</button>
+<button className="border border-grey-500 py-[10px] px-4 text-customOrange-50 bg-customOrange-700 font-semibold rounded-md ">Add new Cabin</button>
 </Modal.Open>
 <Modal.Window name='cabin-form'>
   <CreateCabinForm/>

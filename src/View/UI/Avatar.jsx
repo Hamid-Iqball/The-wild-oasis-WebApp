@@ -11,9 +11,9 @@ function Avatar() {
         src={avatar || 'default-user.jpg'}
         alt={`Avatar of ${fullName}`}
         title={fullName}
-        className="w-12 h-12 rounded-full object-cover border border-spacing-4 border-red-600"
+        className="w-12 h-12 rounded-full object-cover border border-spacing-4 border-customOrange-600"
       />
-      <p className="font-semibold text-orange-800 text-sm">{fullName}</p>
+      <p className="font-semibold text-customOrange-800 text-sm">{fullName}</p>
     </div>
   );
 }

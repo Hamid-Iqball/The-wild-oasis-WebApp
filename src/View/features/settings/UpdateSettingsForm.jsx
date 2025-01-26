@@ -29,19 +29,19 @@ function UpdateSettingsForm() {
     return (
 <form action="" className='bg-white p-4  rounded-md mt-5'>
     <FormItem label='Minimum nights/booking'>
-    <input type="number" id='min-nights' className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' defaultValue={minBookingLength} onBlur={e=>handleUpdate(e ,"minBookingLength")} disabled={isUpdating}/>
+    <input type="number" id='min-nights' className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' defaultValue={minBookingLength} onBlur={e=>handleUpdate(e ,"minBookingLength")} disabled={isUpdating}/>
     </FormItem>
 
     <FormItem label='Maximum nights/booking'>
-    <input type="number" id='max-nights' className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' defaultValue={maxBookingLength} onBlur={e=>handleUpdate(e,'maxBookingLength')} disabled={isUpdating} />
+    <input type="number" id='max-nights' className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' defaultValue={maxBookingLength} onBlur={e=>handleUpdate(e,'maxBookingLength')} disabled={isUpdating} />
     </FormItem>
 
     <FormItem label='Maximum guests/booking'>
-    <input type="number" id='max-guests' className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' defaultValue={maxGuestPerBooking} onBlur={e=>handleUpdate(e,"maxGuestPerBooking")} disabled={isUpdating} />
+    <input type="number" id='max-guests' className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' defaultValue={maxGuestPerBooking} onBlur={e=>handleUpdate(e,"maxGuestPerBooking")} disabled={isUpdating} />
     </FormItem>
 
     <FormItem label='Breakfast Price'>
-    <input type="number" id='breakfast-price' className='p-1.5 border rounded-md focus:border-orange-400  focus:ring-orange-400 focus:ring-2 outline-none ' defaultValue={breakfastPrice} onBlur={e=>handleUpdate(e,'breakfastPrice')} disabled={isUpdating}/>
+    <input type="number" id='breakfast-price' className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' defaultValue={breakfastPrice} onBlur={e=>handleUpdate(e,'breakfastPrice')} disabled={isUpdating}/>
     </FormItem>
 </form>
 
