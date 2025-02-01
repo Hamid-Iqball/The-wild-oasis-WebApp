@@ -1,6 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode:'class',
   content: ["./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
 ],
@@ -47,6 +48,10 @@ export default {
         900:'#101828',
         950:'#030712'
 
+       },
+       customeTheme:{
+        bgLightDark:'#18212F',
+        bgDarkDark:'#111827'
        }
       }
 
