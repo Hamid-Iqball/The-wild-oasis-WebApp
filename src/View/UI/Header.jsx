@@ -9,7 +9,7 @@ function Header() {
 const navigate = useNavigate()
 
   return (
-    <div className="grid grid-cols-1 items-center h-16  px-4 mr-6 ">
+    <div className="grid grid-cols-1 items-center h-16  px-4 mr-6 dark:bg-Dark-100">
       <div className="justify-self-end">
         <div className='flex justify-between items-center gap-2'>
           <Avatar/>

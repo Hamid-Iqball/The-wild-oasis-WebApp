@@ -1,29 +1,36 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-import { getTheme, setTheme } from "../../../Modal/Services/themeService,"
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { getTheme,setTheme } from "../../../Modal/Services/themeService,";
 
-export const useTheme = ()=>{
-    const queryClient  = useQueryClient()
+const useTheme = () => {
+    const queryClient = useQueryClient();
 
-    const {data:theme='light'} = useQuery({
-    queryKey:['theme'],
-    queryFn:getTheme,
-    staleTime:Infinity
-    })
-    
-    
-    const {mutate:toggleTheme}  = useMutation({
-        mutationFn:()=>setTheme(theme==="dark"?"light" :'dark'),
-        onSuccess:(newTheme)=>{
-            queryClient.setQueryData(["theme"],newTheme)
+    // Fetch stored theme
+    const { data: theme = "light" } = useQuery({
+        queryKey: ["theme"],
+        queryFn: getTheme,
+        staleTime: Infinity,
+    });
 
-            document.documentElement.classList.toggle("dark", newTheme === "dark");
-        }
-    })
+    // Mutation to toggle theme
+    const { mutate: toggleTheme } = useMutation({
+        mutationFn: () => {
+            const newTheme = theme === "dark" ? "light" : "dark";
+            setTheme(newTheme);
+            return newTheme;
+        },
+        onSuccess: (newTheme) => {
+            queryClient.setQueryData(["theme"], newTheme);
 
+            // Apply class to <html> for dark mode
+            if (newTheme === "dark") {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        },
+    });
 
-    return {theme, toggleTheme}
+    return { theme, toggleTheme };
+};
 
-
-
-
-}
+export default useTheme;

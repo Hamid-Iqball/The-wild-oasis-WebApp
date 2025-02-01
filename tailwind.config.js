@@ -14,6 +14,10 @@ export default {
         'custom': '4px',
       },
       colors:{
+        Dark:{
+         100:'#18212F',
+         200:'#111827'
+        },
        customOrange:{
          50:'#FFF7ED',
          100:'#FFF7ED',
@@ -49,10 +53,6 @@ export default {
         950:'#030712'
 
        },
-       customeTheme:{
-        bgLightDark:'#18212F',
-        bgDarkDark:'#111827'
-       }
       }
 
 
