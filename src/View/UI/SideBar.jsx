@@ -7,7 +7,7 @@ import Uploader from '../../Modal/data/Uploader'
 function SideBar() {
   return (
     <div className='  h-full flex flex-col justify-start items-center gap-12  dark:bg-Dark-100 col-span-1 row-span-full
-     border-r-[1px] border-customGray-50  py-4 ' >
+       py-4 ' >
     <div className='pt-4'>
       <img src="/logo-light.png" alt="logo" className='h-[7rem] '  />
     </div>

@@ -29,13 +29,13 @@ function SignupForm() {
     <div className='flex flex-col gap-5'>
     <h2 className="text-customOrange-800 text-3xl font-[500]">Create a new user</h2>
     <form action="" onSubmit={handleSubmit(submitFunc)}
-    className='bg-white p-4  rounded-md'>
+    className='dark:bg-Dark-100 dark:border dark:border-customGray-700 p-4  rounded-md'>
 
     <FormItem label='Full name' error={errors?.fullName?.message}>
     <input type="text" id='fullName' 
     disabled={isLoading}
     {...register("fullName" , {required:"This fied is required"})}
-    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400 dark:bg-transparent  focus:ring-customOrange-400 focus:ring-2 outline-none' />
     </FormItem>
 
 
@@ -46,7 +46,7 @@ function SignupForm() {
       value:/\S+@\S+\.\S+/,
       message:'Please enter a valid email address'
     }})}
-    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400 dark:bg-transparent focus:ring-customOrange-400 focus:ring-2 outline-none ' />
     </FormItem>
 
 
@@ -57,14 +57,14 @@ function SignupForm() {
       value:8,
       message:'Password need a minimum of 8 characters'
     }},)} 
-    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400 dark:bg-transparent focus:ring-customOrange-400 focus:ring-2 outline-none ' />
     </FormItem>
 
     <FormItem label='Repeat password' error={errors?.passwordConfirm?.message}>
     <input type="password" id='passwordConfirm' 
     disabled={isLoading}
     {...register("passwordConfirm",{required:"This field is required",validate:((value)=>value=== getValues().password||"Passwords need to match")})}
-    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400 dark:bg-transparent focus:ring-customOrange-400 focus:ring-2 outline-none ' />
     </FormItem>
 
     <div className='flex justify-end gap-2 items-center'>

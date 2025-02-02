@@ -4,7 +4,6 @@ import { useCabins } from '../../../ViewModal/Hooks/CabinHooks/useCabins'
 import Spinner from '../../UI/Spinner'
 import Error from '../../UI/Error'
 import Table from '../../UI/Table'
-import Menus from '../../UI/Menus'
 import { useSearchParams } from 'react-router-dom'
 
 function CabinTable() {

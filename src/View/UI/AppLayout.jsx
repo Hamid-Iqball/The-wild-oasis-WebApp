@@ -7,7 +7,7 @@ function AppLayout() {
   return (
     <div className="flex h-screen">
 
-    <aside className="w-56  text-white fixed top-0 bottom-0 dark:bg-Dark-100  border-r dark:border-customGray-700 ">
+    <aside className="w-56  text-white fixed top-0 bottom-0 border-r dark:bg-Dark-100 dark:border-customGray-700 ">
       <SideBar />
     </aside>
     <main  className="ml-56 flex flex-col flex-1 dark:bg-Dark-100">

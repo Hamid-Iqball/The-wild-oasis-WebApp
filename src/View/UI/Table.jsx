@@ -4,7 +4,7 @@ const TableContext = createContext()
 function Table({columns,children}) {
   return (
     <TableContext.Provider value={{columns}}>
-    <div className={`border rounded-md mb-3 mt-3 dark:text-customGray-50 dark:border dark:border-customGray-600  `}  role='table'>
+    <div className={` rounded-md mb-3 mt-3 dark:text-customGray-50 dark:border dark:border-customGray-600  `}  role='table'>
        {children}
     </div>
     </TableContext.Provider>
@@ -13,7 +13,7 @@ function Table({columns,children}) {
 
 function Header({children}){
     const {columns} = useContext(TableContext)
-    return <header style={{display:'grid' , gridTemplateColumns:columns}} className ={ ` px-2 font-semibold gap-8 p-3  text-[1rem] text-customGray-800 border-b-[1px] dark:text-customGray-50`} role='row'>
+    return <header style={{display:'grid' , gridTemplateColumns:columns}} className ={ ` px-2 font-semibold gap-8 p-3  text-[1rem] text-customGray-800 border-b-[1px] dark:border-customGray-700 dark:text-customGray-50`} role='row'>
     {children}
     </header>
 }
