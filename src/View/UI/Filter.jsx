@@ -18,7 +18,7 @@ function Filter({filterField,filteringOptions}) {
           searchParams.get(filterField) === option.value
             ? 'bg-customOrange-700 text-white'
             : ' text-gray-700 dark:bg-Dark-100 dark:text-gray-200'
-        } border-0 hover:bg-customOrange-700 focus:bg-customOrange-700 active:hover:bg-customOrange-700  px-2 py-1 rounded-md text-[14px] transition-all duration-300 ease-in-out`}
+        } border-0 hover:text-white hover:bg-customOrange-700 focus:bg-customOrange-700 active:hover:bg-customOrange-700  px-2 py-1 rounded-md text-[14px] transition-all duration-300 ease-in-out`}
         onClick={() => handleClick(option.value)}
       >
         {option.label}
