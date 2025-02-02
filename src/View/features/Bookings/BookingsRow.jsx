@@ -49,7 +49,7 @@ function BookingsRow({booking}) {
 
 
   return (
-    <div className='grid grid-cols-[0.8fr,2fr,3fr,1.4fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm  bg-white border-b-[1px] border-[#DDDDDD] rounded-xm p-2 text-customGray-700'>
+    <div className='grid grid-cols-[0.8fr,2fr,3fr,1.4fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm  dark:bg-Dark-100 dark:border-customGray-700 border-b-[1px] rounded-xm p-2 text-customGray-700 dark:text-customGray-50'>
         <div>{cabinName}</div>
 
       <div className='flex flex-col items-start justify-start gap-1'>

@@ -34,17 +34,17 @@ setAvatar(null)
 
   return (
     <div className='flex flex-col gap-3'>
-    <h2 className="text-[#5d5f63] text-xl font-[500]">Update user data</h2>
+    <h2 className="text-[#5d5f63] dark:text-customGray-100 text-xl font-[500]">Update user data</h2>
     <form 
     onSubmit={hanndleSubmit}
-    className='bg-white p-4  rounded-md'>
+    className=' dark:bg-Dark-100 p-4 dark:border dark:border-customGray-700  rounded-md'>
 
 
     <FormItem label='Email' >
     <input type="email" id='email' 
     value={email}
     disabled
-    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 dark:bg-transparent outline-none' />
     </FormItem>
 
 
@@ -52,14 +52,14 @@ setAvatar(null)
     <input type="text" id='fullName'
     value={fullName}
     onChange={(e)=>setFullName(e.target.value)} 
-    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400 dark:border-none dark:bg-transparent focus:ring-customOrange-400 focus:ring-2 outline-none ' />
     </FormItem>
 
 
     <FormItem label='Avatar' >
     <input type="file" id='avatar' 
     onChange={(e)=>setAvatar(e.target.files[0])}
-    className='p-1.5 file:bg-customOrange-700 file:text-slate-50 file:py-2 file:px-4 file:border-none file:rounded-md file:mr-4 hover:file:cursor-pointer' />
+    className='p-1.5 file:bg-customOrange-700 file:text-slate-50 dark:bg-transparent file:py-2 file:px-4 file:border-none file:rounded-md file:mr-4 hover:file:cursor-pointer' />
     </FormItem>
 
   

@@ -20,7 +20,7 @@ function CabinRow({cabin}) {
     
   return (
    
-    <div className='grid grid-cols-[0.8fr,1fr,2fr,1fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm font-[500] bg-white border-b-[1px] border-[#DDDDDD] rounded-md p-[1px]'>
+    <div className='grid grid-cols-[0.8fr,1fr,2fr,1fr,1fr,1fr] place-items-center justify-items-start gap-8 text-sm font-[500]  border-b-[1px] border-[#DDDDDD] dark:bg-Dark-100 dark:border-customGray-700 rounded-md p-[1px]'>
 
        <div className='w-24 bg-white  border-customGray-400 text-customGray-700 border'><img src={image} alt="" className='w-28 ' />
        </div>

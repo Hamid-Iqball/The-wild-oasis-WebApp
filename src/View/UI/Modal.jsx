@@ -13,7 +13,7 @@ function Modal({children}){
   const close = ()=>{setOpenName(" ")}
   const open = setOpenName
   return (
-  <ModalContext.Provider value={{openName,open,close}}>
+  <ModalContext.Provider value={{openName,open,close}} >
   {children}
   </ModalContext.Provider>
   )
@@ -35,9 +35,9 @@ function Window({children,name}) {
   if(name !== openName) return null;
 
   return createPortal (
-    <div className='fixed top-0 left-0 w-full h-screen z-50 bg-customGray-50 bg-opacity-20 backdrop-blur transition duration-1000'>
-    <div className='fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] bg-white py-4 px-4 transition ease-in-out duration-[0.5s] rounded-lg shadow-md shadow-customGray-500 w-2/3 border' ref={ref}>
-    <div>
+    <div className='fixed top-0 left-0 w-full h-screen z-50 bg-customGray-50 bg-opacity-20  backdrop-blur transition duration-1000'>
+    <div className='fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] dark:bg-Dark-100 py-4 px-4 transition ease-in-out duration-[0.5s] rounded-lg shadow-md shadow-customGray-500 w-2/3 border' ref={ref}>
+    <div >
     <button className='absolute top-2 right-3 border text-3xl hover:bg-customGray-100 rounded-md text-orange-900' 
     onClick={close}><HiXMark/></button>
     {cloneElement(children,{onCloseModal : close}) }

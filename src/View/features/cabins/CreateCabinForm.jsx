@@ -50,7 +50,7 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
     function getInputClass(type='regular'){
       switch (type) {
         case 'modal':
-          return 'max-w-full  bg-white  p-2 rounded-md '
+          return 'max-w-full  dark:text-customGray-50   p-2 rounded-md '
 
           case 'regular':
             return 'w-[80%] bg-orange-white border border-slate-200 rounded-md m-2 p-2 bg-orange-600'
@@ -60,34 +60,34 @@ import { useEditCabin } from '../../../ViewModal/Hooks/CabinHooks/useEditCabin'
       }
     }
   return ( 
-  <form  onSubmit={handleSubmit(onSubmit,onError)}  type={onCloseModal?'modal':'regular'} className={getInputClass(typeofInput)}>
+  <form  onSubmit={handleSubmit(onSubmit,onError)}  type={onCloseModal?'modal':'regular'} className={`${getInputClass(typeofInput)} dark:bg-Dark-100 dark:text-customGray-50`}>
         <FormItem label='Cabin name' error={errors?.name?.message}>
-        <input type="text" id='name' {...register('name',{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' disabled={isWorking} />
+        <input type="text" id='name' {...register('name',{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none dark:bg-transparent dark:outline-none ' disabled={isWorking} />
         </FormItem>
 
         <FormItem label='Maximum capacity' error={errors?.maxCapacity?.message}>
         <input type="number" id='maxCapacity' {...register("maxCapacity",{required:"This Field is required",min:{
             value:1,
             message:"Capacity should be at least 1"
-          }})} className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' disabled={isCreating} />
+          }})} className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 dark:bg-transparent dark:outline-noneoutline-none ' disabled={isCreating} />
         </FormItem>
 
         <FormItem label='Price' error={errors?.regularPrice?.message }>
-        <input type="number" id='regularPrice' {...register("regularPrice",{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' disabled={isWorking} />
+        <input type="number" id='regularPrice' {...register("regularPrice",{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none dark:bg-transparent dark:outline-none ' disabled={isWorking} />
           </FormItem>
 
           <FormItem label="Discount" error={errors?.discount?.message}>
           <input type="number" id='discount' {...register("discount",{
                   validate:(value)=> value <= getValues().regularPrice || "Discount must be less than Price" ,required:"This Field is required"
-              })} className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none' defaultValue={0} disabled={isWorking}/>
+              })} className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 dark:bg-transparent dark:outline-none outline-none' defaultValue={0} disabled={isWorking}/>
            </FormItem>
    
           <FormItem label="Description" error={errors?.description?.message}>
-          <textarea type="text" id='description' {...register("description",{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none '/>
+          <textarea type="text" id='description' {...register("description",{required:"This Field is required"})} className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none dark:bg-transparent dark:outline-none '/>
           </FormItem>
 
           <FormItem label="Cabin photo" error={errors?.image?.message}>
-          <input type="file" id='image' {...register("image",{required: isEditSession ? false : "This field is required"})} className='p-1.5 file:bg-customOrange-700 file:text-customGray-50  file:py-2 file:px-4 file:border-none file:rounded-md file:mr-4 hover:file:cursor-pointer   ' disabled={isWorking}/>
+          <input type="file" id='image' {...register("image",{required: isEditSession ? false : "This field is required"})} className='p-1.5 file:bg-customOrange-700 file:text-customGray-50  file:py-2 file:px-4 file:border-none file:rounded-md file:mr-4 hover:file:cursor-pointer dark:bg-transparent dark:outline-none  ' disabled={isWorking}/>
           </FormItem>
 
 

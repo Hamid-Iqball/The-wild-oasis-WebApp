@@ -16,9 +16,9 @@ function onSubmit ({password}){
 //The use form comes with its built in validation which makes form handling very easy 
   return (
     <div className='flex flex-col gap-3'>
-    <h2 className="text-[#5d5f63] text-xl font-[500]">Update Password</h2>
+    <h2 className="text-[#5d5f63] dark:text-customGray-100 text-xl font-[500]">Update Password</h2>
     <form onSubmit={handleSubmit(onSubmit)} 
-    className='bg-white p-4  rounded-md'>
+    className='dark:bg-Dark-100 p-4 dark:border dark:border-customGray-700  rounded-md'>
 
     <FormItem label='New Password (min 8 characters)' error={error?.password?.message} >
     <input type="password" id='password' disabled={isUpdating} 
@@ -29,7 +29,7 @@ function onSubmit ({password}){
         message: "Password needs a minimum of 8 characters",
       },
     })}autoComplete='current-password'
-    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400 dark:bg-transparent  focus:ring-customOrange-400 focus:ring-2 outline-none' />
     </FormItem>
 
 
@@ -40,7 +40,7 @@ function onSubmit ({password}){
       validate: (value) =>
         getValues().password === value || "Passwords need to match",
     })}autoComplete='new-password'
-    className='p-1.5 border rounded-md focus:border-customOrange-400  focus:ring-customOrange-400 focus:ring-2 outline-none ' />
+    className='p-1.5 border rounded-md focus:border-customOrange-400 dark:bg-transparent focus:ring-customOrange-400 focus:ring-2 outline-none ' />
     </FormItem>
 
 
