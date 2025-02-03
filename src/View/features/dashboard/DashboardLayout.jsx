@@ -4,21 +4,28 @@ import Cards from './Cards'
 import Spinner from "../../UI/Spinner"
 import { useRecentBookings } from '../../../ViewModal/Hooks/DashboardHooks/useRecentBookings'
 import { useRecentStays } from '../../../ViewModal/Hooks/DashboardHooks/useRecentStays'
-
+import {useCabins} from '../../../ViewModal/Hooks/CabinHooks/useCabins'
 
 function DashboardLayout() {
 const   { bookings , isLoading} = useRecentBookings()
-const  {stays, isLoading:isStaying,confirmedStays} = useRecentStays()
+const  {stays, isLoading:isStaying,confirmedStays , numDays} = useRecentStays()
 
+const {cabins, isLoading:isLoading3} = useCabins()
+
+console.log(cabins)
+
+const cabinsCount = 1
 if(isLoading || isStaying){
   return <Spinner/>
 }
+
 
 console.log(bookings)
 
   return (
     <section className='flex flex-col gap-8'>
-        <Cards/>
+      
+        <Cards bookings={bookings} confirmedStays={confirmedStays} cabinsCount={cabinsCount} numDays={numDays}/>
         <div className='grid grid-cols-2 gap-8 '>
 
             <div className=' bg-customGray-50 border-customGray-900 dark:border dark:border-customGray-700 dark:bg-Dark-100 rounded-md p-4' >

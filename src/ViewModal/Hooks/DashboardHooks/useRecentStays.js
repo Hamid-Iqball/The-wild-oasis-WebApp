@@ -19,5 +19,5 @@ const {isLoading , data:stays} = useQuery({
 
 const confirmedStays = stays?.filter(stay=>stay.status === 'checked-in' || stay.status==='check-out')
 
-return {isLoading , stays , confirmedStays}
+return {isLoading , stays , confirmedStays, numDays}
 }
