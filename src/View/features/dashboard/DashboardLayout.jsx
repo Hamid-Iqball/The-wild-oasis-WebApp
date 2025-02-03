@@ -1,10 +1,20 @@
 import React from 'react'
 import Cards from './Cards'
-import SmallButton from '../../UI/SmallButton'
+
+import Spinner from "../../UI/Spinner"
+import { useRecentBookings } from '../../../ViewModal/Hooks/DashboardHooks/useRecentBookings'
+import { useRecentStays } from '../../../ViewModal/Hooks/DashboardHooks/useRecentStays'
+
 
 function DashboardLayout() {
+const   { bookings , isLoading} = useRecentBookings()
+const  {stays, isLoading:isStaying,confirmedStays} = useRecentStays()
 
+if(isLoading || isStaying){
+  return <Spinner/>
+}
 
+console.log(bookings)
 
   return (
     <section className='flex flex-col gap-8'>

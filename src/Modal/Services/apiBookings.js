@@ -1,5 +1,6 @@
 
 import { Page_Size } from "../Utils/constants";
+import { getToday } from "../Utils/helper";
 import supabase from "./supabase";
 
 // This function is to get all the bookings.
@@ -93,3 +94,37 @@ return data; // Return deleted rows or null
 
 
 }
+
+
+
+export async function getBookingsAfterDate(date) {
+  const { data, error } = await supabase
+    .from("bookings")
+    .select("created_at, totalPrice, extrasPrice")
+    .gte("created_at", date)
+    .lte("created_at", getToday({ end: true }));
+
+  if (error) {
+    console.error(error);
+    throw new Error("Bookings could not get loaded");
+  }
+
+  return data;
+}
+
+// Returns all STAYS that are were created after the given date
+export async function getStaysAfterDate(date) {
+  const { data, error } = await supabase
+    .from("bookings")
+    .select("*, guests(fullName)")
+    .gte("startDate", date)
+    .lte("startDate", getToday());
+
+  if (error) {
+    console.error(error);
+    throw new Error("Bookings could not get loaded");
+  }
+
+  return data;
+}
+
