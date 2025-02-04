@@ -9,7 +9,7 @@ import { useSearchParams } from 'react-router-dom'
 function CabinTable() {
 const {cabins, isLoading , isError} = useCabins()
 const [searchParams] = useSearchParams()   //Here we need the data that we have stored in the URL and we get that with the help of useSearchParams hook
-
+console.log(cabins)
 if(isLoading){
   return  <Spinner/>
 }

@@ -4,18 +4,19 @@ import Cards from './Cards'
 import Spinner from "../../UI/Spinner"
 import { useRecentBookings } from '../../../ViewModal/Hooks/DashboardHooks/useRecentBookings'
 import { useRecentStays } from '../../../ViewModal/Hooks/DashboardHooks/useRecentStays'
-import {useCabins} from '../../../ViewModal/Hooks/CabinHooks/useCabins'
+import { useCabins } from '../../../ViewModal/Hooks/CabinHooks/useCabins'
+import SalesChart from './SalesChart'
 
 function DashboardLayout() {
 const   { bookings , isLoading} = useRecentBookings()
 const  {stays, isLoading:isStaying,confirmedStays , numDays} = useRecentStays()
 
-const {cabins, isLoading:isLoading3} = useCabins()
+const {cabins, isLoading:isLoading3 , isError} = useCabins()
 
-console.log(cabins)
+const cabinsCount = cabins?cabins.length : 0
 
-const cabinsCount = 1
-if(isLoading || isStaying){
+
+if(isLoading || isStaying || isLoading3){
   return <Spinner/>
 }
 
@@ -43,6 +44,9 @@ console.log(bookings)
             <div>
 
             </div>
+        </div>
+        <div>
+          <SalesChart bookings={bookings} numDays={numDays}/>
         </div>
     </section>
   )

@@ -17,6 +17,12 @@ html{
 
 }
 
+@layer components {
+    .recharts-cartesian-grid-vertical line {
+      stroke: theme('colors.gray.300');
+    }
+  }
+
 /* Dark mode */
 .light{
     --primaryBackground:243, 244, 246;

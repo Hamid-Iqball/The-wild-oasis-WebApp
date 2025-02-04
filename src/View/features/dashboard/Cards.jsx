@@ -2,7 +2,7 @@ import React from 'react'
 import { HiOutlineBanknotes, HiOutlineBriefcase, HiOutlineCalendarDays, HiOutlineChartBar } from 'react-icons/hi2'
 import {formatCurrency} from "../../../Modal/Utils/helper"
 
-function Cards({bookings , confirmedStays, numDays,cabinCounts}) {
+function Cards({bookings , confirmedStays, numDays,cabinsCount}) {
 
     //1
     const numBookings = bookings?.length
@@ -14,8 +14,8 @@ function Cards({bookings , confirmedStays, numDays,cabinCounts}) {
     const checkins = confirmedStays.length 
 
     //4 Occupancy rate
-    const occRate = confirmedStays.reduce((acc,cur)=>acc+cur.numNights , 0)/(numDays*cabinCounts)
-    console.log(occRate)
+    const occRate = confirmedStays.reduce((acc,cur)=>acc+cur.numNights , 0)/( numDays*cabinsCount)
+  
   return (
            <div className='grid grid-cols-4 gap-6 mt-8'>
     
@@ -49,7 +49,7 @@ function Cards({bookings , confirmedStays, numDays,cabinCounts}) {
                 </div>
                 <div className="flex flex-col gap-1">
                     <h3 className="text-gray-900 dark:text-white text-normal font-semibold">Occupancy rate</h3>
-                    <p className="text-gray-900 dark:text-white text-2xl font-semibold">{occRate*100}</p>
+                    <p className="text-gray-900 dark:text-white text-2xl font-semibold">{Math.round(occRate*100)}%</p>
                 </div>
                 </div>
             </div>
