@@ -6,6 +6,7 @@ import { useRecentBookings } from '../../../ViewModal/Hooks/DashboardHooks/useRe
 import { useRecentStays } from '../../../ViewModal/Hooks/DashboardHooks/useRecentStays'
 import { useCabins } from '../../../ViewModal/Hooks/CabinHooks/useCabins'
 import SalesChart from './SalesChart'
+import DurationChart from './DurationChart'
 
 function DashboardLayout() {
 const   { bookings , isLoading} = useRecentBookings()
@@ -41,8 +42,8 @@ console.log(bookings)
             
             </div>
 
-            <div>
-
+            <div className=' bg-customGray-50 border-customGray-900 dark:border dark:border-customGray-700 dark:bg-Dark-100 rounded-md p-4'>
+            <DurationChart confirmedStays={confirmedStays}/>
             </div>
         </div>
         <div>

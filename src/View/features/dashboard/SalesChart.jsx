@@ -47,7 +47,7 @@ function SalesChart({ bookings, numDays }) {
 
   return (
     <div className="bg-gray-50 p-3 rounded-md dark:bg-Dark-100">
-      <h2>Sales</h2>
+      <h2 className="text-xl font-semibold p-4">Sales from {format(allDates.at(0), 'MMM dd yyyy')} &dash; {format(allDates.at(-1), 'MMM dd yyyy')} </h2>
       <ResponsiveContainer height={300} width="100%">
         <AreaChart data={data}>
           <XAxis dataKey="label" tick={{ fill: colors.text }} stroke={colors.text} />
