@@ -13,7 +13,7 @@ function Cabins() {
   return (
 <section>
   <div className="flex justify-between items-center  my-1  mb-8">
-    <h1 className="text-3xl font-[500] text-customOrange-800 dark:text-customOrange-600">All Cabins</h1>
+    <h1 className="text-3xl font-[500] text-customOrange-800 dark:text-customOrange-400">All Cabins</h1>
     <p className="text-[1rem] font-[500] flex items-center gap-3">
 
     <Filter filterField='discount'

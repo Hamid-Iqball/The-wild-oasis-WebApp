@@ -143,7 +143,7 @@ const startData = theme==='light' ? [...startDataLight]:[...startDataDark]
             ))}
           </Pie>
           <Tooltip/>
-          <Legend verticalAlign="middle" align="right" width="30%" layout="vertical" iconSize={15} iconType="circle" />
+          {/* <Legend verticalAlign="middle" align="right" width="30%" layout="vertical" iconSize={15} iconType="circle" /> */}
         </PieChart>
       </ResponsiveContainer>
     </div>

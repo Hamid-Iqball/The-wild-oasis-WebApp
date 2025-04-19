@@ -1,5 +1,5 @@
 export const getTheme = async()=>{
-    return localStorage.getItem("theme") || "light"
+    return localStorage.getItem("theme") || "dark"
 }
 
 export const setTheme = async (newTheme) =>{

@@ -43,7 +43,7 @@ function BookingDetails() {
 
     <div className='flex justify-between items-center gap-4'>
         <div className='flex justify-between items-center gap-4'>
-        <h1 className='text-3xl text-customOrange-800 font-[500]'>Booking #{bookingId}</h1>
+        <h1 className='text-3xl text-customOrange-800 font-[500]  dark:text-customOrange-400 '>Booking #{bookingId}</h1>
         <span className={`${getStatus[status]}  text-[12px] font-semibold px-1  rounded-lg`} >{status.toUpperCase()}</span>
         </div>
         <button className='flex justify-between items-center gap-1 text-customOrange-800 font-semibold' onClick={moveBack}> <FaArrowLeft/> Back </button>
@@ -60,7 +60,7 @@ function BookingDetails() {
         {status==='checked-in' && <button className='py-2 px-3 text-white bg-customOrange-700 rounded-md  font-semibold text-center hover:bg-customOrange-800 hover:duration-300 hover:ease-in-out' onClick={()=>checkOut(bookingId)} disabled={isCheckingOut} >Check Out</button>}
 
         <Modal.Open opens='delete-booking'>
-        <button className='py-2 px-3 text-white bg-customOrange-700 rounded-md  font-semibold text-center hover:bg-customOrange-800 hover:duration-300 hover:ease-in-out' >Delete Booking</button>
+        <button className='py-2 px-3 text-white bg-customOrange-700 dark:bg-dark-100 rounded-md  font-semibold text-center hover:bg-customOrange-800 hover:duration-300 hover:ease-in-out' >Delete Booking</button>
         </Modal.Open>
         <button className='py-2 px-3 text-customOrange-800 font-semibold bg-customGray-50 border rounded-lg text-center hover:bg-customGray-200 hover:duration-300 hover:ease-in-out' onClick={moveBack}>Back</button>
     </div>

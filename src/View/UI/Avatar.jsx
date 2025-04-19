@@ -13,7 +13,7 @@ function Avatar() {
         title={fullName}
         className="w-12 h-12 rounded-full object-cover border border-spacing-4 border-customOrange-600"
       />
-      <p className="font-semibold text-customOrange-800 text-sm">{fullName}</p>
+      <p className="font-semibold text-customOrange-800 dark:text-customOrange-400 text-sm">{fullName}</p>
     </div>
   );
 }

@@ -6,7 +6,7 @@ function ThemeButton (){
     const  {theme,toggleTheme} = useTheme()
 
     return <button onClick={toggleTheme}>
-         {theme === "dark" ? <MdLightMode size={22} className="text-customOrange-300"/> : <BsMoon size={20} className="text-customOrange-800"/>}
+         {theme === "dark" ? <MdLightMode size={22} className="text-customOrange-300"/> : <BsMoon size={20} className="text-customOrange-800 dark:text-customOrange-400"/>}
     </button>
 }
 

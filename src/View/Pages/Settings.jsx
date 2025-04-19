@@ -4,7 +4,7 @@ import UpdateSettingsForm from '../features/settings/UpdateSettingsForm'
 function Settings() {
   return (
     <div >
-      <h1 className="text-3xl font-[500] text-customOrange-800 ">
+      <h1 className="text-3xl font-[500]  text-customOrange-800 dark:text-customOrange-400">
         Update Hotel Settings
       </h1>
       <div >

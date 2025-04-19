@@ -27,7 +27,7 @@ function SignupForm() {
 
   return (
     <div className='flex flex-col gap-5'>
-    <h2 className="text-customOrange-800 text-3xl font-[500]">Create a new user</h2>
+    <h2 className="text-customOrange-800 dark:text-customOrange-400 text-3xl font-[500]">Create a new user</h2>
     <form action="" onSubmit={handleSubmit(submitFunc)}
     className='dark:bg-Dark-100 dark:border dark:border-customGray-700 p-4  rounded-md'>
 
