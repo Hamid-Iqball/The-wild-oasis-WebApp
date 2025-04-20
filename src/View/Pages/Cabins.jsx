@@ -12,9 +12,9 @@ function Cabins() {
 //Sending the props to the CabinTableOperations to make it reuseabl
   return (
 <section>
-  <div className="flex justify-between items-center  my-1  mb-8">
+  <div className="flex flex-col sm:flex-row justify-start sm:justify-between sm:items-center gap-2   my-1  mb-8">
     <h1 className="text-3xl font-[500] text-customOrange-800 dark:text-customOrange-400">All Cabins</h1>
-    <p className="text-[1rem] font-[500] flex items-center gap-3">
+    <div className="text-[1rem] font-[500]  flex sm:flex-row items-start   sm:items-center gap-3">
 
     <Filter filterField='discount'
     filteringOptions={ [
@@ -34,7 +34,7 @@ function Cabins() {
       {value:'maxCapacity-desc',label:'Sort by capacity (high first)'},
     ]}/>
    
-    </p>
+    </div>
     
   </div>
   <div>
