@@ -1,6 +1,6 @@
-import { supabaseUrl } from "../Services/supabase";
+import {supabaseUrl} from "../Services/supabase";
 
-
+console.log(supabaseUrl)
 const imageUrl = `${supabaseUrl}/storage/v1/object/public/cabin-images/`;
 
 export const cabins = [

@@ -1,6 +1,9 @@
 import { createClient } from '@supabase/supabase-js'
-export const supabaseUrl = process.env.SUPABASE_URL
-const supabaseKey = process.env.SUPABASE_API_KEY
+
+// Access environment variables with proper format for React
+export const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || process.env.VITE_SUPABASE_URL
+export const supabaseKey = import.meta.env.VITE_SUPABASE_API_KEY || process.env.VITE_SUPABASE_API_KEY
+
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 export default supabase
