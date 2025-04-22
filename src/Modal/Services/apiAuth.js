@@ -1,36 +1,52 @@
+ // Assuming supabase client is correctly initialized
+
 import supabase, { supabaseUrl } from "./supabase";
 
-//Here in this funciton we are sending form data of signUp form to the backend to create a user.
-export async function signUp({fullName,email,password}){
-const {data,error}= await supabase.auth.signUp({
-  email,
-  password,
-  options:{
-    data:{
-      fullName,
-      avatar:''
+// SignUp function to register a new user
+export async function signUp({ fullName, email, password }) {
+  try {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: {
+          fullName,
+          avatar: '' // You can add a default avatar URL here if needed
+        }
+      }
+    });
+
+    if (error) {
+      throw new Error(error.message); // Handle error properly
     }
+
+    return data; // Return user data on successful sign up
+  } catch (error) {
+    console.error("Error during sign-up:", error);
+    throw new Error("An error occurred during sign-up. Please try again.");
   }
-})
-
-
-if (error){
-  throw new Error(error.message)
 }
 
-return data
-}
+// Login function to authenticate the user
+export async function login({ email, password }) {
+  try {
+    let { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password
+    });
 
+    if (error) {
+      throw new Error(error.message); // Handle login error
+    }
 
-export async function login ({email,password}){
-
-let { data, error } = await supabase.auth.signInWithPassword({email,password})
-  if (error){
-    throw new Error(error.message)
+    console.log("Logged in user data:", data);
+    return data; // Return user data upon successful login
+  } catch (error) {
+    console.error("Error during login:", error);
+    throw new Error("Invalid email or password. Please try again.");
   }
-  console.log(data)
-  return data;
 }
+
 
 //Why we need a function from supabase to load the user again, The thing is the user might want to access this page a bit later, In the web Application if you a logged in a day ago and then reload the page you will have to be logged in. So here we will check if that user exists in our supabase then we will fetch that user.
 
