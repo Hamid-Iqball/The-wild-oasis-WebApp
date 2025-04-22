@@ -1,11 +1,29 @@
 import React from 'react'
 import { HiOutlineCalendarDays, HiOutlineCog6Tooth, HiOutlineHome, HiOutlineHomeModern, HiOutlineUsers } from 'react-icons/hi2'
 import { NavLink } from 'react-router-dom'
-import Uploader from '../../Modal/data/Uploader'
+
 import useTheme from '../../ViewModal/Hooks/ThemeHooks/useTheme'
 
 function SideBar() {
-  const { theme } = useTheme()
+  const { theme, isLoading } = useTheme()
+  
+  // If theme is still loading, use a neutral class to prevent flicker
+  if (isLoading) {
+    return (
+      <div className="h-full flex flex-col justify-start items-center gap-6 lg:gap-12 col-span-1 row-span-full md:py-4 md:mx-4 bg-gray-100">
+        {/* Skeleton loader for logo */}
+        <div className="p-2 lg:pt-4">
+          <div className="h-20 lg:h-[7rem] w-32 bg-gray-200 animate-pulse rounded"></div>
+        </div>
+        {/* Skeleton loader for navigation */}
+        <div className="w-full px-2">
+          {[1, 2, 3, 4, 5].map(i => (
+            <div key={i} className="h-12 my-2 bg-gray-200 animate-pulse rounded-md"></div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={`h-full flex flex-col justify-start items-center gap-6 lg:gap-12 col-span-1 row-span-full md:py-4 md:mx-4 transition-colors ${theme !== 'dark' ? 'bg-white' : 'bg-Dark-100'}`}>
