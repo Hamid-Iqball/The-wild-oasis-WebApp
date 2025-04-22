@@ -73,10 +73,6 @@ function SideBar() {
             </li>
           </ul>
         </nav>
-
-        <div className="hidden lg:block">
-          <Uploader/>
-        </div>
       </div>
     </div>
   );
