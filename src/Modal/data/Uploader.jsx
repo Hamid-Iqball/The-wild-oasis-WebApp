@@ -5,7 +5,7 @@ import supabase from "../Services/supabase";
 
 import { subtractDates } from "../Utils/helper";
 
-import { bookings } from "../../starter/data/data-bookings";
+import { bookings } from "./data-bookings";
 import { cabins } from "./data-cabins";
 import { guests } from "./data-guests";
 

@@ -8,10 +8,10 @@ function SideBar() {
   const { theme } = useTheme()
 
   return (
-    <div className='h-full flex flex-col justify-start items-center gap-6 lg:gap-12 dark:bg-Dark-100 col-span-1 row-span-full py-4 md:mx-4 '>
+    <div className={`h-full flex flex-col justify-start items-center gap-6 lg:gap-12 col-span-1 row-span-full md:py-4 md:mx-4 transition-colors ${theme !== 'dark' ? 'bg-white' : 'bg-Dark-100'}`}>
     
-      <div className='pt-2 lg:pt-4'>
-        <img src={theme === 'dark' ? '/logo-dark.png' : '/logo-light.png'} alt="logo" className='h-16 sm:h-22 lg:h-[7rem] lg:w-auto object-contain' />
+      <div className=' p-2 lg:pt-4'>
+        <img src={theme === 'dark' ? '/logo-dark.png' : '/logo-light.png'} alt="logo" className='h-20 lg:h-[7rem] lg:w-auto object-contain' />
       </div>
     
       <div className='w-full'>

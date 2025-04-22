@@ -1,5 +1,4 @@
-
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Pie, PieChart, ResponsiveContainer, Cell, Legend, Tooltip } from "recharts";
 import useTheme from "../../../ViewModal/Hooks/ThemeHooks/useTheme";
 import { data } from "autoprefixer";
@@ -93,6 +92,16 @@ const startDataLight = [
 function DurationChart({ confirmedStays,stays }) {
 
 const  {theme} = useTheme()
+const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+useEffect(() => {
+  function handleResize() {
+    setWindowWidth(window.innerWidth);
+  }
+  
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
 
 const startData = theme==='light' ? [...startDataLight]:[...startDataDark]
     function prepareData(startData, stays) {
@@ -143,7 +152,16 @@ const startData = theme==='light' ? [...startDataLight]:[...startDataDark]
             ))}
           </Pie>
           <Tooltip/>
-          {/* <Legend verticalAlign="middle" align="right" width="30%" layout="vertical" iconSize={15} iconType="circle" /> */}
+          {windowWidth > 768 && (
+            <Legend 
+              verticalAlign="middle" 
+              align="right" 
+              width="30%" 
+              layout="vertical" 
+              iconSize={15} 
+              iconType="circle" 
+            />
+          )}
         </PieChart>
       </ResponsiveContainer>
     </div>

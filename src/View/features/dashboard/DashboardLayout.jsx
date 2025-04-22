@@ -27,7 +27,7 @@ function DashboardLayout() {
         cabinsCount={cabinsCount}
         numDays={numDays}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
         {/* Activity */}
         <div className="bg-customGray-50 border-customGray-900 dark:border dark:border-customGray-700 dark:bg-Dark-100 rounded-md p-3 md:p-4">
           <h2 className="text-lg md:text-xl font-bold border-b dark:border-customGray-700 pb-3 md:pb-4">
