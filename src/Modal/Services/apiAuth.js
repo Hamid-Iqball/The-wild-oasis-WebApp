@@ -1,5 +1,3 @@
- // Assuming supabase client is correctly initialized
-
 import supabase, { supabaseUrl } from "./supabase";
 
 // SignUp function to register a new user
@@ -71,6 +69,8 @@ export async function logout(){
  if(error) throw new Error(error.message)
 }
 
+
+// updateCurrentUser function 
 export async function updateCurrentUser({password,fullName,avatar}){
 
 //1. Update the password or the fullName (Cannot do it the same time because both are located in different forms)
@@ -84,15 +84,15 @@ if(error) throw new Error(error.message)
 if(!avatar) return data;
 
 //2. Upload the avatar image
-const fileName = `avatars-${data.user.id}-${Math.random()}`
-const {error:storageError} = await supabase.storage.from('avatars').upload(fileName,avatar)
+const fileName = `avatar-${data.user.id}-${Math.random()}`
+const {error:storageError} = await supabase.storage.from('avatar').upload(fileName,avatar)
 if(storageError) throw new Error(storageError.message)
 
 
 //3. Update the avatar image. 
 const {data:updateUser,error:error2} = await supabase.auth.updateUser({
   data:{
-    avatar:`${supabaseUrl}/storage/v1/object/public/avatars/${fileName}`,
+    avatar:`${supabaseUrl}/storage/v1/object/public/avatar/${fileName}`,
   }
 })
 

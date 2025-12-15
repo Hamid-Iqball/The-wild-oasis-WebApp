@@ -41,6 +41,7 @@ function BookingsRow({booking}) {
   } = booking
 
 
+  console.log("testttt",booking)
   const getStatus = {
     unconfirmed:'text-customBlue-dark bg-customBlue-light  dark:text-customBlue-light dark:bg-customBlue-dark ',
     'checked-out': 'text-customGray-600 bg-customGray-100  dark:text-customGray-100 dark:bg-customGray-600',

@@ -10,6 +10,9 @@ export async function getCabins(){
     return data;
 }
 
+
+// https://yrybybnltnggrcfaidva.supabase.co/storage/v1/object/public/avatar/default-user.jpg
+//  https://yrybybnltnggrcfaidva.supabase.co/storage/v1/object/public/cabin-images/cabin-001.jpg
 // Create/Edit Cabin
 export async function createEditCabin(newCabin , id){
     const hasImagePath = newCabin.image?.startsWith?.(supabaseUrl);
@@ -51,7 +54,7 @@ export async function createEditCabin(newCabin , id){
 
 
     
-    export async function deleteCabin(id){
+export async function deleteCabin(id){
         const {data, error } = await supabase
         .from('cabins')
         .delete()

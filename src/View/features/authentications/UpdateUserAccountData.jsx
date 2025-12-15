@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import FormItem from "../../UI/FormItem"
 import { useUser } from '../../../ViewModal/Hooks/AuthenticationsHooks/useUser'
 import { useUpdateUser } from '../../../ViewModal/Hooks/AuthenticationsHooks/useUpdateUser'
+
+
 function UpdateUserAccountData() {
   const {
     user:{
@@ -10,9 +12,9 @@ function UpdateUserAccountData() {
     }
   } =   useUser()
 
-  const [fullName, setFullName]= useState(currenFullName)
-  const [avatar,setAvatar]= useState(null)
-  const {updateUser,isUpdating} = useUpdateUser()
+const [fullName, setFullName]= useState(currenFullName)
+const [avatar,setAvatar]= useState(null)
+const {updateUser,isUpdating} = useUpdateUser()
 
 
   function hanndleSubmit(e){

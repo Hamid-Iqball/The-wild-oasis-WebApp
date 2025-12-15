@@ -3,6 +3,7 @@ import { HiOutlineCalendarDays, HiOutlineCog6Tooth, HiOutlineHome, HiOutlineHome
 import { NavLink } from 'react-router-dom'
 
 import useTheme from '../../ViewModal/Hooks/ThemeHooks/useTheme'
+import Uploader from '../../Modal/data/Uploader'
 
 function SideBar() {
   const { theme, isLoading } = useTheme()
@@ -91,6 +92,10 @@ function SideBar() {
             </li>
           </ul>
         </nav>
+      </div>
+      
+      <div className='w-full px-2 mt-auto mb-4'>
+        <Uploader />
       </div>
     </div>
   );

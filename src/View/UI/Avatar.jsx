@@ -3,6 +3,7 @@ import { useUser } from '../../ViewModal/Hooks/AuthenticationsHooks/useUser';
 
 function Avatar() {
   const { user } = useUser() || {};
+  console.log(user)
   const { fullName = 'Anonymous', avatar } = user?.user_metadata || {};
 
   return (
